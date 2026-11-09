@@ -42,3 +42,16 @@ P6 update (9 Nov 2026): deployed.
 - Checked live with curl: good sheet 201, tampered sheet 422, get 200, countersign with wrong digest 409, with right digest 200, /handover/[id] 200, /api/status ok with blobListMs 29. The test round was deleted afterwards, the door is empty.
 - Production URL is public (no Vercel login wall). Deployment protection on the project was left as created; the production alias is not gated. Preview URLs may be.
 - Still pending, needs P3/P4: SheetSender pointing at the live URL, a full preview round landing on the door, and keeping it as the recorded sample.
+
+## P3 (9 Nov 2026) - NOT DONE, partial
+Built: stations, PlantSim, dials, tags, round card, chevron, sign flow, fixture reader (Assets/Scripts/*.ts). Compiles clean in Lens Studio 5.23.2. A scripted full round in Interactive Preview (builder self-test, direct calls, not real pinches) printed PASS for: alarm tag and card text, READY refused, HOLD needs an escalation, Correct by one step, fogged gauge refused then By eye, summary line, short code 3AE4. No log errors.
+
+Not done, no P3 task is ticked:
+- LEAF c1 to c5 are written (Assets/Tests/) and register in the Lens, but have never been run. The LEAF plugin stayed "Not Connected": list and run requests timed out. The preview had been left paused; after setting it back to Interactive the editor stopped answering.
+- verify-preview from the user's eye at each station was not done. Tag and card backplates looked invisible in the builder's screenshots. Fog quad and band arc not confirmed visually.
+- Scene file not committed (unsaved, token state not confirmed). Assets/GeneratedSFX (two placeholder tones) not committed.
+
+Facts for the next session:
+- InteractionKit 4.x and UI Kit 4.x do not compile on 5.23.2. Use SpectaclesInteractionKit 2.0.0 and SpectaclesUIKit 2.0.0 (folder "SpectaclesUIKit 2.lspkg"). Imports in GaugeTag.ts and RoundCard.ts use that path.
+- Leaf 4.0.0 needs InteractionKit 4.x and cannot work here. Leaf 2.0.2 works with SIK 2.0.0 but its folder must be named Leaf.lspkg. It has no waitUntil; the test kit carries its own.
+- After a Lens Studio restart the MCP server may move port; reconnect the session.

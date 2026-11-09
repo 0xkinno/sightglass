@@ -1,0 +1,76 @@
+- !<AssetImportMetadata/40fe1f51-3ced-4ed4-ab91-1912c822bbf2>
+  ImportedAssetIds:
+    TypeScriptAsset: !<reference> e17e6ffc-c7b3-495d-8f8a-2fc122415c60
+  ImporterName: TypeScriptAssetImporter
+  PrimaryAsset: !<reference> e17e6ffc-c7b3-495d-8f8a-2fc122415c60
+  PackageType: NotAPackage
+  LegacyPackagePolicy: ~
+  ExtraData:
+    {}
+  AssetDataMap:
+    TypeScriptAsset: !<own> 01662a3a-bdfb-4988-8b50-9f69292558d8
+  DependentFiles:
+    []
+  ImporterSettings: !<AssetImporterSettings>
+    {}
+  CompressionSettings: !<own> 00000000-0000-0000-0000-000000000000
+- !<TypeScriptAssetData/01662a3a-bdfb-4988-8b50-9f69292558d8>
+  SvgIcon: ""
+  SetupScript:
+    code: ""
+  Description: ""
+  VersionMajor: 0
+  VersionMinor: 0
+  VersionPatch: 0
+  VersionPrerelease: ""
+  UpdateOrder: 0
+  ComponentUid: 8ba63356-438e-4ff3-b12c-83f49fb7bdff
+  ExportUid: 00000000-0000-0000-0000-000000000000
+  PackagePolicy: CanBeUnpacked
+  ScriptInputsHidden:
+    audio: false
+    chevron: false
+    eyeHeightCm: false
+    machineRoot: false
+    placeFloorFromCamera: false
+    plant: false
+    reader: false
+    roundCard: false
+    selfTest: false
+  ScriptTypesHidden:
+    {}
+  ReadMe: !<reference> 00000000-0000-0000-0000-000000000000
+  DeclarationFile: !<reference> 00000000-0000-0000-0000-000000000000
+  Tags:
+    []
+  Attachments:
+    []
+  DefaultScriptInputs:
+    - plant: !<MappingBased.AssignableType_1> 00000000-0000-0000-0000-000000000000
+      reader: !<MappingBased.AssignableType_2> 00000000-0000-0000-0000-000000000000
+      roundCard: !<MappingBased.AssignableType_3> 00000000-0000-0000-0000-000000000000
+      chevron: !<MappingBased.AssignableType_4> 00000000-0000-0000-0000-000000000000
+      audio: !<MappingBased.AssignableType_5> 00000000-0000-0000-0000-000000000000
+      machineRoot: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      eyeHeightCm: !<float> 165.000000
+      placeFloorFromCamera: true
+      selfTest: false
+  ScriptTypes:
+    -
+      {}
+  InputLines:
+    - '// @ui {"widget":"label", "label":"<span style=\"color: #60A5FA;\">SightglassMain: round flow and sign</span>"}'
+    - '// @ui {"widget":"separator"}'
+    - '// @ui {"widget":"group_start", "label":"References"}'
+    - '// @input AssignableType_1 plant {"hint":"Plant simulator. Restarted when the round starts."}'
+    - '// @input AssignableType_2 reader {"hint":"Gauge reader. Fixture mode only in this build."}'
+    - '// @input AssignableType_3 roundCard {"hint":"Round card shown low left of view."}'
+    - '// @input AssignableType_4 chevron {"hint":"Chevron that points to the next gauge when it is out of view."}'
+    - '// @input AssignableType_5 audio {"hint":"Spatial cues for the alarm moment."}'
+    - '// @input SceneObject machineRoot {"hint":"Root of the stand-in machinery space. Its floor is placed relative to the real camera height."}'
+    - '// @ui {"widget":"group_end"}'
+    - '// @ui {"widget":"group_start", "label":"Settings"}'
+    - '// @input float eyeHeightCm = 165 {"hint":"Eye height above the floor in centimetres. The stand-in floor is placed this far below the camera at start.", "widget":"slider", "min":140, "max":190, "step":1}'
+    - '// @input bool placeFloorFromCamera = true {"hint":"Place the stand-in floor from the camera height at start."}'
+    - '// @input bool selfTest {"hint":"Debug: play a scripted round on start and log SIGHTGLASS_SELFTEST lines."}'
+    - '// @ui {"widget":"group_end"}'

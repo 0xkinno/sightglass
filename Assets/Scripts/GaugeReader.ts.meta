@@ -1,0 +1,58 @@
+- !<AssetImportMetadata/c6baff52-d7a5-4471-b4ee-493f1d5af623>
+  ImportedAssetIds:
+    TypeScriptAsset: !<reference> 27c9db96-80ef-4dfc-998f-bb60ecc09d95
+  ImporterName: TypeScriptAssetImporter
+  PrimaryAsset: !<reference> 27c9db96-80ef-4dfc-998f-bb60ecc09d95
+  PackageType: NotAPackage
+  LegacyPackagePolicy: ~
+  ExtraData:
+    {}
+  AssetDataMap:
+    TypeScriptAsset: !<own> aacdd469-aee3-4ece-9acf-3deab235714b
+  DependentFiles:
+    []
+  ImporterSettings: !<AssetImporterSettings>
+    {}
+  CompressionSettings: !<own> 00000000-0000-0000-0000-000000000000
+- !<TypeScriptAssetData/aacdd469-aee3-4ece-9acf-3deab235714b>
+  SvgIcon: ""
+  SetupScript:
+    code: ""
+  Description: ""
+  VersionMajor: 0
+  VersionMinor: 0
+  VersionPatch: 0
+  VersionPrerelease: ""
+  UpdateOrder: 0
+  ComponentUid: dfdccd4c-ab30-4d8d-8341-9157db5e80be
+  ExportUid: 00000000-0000-0000-0000-000000000000
+  PackagePolicy: CanBeUnpacked
+  ScriptInputsHidden:
+    fixtureLatencyMs: false
+    mode: false
+    plant: false
+  ScriptTypesHidden:
+    {}
+  ReadMe: !<reference> 00000000-0000-0000-0000-000000000000
+  DeclarationFile: !<reference> 00000000-0000-0000-0000-000000000000
+  Tags:
+    []
+  Attachments:
+    []
+  DefaultScriptInputs:
+    - plant: !<MappingBased.AssignableType_1> 00000000-0000-0000-0000-000000000000
+      mode: fixture
+      fixtureLatencyMs: !<float> 350.000000
+  ScriptTypes:
+    -
+      {}
+  InputLines:
+    - '// @ui {"widget":"label", "label":"<span style=\"color: #60A5FA;\">GaugeReader: fixture reader</span>"}'
+    - '// @ui {"widget":"separator"}'
+    - '// @ui {"widget":"group_start", "label":"References"}'
+    - '// @input AssignableType_1 plant {"hint":"Plant simulator. Only the fixture mode reads it."}'
+    - '// @ui {"widget":"group_end"}'
+    - '// @ui {"widget":"group_start", "label":"Settings"}'
+    - "// @input string mode = \"fixture\" {\"hint\":\"Reader mode. Only 'fixture' is available in this build.\", \"widget\":\"combobox\", \"values\":[{\"label\":\"fixture\", \"value\":\"fixture\"}]}"
+    - '// @input float fixtureLatencyMs = 350 {"hint":"Pause before the answer comes back, so the Reading state is visible on the tag.", "widget":"slider", "min":0, "max":2000, "step":50}'
+    - '// @ui {"widget":"group_end"}'

@@ -1,0 +1,64 @@
+- !<AssetImportMetadata/1aad3e87-74d3-4656-a88a-1652a70f4703>
+  ImportedAssetIds:
+    TypeScriptAsset: !<reference> f35d4f83-d2de-4eb8-93c9-745722705122
+  ImporterName: TypeScriptAssetImporter
+  PrimaryAsset: !<reference> f35d4f83-d2de-4eb8-93c9-745722705122
+  PackageType: NotAPackage
+  LegacyPackagePolicy: ~
+  ExtraData:
+    {}
+  AssetDataMap:
+    TypeScriptAsset: !<own> 7a48e9b7-78c6-4dfe-bf2a-7f1cbeca8895
+  DependentFiles:
+    []
+  ImporterSettings: !<AssetImporterSettings>
+    {}
+  CompressionSettings: !<own> 00000000-0000-0000-0000-000000000000
+- !<TypeScriptAssetData/7a48e9b7-78c6-4dfe-bf2a-7f1cbeca8895>
+  SvgIcon: ""
+  SetupScript:
+    code: ""
+  Description: ""
+  VersionMajor: 0
+  VersionMinor: 0
+  VersionPatch: 0
+  VersionPrerelease: ""
+  UpdateOrder: 0
+  ComponentUid: 7bdd8c94-d331-468d-a5b9-6781fcc0e46d
+  ExportUid: 00000000-0000-0000-0000-000000000000
+  PackagePolicy: CanBeUnpacked
+  ScriptInputsHidden:
+    faceDiameterCm: false
+    foggedGlass: false
+    gaugeId: false
+    material: false
+    plant: false
+  ScriptTypesHidden:
+    {}
+  ReadMe: !<reference> 00000000-0000-0000-0000-000000000000
+  DeclarationFile: !<reference> 00000000-0000-0000-0000-000000000000
+  Tags:
+    []
+  Attachments:
+    []
+  DefaultScriptInputs:
+    - gaugeId: ME-LO-IN
+      plant: !<MappingBased.AssignableType_1> 00000000-0000-0000-0000-000000000000
+      material: !<reference.Material> 00000000-0000-0000-0000-000000000000
+      faceDiameterCm: !<float> 15.000000
+      foggedGlass: false
+  ScriptTypes:
+    -
+      {}
+  InputLines:
+    - '// @ui {"widget":"label", "label":"<span style=\"color: #60A5FA;\">GaugeStationView: stand-in dial</span>"}'
+    - '// @ui {"widget":"separator"}'
+    - '// @ui {"widget":"group_start", "label":"References"}'
+    - '// @input string gaugeId = "ME-LO-IN" {"hint":"Round card gauge id this dial shows, for example ME-LO-IN."}'
+    - '// @input AssignableType_1 plant {"hint":"Plant simulator that drives the needle."}'
+    - '// @input Asset.Material material {"hint":"Vertex colour material used for every dial mesh."}'
+    - '// @ui {"widget":"group_end"}'
+    - '// @ui {"widget":"group_start", "label":"Settings"}'
+    - '// @input float faceDiameterCm = 15 {"hint":"Dial face diameter in centimetres. Real gauges of this kind are 150 mm.", "widget":"slider", "min":10, "max":25, "step":0.5}'
+    - '// @input bool foggedGlass {"hint":"Cover this dial with a fogged glass quad so the reader cannot see the needle."}'
+    - '// @ui {"widget":"group_end"}'

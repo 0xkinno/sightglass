@@ -1,0 +1,67 @@
+- !<AssetImportMetadata/847f940c-6cef-4071-8f69-28d6322fe218>
+  ImportedAssetIds:
+    TypeScriptAsset: !<reference> 317a1879-8204-44ce-863f-44ac676304ed
+  ImporterName: TypeScriptAssetImporter
+  PrimaryAsset: !<reference> 317a1879-8204-44ce-863f-44ac676304ed
+  PackageType: NotAPackage
+  LegacyPackagePolicy: ~
+  ExtraData:
+    {}
+  AssetDataMap:
+    TypeScriptAsset: !<own> 400238da-c47b-4820-aea0-a81c71a09e90
+  DependentFiles:
+    []
+  ImporterSettings: !<AssetImporterSettings>
+    {}
+  CompressionSettings: !<own> 00000000-0000-0000-0000-000000000000
+- !<TypeScriptAssetData/400238da-c47b-4820-aea0-a81c71a09e90>
+  SvgIcon: ""
+  SetupScript:
+    code: ""
+  Description: ""
+  VersionMajor: 0
+  VersionMinor: 0
+  VersionPatch: 0
+  VersionPrerelease: ""
+  UpdateOrder: 0
+  ComponentUid: 636dbacc-1428-4b15-871d-405718e196b6
+  ExportUid: 00000000-0000-0000-0000-000000000000
+  PackagePolicy: CanBeUnpacked
+  ScriptInputsHidden:
+    audio: false
+    distanceCm: false
+    material: false
+    sizeCm: false
+    viewHalfHeightDeg: false
+    viewHalfWidthDeg: false
+  ScriptTypesHidden:
+    {}
+  ReadMe: !<reference> 00000000-0000-0000-0000-000000000000
+  DeclarationFile: !<reference> 00000000-0000-0000-0000-000000000000
+  Tags:
+    []
+  Attachments:
+    []
+  DefaultScriptInputs:
+    - material: !<reference.Material> 00000000-0000-0000-0000-000000000000
+      audio: !<MappingBased.AssignableType_1> 00000000-0000-0000-0000-000000000000
+      viewHalfWidthDeg: !<float> 22.000000
+      viewHalfHeightDeg: !<float> 14.000000
+      distanceCm: !<float> 80.000000
+      sizeCm: !<float> 3.000000
+  ScriptTypes:
+    -
+      {}
+  InputLines:
+    - '// @ui {"widget":"label", "label":"<span style=\"color: #60A5FA;\">ChevronGuide: edge chevron to the next gauge</span>"}'
+    - '// @ui {"widget":"separator"}'
+    - '// @ui {"widget":"group_start", "label":"References"}'
+    - '// @input Asset.Material material {"hint":"Vertex colour material for the chevron mesh."}'
+    - '// @input AssignableType_1 audio {"hint":"Spatial audio cues. The click plays from the direction of the gauge."}'
+    - '// @ui {"widget":"group_end"}'
+    - '// @ui {"widget":"group_start", "label":"Settings"}'
+    - '// @input float viewHalfWidthDeg = 22 {"hint":"Horizontal half angle of the comfortable view, in degrees. Beyond it the gauge counts as out of view.", "widget":"slider", "min":10, "max":40, "step":1}'
+    - '// @input float viewHalfHeightDeg = 14 {"hint":"Vertical half angle of the comfortable view, in degrees.", "widget":"slider", "min":8, "max":30, "step":1}'
+    - '// @input float distanceCm = 80 {"hint":"Distance of the chevron in front of the eyes, in centimetres.", "widget":"slider", "min":40, "max":120, "step":5}'
+    - '// @input float sizeCm = 3 {"hint":"Chevron size in centimetres.", "widget":"slider", "min":1.5, "max":6, "step":0.5}'
+    - '// @ui {"widget":"group_end"}'

@@ -1,0 +1,62 @@
+- !<AssetImportMetadata/8536cdd2-7af9-4aad-a64a-28eee655817b>
+  ImportedAssetIds:
+    TypeScriptAsset: !<reference> 7bee524f-18dd-4846-b224-e5554708160c
+  ImporterName: TypeScriptAssetImporter
+  PrimaryAsset: !<reference> 7bee524f-18dd-4846-b224-e5554708160c
+  PackageType: NotAPackage
+  LegacyPackagePolicy: ~
+  ExtraData:
+    {}
+  AssetDataMap:
+    TypeScriptAsset: !<own> 62abf416-da29-4e0a-89cc-0135e5b4ef9d
+  DependentFiles:
+    []
+  ImporterSettings: !<AssetImporterSettings>
+    {}
+  CompressionSettings: !<own> 00000000-0000-0000-0000-000000000000
+- !<TypeScriptAssetData/62abf416-da29-4e0a-89cc-0135e5b4ef9d>
+  SvgIcon: ""
+  SetupScript:
+    code: ""
+  Description: ""
+  VersionMajor: 0
+  VersionMinor: 0
+  VersionPatch: 0
+  VersionPrerelease: ""
+  UpdateOrder: 0
+  ComponentUid: 67cf532f-0e73-4195-8d7b-c9130bab320a
+  ExportUid: 00000000-0000-0000-0000-000000000000
+  PackagePolicy: CanBeUnpacked
+  ScriptInputsHidden:
+    distanceCm: false
+    followSpeed: false
+    offsetDownCm: false
+    offsetLeftCm: false
+    widthCm: false
+  ScriptTypesHidden:
+    {}
+  ReadMe: !<reference> 00000000-0000-0000-0000-000000000000
+  DeclarationFile: !<reference> 00000000-0000-0000-0000-000000000000
+  Tags:
+    []
+  Attachments:
+    []
+  DefaultScriptInputs:
+    - offsetLeftCm: !<float> 22.000000
+      offsetDownCm: !<float> 20.000000
+      distanceCm: !<float> 80.000000
+      followSpeed: 2.500000
+      widthCm: !<float> 24.000000
+  ScriptTypes:
+    -
+      {}
+  InputLines:
+    - '// @ui {"widget":"label", "label":"<span style=\"color: #60A5FA;\">RoundCard: round progress, summary and sign</span>"}'
+    - '// @ui {"widget":"separator"}'
+    - '// @ui {"widget":"group_start", "label":"Settings"}'
+    - '// @input float offsetLeftCm = 22 {"hint":"How far to the left of the eye line the card sits, in centimetres.", "widget":"slider", "min":0, "max":40, "step":1}'
+    - '// @input float offsetDownCm = 20 {"hint":"How far below the eye line the card sits, in centimetres.", "widget":"slider", "min":0, "max":40, "step":1}'
+    - '// @input float distanceCm = 80 {"hint":"Distance in front of the eyes, in centimetres. 80 is 0.8 m.", "widget":"slider", "min":50, "max":120, "step":5}'
+    - '// @input float followSpeed = 2.5 {"hint":"How quickly the card catches up with your head. Lower is lazier.", "widget":"slider", "min":0.5, "max":8, "step":0.5}'
+    - '// @input float widthCm = 24 {"hint":"Card width in centimetres.", "widget":"slider", "min":16, "max":34, "step":1}'
+    - '// @ui {"widget":"group_end"}'

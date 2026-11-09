@@ -1,0 +1,53 @@
+- !<AssetImportMetadata/98255fb4-0ad6-4c61-a18c-3c27a6841d7b>
+  ImportedAssetIds:
+    TypeScriptAsset: !<reference> ae1af8be-f7c7-485c-b0d6-66920d50475c
+  ImporterName: TypeScriptAssetImporter
+  PrimaryAsset: !<reference> ae1af8be-f7c7-485c-b0d6-66920d50475c
+  PackageType: NotAPackage
+  LegacyPackagePolicy: ~
+  ExtraData:
+    {}
+  AssetDataMap:
+    TypeScriptAsset: !<own> 2c932d43-72a3-4595-a699-0d9a6aac7c71
+  DependentFiles:
+    []
+  ImporterSettings: !<AssetImporterSettings>
+    {}
+  CompressionSettings: !<own> 00000000-0000-0000-0000-000000000000
+- !<TypeScriptAssetData/2c932d43-72a3-4595-a699-0d9a6aac7c71>
+  SvgIcon: ""
+  SetupScript:
+    code: ""
+  Description: ""
+  VersionMajor: 0
+  VersionMinor: 0
+  VersionPatch: 0
+  VersionPrerelease: ""
+  UpdateOrder: 0
+  ComponentUid: 38b64a56-2b5b-49c9-8923-56e369226b37
+  ExportUid: 00000000-0000-0000-0000-000000000000
+  PackagePolicy: CanBeUnpacked
+  ScriptInputsHidden:
+    driftSeconds: false
+    noiseTicks: false
+  ScriptTypesHidden:
+    {}
+  ReadMe: !<reference> 00000000-0000-0000-0000-000000000000
+  DeclarationFile: !<reference> 00000000-0000-0000-0000-000000000000
+  Tags:
+    []
+  Attachments:
+    []
+  DefaultScriptInputs:
+    - driftSeconds: !<float> 60.000000
+      noiseTicks: 0.150000
+  ScriptTypes:
+    -
+      {}
+  InputLines:
+    - '// @ui {"widget":"label", "label":"<span style=\"color: #60A5FA;\">PlantSim: stand-in plant values</span>"}'
+    - '// @ui {"widget":"separator"}'
+    - '// @ui {"widget":"group_start", "label":"Settings"}'
+    - '// @input float driftSeconds = 60 {"hint":"Seconds for the main engine LO inlet pressure to drift from 3.0 to 1.6 bar.", "widget":"slider", "min":10, "max":600, "step":5}'
+    - '// @input float noiseTicks = 0.15 {"hint":"Share of one minor tick used as needle noise. 0 is a perfectly still needle.", "widget":"slider", "min":0, "max":0.5, "step":0.05}'
+    - '// @ui {"widget":"group_end"}'

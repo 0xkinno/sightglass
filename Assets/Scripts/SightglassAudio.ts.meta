@@ -1,0 +1,61 @@
+- !<AssetImportMetadata/66af3ba2-cee7-4372-b02d-4c05b8bcd36d>
+  ImportedAssetIds:
+    TypeScriptAsset: !<reference> 2a2d8db9-8fdd-4d02-a636-c81b5c19ceab
+  ImporterName: TypeScriptAssetImporter
+  PrimaryAsset: !<reference> 2a2d8db9-8fdd-4d02-a636-c81b5c19ceab
+  PackageType: NotAPackage
+  LegacyPackagePolicy: ~
+  ExtraData:
+    {}
+  AssetDataMap:
+    TypeScriptAsset: !<own> 6a49dfd1-271c-4831-8461-e168d73487f2
+  DependentFiles:
+    []
+  ImporterSettings: !<AssetImporterSettings>
+    {}
+  CompressionSettings: !<own> 00000000-0000-0000-0000-000000000000
+- !<TypeScriptAssetData/6a49dfd1-271c-4831-8461-e168d73487f2>
+  SvgIcon: ""
+  SetupScript:
+    code: ""
+  Description: ""
+  VersionMajor: 0
+  VersionMinor: 0
+  VersionPatch: 0
+  VersionPrerelease: ""
+  UpdateOrder: 0
+  ComponentUid: dac83700-b842-4128-bac1-56ae1dddb6e7
+  ExportUid: 00000000-0000-0000-0000-000000000000
+  PackagePolicy: CanBeUnpacked
+  ScriptInputsHidden:
+    alarmTrack: false
+    alarmVolume: false
+    clickTrack: false
+    clickVolume: false
+  ScriptTypesHidden:
+    {}
+  ReadMe: !<reference> 00000000-0000-0000-0000-000000000000
+  DeclarationFile: !<reference> 00000000-0000-0000-0000-000000000000
+  Tags:
+    []
+  Attachments:
+    []
+  DefaultScriptInputs:
+    - clickTrack: !<reference.AudioTrackAsset> 00000000-0000-0000-0000-000000000000
+      alarmTrack: !<reference.AudioTrackAsset> 00000000-0000-0000-0000-000000000000
+      clickVolume: 0.500000
+      alarmVolume: 0.700000
+  ScriptTypes:
+    -
+      {}
+  InputLines:
+    - '// @ui {"widget":"label", "label":"<span style=\"color: #60A5FA;\">SightglassAudio: spatial cues</span>"}'
+    - '// @ui {"widget":"separator"}'
+    - '// @ui {"widget":"group_start", "label":"References"}'
+    - '// @input Asset.AudioTrackAsset clickTrack {"hint":"Soft click for the chevron. Placeholder tone."}'
+    - '// @input Asset.AudioTrackAsset alarmTrack {"hint":"Low two note cue for an alarm reading. Placeholder tone."}'
+    - '// @ui {"widget":"group_end"}'
+    - '// @ui {"widget":"group_start", "label":"Settings"}'
+    - '// @input float clickVolume = 0.5 {"hint":"Click volume, 0 to 1.", "widget":"slider", "min":0, "max":1, "step":0.05}'
+    - '// @input float alarmVolume = 0.7 {"hint":"Alarm cue volume, 0 to 1.", "widget":"slider", "min":0, "max":1, "step":0.05}'
+    - '// @ui {"widget":"group_end"}'

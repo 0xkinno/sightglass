@@ -1,0 +1,70 @@
+- !<AssetImportMetadata/14c131a9-245f-412d-b3c3-6cf2f765ba1c>
+  ImportedAssetIds:
+    TypeScriptAsset: !<reference> 8f350ac9-2417-44c9-af43-65c574372d5c
+  ImporterName: TypeScriptAssetImporter
+  PrimaryAsset: !<reference> 8f350ac9-2417-44c9-af43-65c574372d5c
+  PackageType: NotAPackage
+  LegacyPackagePolicy: ~
+  ExtraData:
+    {}
+  AssetDataMap:
+    TypeScriptAsset: !<own> 34477754-7806-4315-b3ce-5dcc467d3e73
+  DependentFiles:
+    []
+  ImporterSettings: !<AssetImporterSettings>
+    {}
+  CompressionSettings: !<own> 00000000-0000-0000-0000-000000000000
+- !<TypeScriptAssetData/34477754-7806-4315-b3ce-5dcc467d3e73>
+  SvgIcon: ""
+  SetupScript:
+    code: ""
+  Description: ""
+  VersionMajor: 0
+  VersionMinor: 0
+  VersionPatch: 0
+  VersionPrerelease: ""
+  UpdateOrder: 0
+  ComponentUid: 6a805586-32b6-4410-bc06-1e81f03ce35a
+  ExportUid: 00000000-0000-0000-0000-000000000000
+  PackagePolicy: CanBeUnpacked
+  ScriptInputsHidden:
+    buttonHeightCm: false
+    buttonWidthCm: false
+    dotDiameterCm: false
+    gaugeId: false
+    material: false
+    plateHeightCm: false
+    plateWidthCm: false
+  ScriptTypesHidden:
+    {}
+  ReadMe: !<reference> 00000000-0000-0000-0000-000000000000
+  DeclarationFile: !<reference> 00000000-0000-0000-0000-000000000000
+  Tags:
+    []
+  Attachments:
+    []
+  DefaultScriptInputs:
+    - gaugeId: ""
+      material: !<reference.Material> 00000000-0000-0000-0000-000000000000
+      plateWidthCm: !<float> 9.000000
+      plateHeightCm: !<float> 5.000000
+      buttonWidthCm: 4.800000
+      buttonHeightCm: 4.200000
+      dotDiameterCm: !<float> 4.000000
+  ScriptTypes:
+    -
+      {}
+  InputLines:
+    - '// @ui {"widget":"label", "label":"<span style=\"color: #60A5FA;\">GaugeTag: reading tag and decision bar</span>"}'
+    - '// @ui {"widget":"separator"}'
+    - '// @ui {"widget":"group_start", "label":"References"}'
+    - '// @input string gaugeId {"hint":"Round card gauge id this tag belongs to."}'
+    - '// @input Asset.Material material {"hint":"Vertex colour material for the tone strip on the plate."}'
+    - '// @ui {"widget":"group_end"}'
+    - '// @ui {"widget":"group_start", "label":"Settings"}'
+    - '// @input float plateWidthCm = 9 {"hint":"Tag plate width in centimetres.", "widget":"slider", "min":7, "max":14, "step":0.5}'
+    - '// @input float plateHeightCm = 5 {"hint":"Tag plate height in centimetres.", "widget":"slider", "min":4, "max":8, "step":0.5}'
+    - '// @input float buttonWidthCm = 4.8 {"hint":"Width of each decision button in centimetres. Targets must stay at least 4 cm.", "widget":"slider", "min":4, "max":8, "step":0.2}'
+    - '// @input float buttonHeightCm = 4.2 {"hint":"Height of each decision button in centimetres.", "widget":"slider", "min":4, "max":6, "step":0.2}'
+    - '// @input float dotDiameterCm = 4 {"hint":"Diameter of the idle dot you pinch to read, in centimetres.", "widget":"slider", "min":2, "max":6, "step":0.5}'
+    - '// @ui {"widget":"group_end"}'

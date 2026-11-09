@@ -1,0 +1,64 @@
+- !<AssetImportMetadata/c3228db7-a79f-47d5-afa7-0850853ba3ee>
+  ImportedAssetIds:
+    TypeScriptAsset: !<reference> 847ccd6e-70de-4633-919b-9b6f01caab36
+  ImporterName: TypeScriptAssetImporter
+  PrimaryAsset: !<reference> 847ccd6e-70de-4633-919b-9b6f01caab36
+  PackageType: NotAPackage
+  LegacyPackagePolicy: ~
+  ExtraData:
+    {}
+  AssetDataMap:
+    TypeScriptAsset: !<own> 76507970-7c48-4045-a68c-c1e22f1fdf13
+  DependentFiles:
+    []
+  ImporterSettings: !<AssetImporterSettings>
+    {}
+  CompressionSettings: !<own> 00000000-0000-0000-0000-000000000000
+- !<TypeScriptAssetData/76507970-7c48-4045-a68c-c1e22f1fdf13>
+  SvgIcon: ""
+  SetupScript:
+    code: ""
+  Description: ""
+  VersionMajor: 0
+  VersionMinor: 0
+  VersionPatch: 0
+  VersionPrerelease: ""
+  UpdateOrder: 0
+  ComponentUid: 133b055c-3c10-4041-93e4-a8de44042d9c
+  ExportUid: 00000000-0000-0000-0000-000000000000
+  PackagePolicy: CanBeUnpacked
+  ScriptInputsHidden:
+    centreHeightCm: false
+    heightCm: false
+    label: false
+    material: false
+    widthCm: false
+  ScriptTypesHidden:
+    {}
+  ReadMe: !<reference> 00000000-0000-0000-0000-000000000000
+  DeclarationFile: !<reference> 00000000-0000-0000-0000-000000000000
+  Tags:
+    []
+  Attachments:
+    []
+  DefaultScriptInputs:
+    - material: !<reference.Material> 00000000-0000-0000-0000-000000000000
+      label: Station
+      widthCm: !<float> 120.000000
+      heightCm: !<float> 56.000000
+      centreHeightCm: !<float> 140.000000
+  ScriptTypes:
+    -
+      {}
+  InputLines:
+    - '// @ui {"widget":"label", "label":"<span style=\"color: #60A5FA;\">StationPanel: stand-in panel</span>"}'
+    - '// @ui {"widget":"separator"}'
+    - '// @ui {"widget":"group_start", "label":"References"}'
+    - '// @input Asset.Material material {"hint":"Vertex colour material used for the panel plate."}'
+    - '// @ui {"widget":"group_end"}'
+    - '// @ui {"widget":"group_start", "label":"Settings"}'
+    - '// @input string label = "Station" {"hint":"Station name printed on the panel."}'
+    - '// @input float widthCm = 120 {"hint":"Panel width in centimetres.", "widget":"slider", "min":40, "max":160, "step":5}'
+    - '// @input float heightCm = 56 {"hint":"Panel height in centimetres.", "widget":"slider", "min":30, "max":100, "step":2}'
+    - '// @input float centreHeightCm = 140 {"hint":"Panel centre height above the floor, in centimetres. Dials sit at the same height.", "widget":"slider", "min":80, "max":200, "step":5}'
+    - '// @ui {"widget":"group_end"}'
