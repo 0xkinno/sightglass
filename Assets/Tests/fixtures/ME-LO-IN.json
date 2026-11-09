@@ -1,0 +1,1 @@
+{ "legible": true, "center": { "x": 308, "y": 308 }, "needle_tip": { "x": 308, "y": 150 }, "min_mark": { "x": 150, "y": 308 }, "max_mark": { "x": 466, "y": 308 }, "min_label": 0, "max_label": 6, "image_height": 616, "image_width": 616, "model_value": 2.75, "reason": "The gauge is clear and all required points are visible.", "unit": "bar" }

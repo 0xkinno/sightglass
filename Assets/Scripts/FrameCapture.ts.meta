@@ -1,0 +1,71 @@
+- !<AssetImportMetadata/8cbcd279-494d-42c7-9568-21ad55d840ec>
+  ImportedAssetIds:
+    TypeScriptAsset: !<reference> 496d24da-01b8-441d-9eee-f92debfa65d2
+  ImporterName: TypeScriptAssetImporter
+  PrimaryAsset: !<reference> 496d24da-01b8-441d-9eee-f92debfa65d2
+  PackageType: NotAPackage
+  LegacyPackagePolicy: ~
+  ExtraData:
+    {}
+  AssetDataMap:
+    TypeScriptAsset: !<own> 62fcd2ec-5ff9-4173-b882-966b6eaffe25
+  DependentFiles:
+    []
+  ImporterSettings: !<AssetImporterSettings>
+    {}
+  CompressionSettings: !<own> 00000000-0000-0000-0000-000000000000
+- !<TypeScriptAssetData/62fcd2ec-5ff9-4173-b882-966b6eaffe25>
+  SvgIcon: ""
+  SetupScript:
+    code: ""
+  Description: ""
+  VersionMajor: 0
+  VersionMinor: 0
+  VersionPatch: 0
+  VersionPrerelease: ""
+  UpdateOrder: 0
+  ComponentUid: e56be926-3570-4dc0-8ac4-f47fe2a9d83c
+  ExportUid: 00000000-0000-0000-0000-000000000000
+  PackagePolicy: CanBeUnpacked
+  ScriptInputsHidden:
+    cropTexture: false
+    dumpFirst: false
+    mainCamera: false
+    minCropPx: false
+    overlayRoots: false
+    paddingPct: false
+    sceneRenderTarget: false
+  ScriptTypesHidden:
+    {}
+  ReadMe: !<reference> 00000000-0000-0000-0000-000000000000
+  DeclarationFile: !<reference> 00000000-0000-0000-0000-000000000000
+  Tags:
+    []
+  Attachments:
+    []
+  DefaultScriptInputs:
+    - cropTexture: !<reference.Texture> 00000000-0000-0000-0000-000000000000
+      sceneRenderTarget: !<reference.Texture> 00000000-0000-0000-0000-000000000000
+      mainCamera: !<reference.Camera> 00000000-0000-0000-0000-000000000000
+      overlayRoots: !<reference.SceneObject[]>
+        []
+      paddingPct: !<float> 15.000000
+      minCropPx: !<float> 96.000000
+      dumpFirst: !<float> 0.000000
+  ScriptTypes:
+    -
+      {}
+  InputLines:
+    - '// @ui {"widget":"label", "label":"<span style=\"color: #60A5FA;\">FrameCapture: composite crop of one dial</span>"}'
+    - '// @ui {"widget":"separator"}'
+    - '// @ui {"widget":"group_start", "label":"References"}'
+    - '// @input Asset.Texture cropTexture {"hint":"Screen crop texture asset. Its input is set to the scene render target."}'
+    - '// @input Asset.Texture sceneRenderTarget {"hint":"Render target the main camera draws into (camera feed plus virtual scene)."}'
+    - '// @input Component.Camera mainCamera {"hint":"Main camera. Used to project the dial rim to screen space."}'
+    - '// @input SceneObject[] overlayRoots = {} {"hint":"Everything that is overlay: tags, round card, chevron. Disabled for the capture frame."}'
+    - '// @ui {"widget":"group_end"}'
+    - '// @ui {"widget":"group_start", "label":"Settings"}'
+    - '// @input float paddingPct = 15 {"hint":"Padding around the projected rim, in percent of the rim size.", "widget":"slider", "min":0, "max":40, "step":1}'
+    - '// @input float minCropPx = 96 {"hint":"Smallest crop edge in pixels. Smaller crops are refused as too far away.", "widget":"slider", "min":32, "max":400, "step":8}'
+    - '// @input float dumpFirst {"hint":"Evidence: print the JPEG of the first N captures to the log as SIGHTGLASS_B64 lines.", "widget":"slider", "min":0, "max":20, "step":1}'
+    - '// @ui {"widget":"group_end"}'

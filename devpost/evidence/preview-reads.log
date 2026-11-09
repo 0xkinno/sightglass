@@ -1,0 +1,257 @@
+# Preview reads, 9 Nov 2026. Lens Studio 5.23.2 preview, SPECS 27, live reader (gemini-2.5-flash via RSG), run by Assets/Tests/AccuracyRun.ts.
+# Copied from the Lens Studio log. truth = PlantSim value at capture time (ME-LO-IN pinned at drift 0.3). errTicks = (read - truth) / minorTick.
+# arm=hide: overlay off for the capture frame (shipped path). arm=show: overlay on, tag open, band arc visible.
+SIGHTGLASS_ACC_START reps=5 showReps=3
+SIGHTGLASS_RESPKEYS candidates,modelVersion,createTime,responseId
+SIGHTGLASS_RAW gauge=ME-LO-IN crop=616x616 json={ "legible": true, "center": { "x": 308, "y": 308 }, "needle_tip": { "x": 308, "y": 150 }, "min_mark": { "x": 150, "y": 308 }, "max_mark": { "x": 466, "y": 308 }, "min_label": 0, "max_label": 6, "image_height": 616, "image_width": 616, "model_value": 2.75, "reason": "The gauge is clear and all required points are visible.", "unit": "bar" }
+SIGHTGLASS_READ gauge=ME-LO-IN mode=live ms=2968 tokens=null kind=PROPOSED stretchX=0.500
+SIGHTGLASS_ACC arm=hide gauge=ME-LO-IN rep=1 truth=2.563 read=3.000 errTicks=2.19 minorTick=0.2 kind=PROPOSED verdict=NORMAL expectCant=false crop=616x616 ms=2968 tokens=null modelValue=2.75
+SIGHTGLASS_RESPKEYS candidates,modelVersion,createTime,responseId
+SIGHTGLASS_RAW gauge=ME-LO-IN crop=616x616 json={ "legible": true, "center": { "x": 308, "y": 308 }, "needle_tip": { "x": 278, "y": 160 }, "min_mark": { "x": 160, "y": 456 }, "max_mark": { "x": 456, "y": 456 }, "min_label": 0, "max_label": 6, "image_height": 616, "image_width": 616, "model_value": 2.6, "reason": "The gauge is clear and all necessary points are visible.", "unit": "bar" }
+SIGHTGLASS_READ gauge=ME-LO-IN mode=live ms=3349 tokens=null kind=PROPOSED stretchX=0.500
+SIGHTGLASS_ACC arm=show gauge=ME-LO-IN rep=1 truth=2.557 read=2.400 errTicks=-0.79 minorTick=0.2 kind=PROPOSED verdict=NORMAL expectCant=false crop=616x616 ms=3349 tokens=null modelValue=2.6
+SIGHTGLASS_RESPKEYS candidates,modelVersion,createTime,responseId
+SIGHTGLASS_RAW gauge=ME-LO-IN crop=616x616 json={"legible": true, "center": {"x": 308, "y": 370}, "needle_tip": {"x": 290, "y": 160}, "min_mark": {"x": 150, "y": 500}, "max_mark": {"x": 460, "y": 500}, "min_label": 0, "max_label": 6, "image_height": 616, "image_width": 616, "model_value": 2.6, "reason": "The gauge is clear and readable.", "unit": "bar"}
+SIGHTGLASS_READ gauge=ME-LO-IN mode=live ms=3243 tokens=null kind=PROPOSED stretchX=0.500
+SIGHTGLASS_ACC arm=hide gauge=ME-LO-IN rep=2 truth=2.563 read=2.700 errTicks=0.68 minorTick=0.2 kind=PROPOSED verdict=NORMAL expectCant=false crop=616x616 ms=3243 tokens=null modelValue=2.6
+SIGHTGLASS_RESPKEYS candidates,modelVersion,createTime,responseId
+SIGHTGLASS_RAW gauge=ME-LO-IN crop=616x616 json={"legible": true, "center": {"x": 308, "y": 308}, "needle_tip": {"x": 260, "y": 170}, "min_mark": {"x": 140, "y": 400}, "max_mark": {"x": 470, "y": 400}, "min_label": 0, "max_label": 6, "image_height": 616, "image_width": 616, "model_value": 2.6, "reason": "The gauge is clear and all necessary points are visible.", "unit": "bar"}
+SIGHTGLASS_READ gauge=ME-LO-IN mode=live ms=3310 tokens=null kind=PROPOSED stretchX=0.500
+SIGHTGLASS_ACC arm=show gauge=ME-LO-IN rep=2 truth=2.554 read=2.000 errTicks=-2.77 minorTick=0.2 kind=PROPOSED verdict=WATCH expectCant=false crop=616x616 ms=3310 tokens=null modelValue=2.6
+SIGHTGLASS_RESPKEYS candidates,modelVersion,createTime,responseId
+SIGHTGLASS_RAW gauge=ME-LO-IN crop=616x616 json={ "legible": true, "center": { "x": 308, "y": 308 }, "needle_tip": { "x": 290, "y": 160 }, "min_mark": { "x": 160, "y": 440 }, "max_mark": { "x": 450, "y": 440 }, "min_label": 0, "max_label": 6, "image_height": 616, "image_width": 616, "model_value": 2.6, "reason": "", "unit": "bar" }
+SIGHTGLASS_READ gauge=ME-LO-IN mode=live ms=3187 tokens=null kind=PROPOSED stretchX=0.500
+SIGHTGLASS_ACC arm=hide gauge=ME-LO-IN rep=3 truth=2.551 read=2.600 errTicks=0.24 minorTick=0.2 kind=PROPOSED verdict=NORMAL expectCant=false crop=616x616 ms=3187 tokens=null modelValue=2.6
+SIGHTGLASS_RESPKEYS candidates,modelVersion,createTime,responseId
+SIGHTGLASS_RAW gauge=ME-LO-IN crop=616x616 json={ "legible": true, "center": { "x": 310, "y": 310 }, "needle_tip": { "x": 290, "y": 120 }, "min_mark": { "x": 120, "y": 400 }, "max_mark": { "x": 500, "y": 400 }, "min_label": 0, "max_label": 6, "image_height": 616, "image_width": 616, "model_value": 2.7, "reason": "The gauge is clear and all necessary points are visible.", "unit": "bar" }
+SIGHTGLASS_READ gauge=ME-LO-IN mode=live ms=3217 tokens=null kind=PROPOSED stretchX=0.500
+SIGHTGLASS_ACC arm=show gauge=ME-LO-IN rep=3 truth=2.550 read=2.700 errTicks=0.75 minorTick=0.2 kind=PROPOSED verdict=NORMAL expectCant=false crop=616x616 ms=3217 tokens=null modelValue=2.7
+SIGHTGLASS_RESPKEYS candidates,modelVersion,createTime,responseId
+SIGHTGLASS_RAW gauge=ME-LO-IN crop=616x616 json={ "legible": true, "center": { "x": 340, "y": 380 }, "needle_tip": { "x": 300, "y": 220 }, "min_mark": { "x": 200, "y": 480 }, "max_mark": { "x": 500, "y": 480 }, "min_label": 0, "max_label": 6, "image_height": 616, "image_width": 616, "model_value": 2.6, "reason": "", "unit": "bar" }
+SIGHTGLASS_READ gauge=ME-LO-IN mode=live ms=3325 tokens=null kind=PROPOSED stretchX=0.500
+SIGHTGLASS_ACC arm=hide gauge=ME-LO-IN rep=4 truth=2.551 read=2.300 errTicks=-1.25 minorTick=0.2 kind=PROPOSED verdict=NORMAL expectCant=false crop=616x616 ms=3325 tokens=null modelValue=2.6
+SIGHTGLASS_RESPKEYS candidates,modelVersion,createTime,responseId
+SIGHTGLASS_RAW gauge=ME-LO-IN crop=616x616 json={"legible": true, "center": {"x": 308, "y": 370}, "needle_tip": {"x": 290, "y": 160}, "min_mark": {"x": 140, "y": 500}, "max_mark": {"x": 470, "y": 500}, "min_label": 0, "max_label": 6, "image_height": 616, "image_width": 616, "model_value": 2.6, "unit": "bar"}
+SIGHTGLASS_READ gauge=ME-LO-IN mode=live ms=3557 tokens=null kind=PROPOSED stretchX=0.500
+SIGHTGLASS_ACC arm=hide gauge=ME-LO-IN rep=5 truth=2.551 read=2.700 errTicks=0.75 minorTick=0.2 kind=PROPOSED verdict=NORMAL expectCant=false crop=616x616 ms=3557 tokens=null modelValue=2.6
+SIGHTGLASS_RESPKEYS candidates,modelVersion,createTime,responseId
+SIGHTGLASS_RAW gauge=ME-JCW-OUT crop=656x656 json={ "legible": true, "center": { "x": 328, "y": 328 }, "needle_tip": { "x": 420, "y": 250 }, "min_mark": { "x": 190, "y": 460 }, "max_mark": { "x": 460, "y": 460 }, "min_label": 0, "max_label": 120, "image_height": 656, "image_width": 656, "model_value": 84, "reason": "The gauge is clear and all necessary points are visible.", "unit": "�C" }
+SIGHTGLASS_READ gauge=ME-JCW-OUT mode=live ms=3794 tokens=null kind=PROPOSED stretchX=0.500
+SIGHTGLASS_ACC arm=hide gauge=ME-JCW-OUT rep=1 truth=81.966 read=94.000 errTicks=6.02 minorTick=2 kind=PROPOSED verdict=ALARM expectCant=false crop=656x656 ms=3794 tokens=null modelValue=84
+SIGHTGLASS_RESPKEYS candidates,modelVersion,createTime,responseId
+SIGHTGLASS_RAW gauge=ME-JCW-OUT crop=656x656 json={ "legible": true, "center": { "x": 328, "y": 328 }, "needle_tip": { "x": 428, "y": 260 }, "min_mark": { "x": 260, "y": 480 }, "max_mark": { "x": 480, "y": 480 }, "min_label": 0, "max_label": 120, "image_height": 656, "image_width": 656, "model_value": 84, "reason": "The gauge is clear and all necessary points are visible.", "unit": "�C" }
+SIGHTGLASS_READ gauge=ME-JCW-OUT mode=live ms=3446 tokens=null kind=CANT_READ stretchX=0.500
+SIGHTGLASS_ACC arm=show gauge=ME-JCW-OUT rep=1 truth=82.253 read=null errTicks=null minorTick=2 kind=CANT_READ verdict=null expectCant=false crop=656x656 ms=3446 tokens=null modelValue=84
+SIGHTGLASS_RESPKEYS candidates,modelVersion,createTime,responseId
+SIGHTGLASS_RAW gauge=ME-JCW-OUT crop=656x656 json={ "legible": true, "center": { "x": 328, "y": 328 }, "needle_tip": { "x": 420, "y": 240 }, "min_mark": { "x": 190, "y": 470 }, "max_mark": { "x": 460, "y": 470 }, "min_label": 0, "max_label": 120, "image_height": 656, "image_width": 656, "model_value": 84, "reason": "", "unit": "�C" }
+SIGHTGLASS_READ gauge=ME-JCW-OUT mode=live ms=3144 tokens=null kind=PROPOSED stretchX=0.500
+SIGHTGLASS_ACC arm=hide gauge=ME-JCW-OUT rep=2 truth=82.297 read=93.000 errTicks=5.35 minorTick=2 kind=PROPOSED verdict=ALARM expectCant=false crop=656x656 ms=3144 tokens=null modelValue=84
+SIGHTGLASS_RESPKEYS candidates,modelVersion,createTime,responseId
+SIGHTGLASS_RAW gauge=ME-JCW-OUT crop=656x656 json={ "legible": true, "center": { "x": 328, "y": 328 }, "needle_tip": { "x": 420, "y": 260 }, "min_mark": { "x": 200, "y": 500 }, "max_mark": { "x": 450, "y": 500 }, "min_label": 0, "max_label": 120, "image_height": 656, "image_width": 656, "model_value": 84, "reason": "The gauge is clear and all necessary points are visible.", "unit": "�C" }
+SIGHTGLASS_READ gauge=ME-JCW-OUT mode=live ms=3122 tokens=null kind=PROPOSED stretchX=0.500
+SIGHTGLASS_ACC arm=show gauge=ME-JCW-OUT rep=2 truth=82.295 read=93.000 errTicks=5.35 minorTick=2 kind=PROPOSED verdict=ALARM expectCant=false crop=656x656 ms=3122 tokens=null modelValue=84
+SIGHTGLASS_RESPKEYS candidates,modelVersion,createTime,responseId
+SIGHTGLASS_RAW gauge=ME-JCW-OUT crop=656x656 json={ "legible": true, "center": { "x": 328, "y": 328 }, "needle_tip": { "x": 409, "y": 260 }, "min_mark": { "x": 200, "y": 456 }, "max_mark": { "x": 456, "y": 456 }, "min_label": 0, "max_label": 120, "image_height": 656, "image_width": 656, "model_value": 84, "reason": "The gauge is clear and all elements are visible.", "unit": "�C" }
+SIGHTGLASS_READ gauge=ME-JCW-OUT mode=live ms=3654 tokens=null kind=PROPOSED stretchX=0.500
+SIGHTGLASS_ACC arm=hide gauge=ME-JCW-OUT rep=3 truth=82.264 read=95.000 errTicks=6.37 minorTick=2 kind=PROPOSED verdict=ALARM expectCant=false crop=656x656 ms=3654 tokens=null modelValue=84
+SIGHTGLASS_RESPKEYS candidates,modelVersion,createTime,responseId
+SIGHTGLASS_RAW gauge=ME-JCW-OUT crop=656x656 json={"legible": true, "center": {"x": 328, "y": 328}, "needle_tip": {"x": 438, "y": 250}, "min_mark": {"x": 190, "y": 460}, "max_mark": {"x": 466, "y": 460}, "min_label": 0, "max_label": 120, "image_height": 656, "image_width": 656, "model_value": 85, "unit": "�C"}
+SIGHTGLASS_READ gauge=ME-JCW-OUT mode=live ms=3334 tokens=null kind=PROPOSED stretchX=0.500
+SIGHTGLASS_ACC arm=show gauge=ME-JCW-OUT rep=3 truth=82.292 read=97.000 errTicks=7.35 minorTick=2 kind=PROPOSED verdict=ALARM expectCant=false crop=656x656 ms=3334 tokens=null modelValue=85
+SIGHTGLASS_RESPKEYS candidates,modelVersion,createTime,responseId
+SIGHTGLASS_RAW gauge=ME-JCW-OUT crop=656x656 json={ "legible": true, "center": { "x": 328, "y": 328 }, "needle_tip": { "x": 438, "y": 240 }, "min_mark": { "x": 190, "y": 466 }, "max_mark": { "x": 466, "y": 466 }, "min_label": 0, "max_label": 120, "image_height": 656, "image_width": 656, "model_value": 84, "reason": "The gauge is clear and all necessary points are visible.", "unit": "�C" }
+SIGHTGLASS_READ gauge=ME-JCW-OUT mode=live ms=3306 tokens=null kind=PROPOSED stretchX=0.500
+SIGHTGLASS_ACC arm=hide gauge=ME-JCW-OUT rep=4 truth=82.265 read=95.000 errTicks=6.37 minorTick=2 kind=PROPOSED verdict=ALARM expectCant=false crop=656x656 ms=3306 tokens=null modelValue=84
+SIGHTGLASS_RESPKEYS candidates,modelVersion,createTime,responseId
+SIGHTGLASS_RAW gauge=ME-JCW-OUT crop=656x656 json={ "legible": true, "center": { "x": 328, "y": 328 }, "needle_tip": { "x": 408, "y": 250 }, "min_mark": { "x": 190, "y": 500 }, "max_mark": { "x": 466, "y": 500 }, "min_label": 0, "max_label": 120, "image_height": 656, "image_width": 656, "model_value": 84, "reason": "", "unit": "�C" }
+SIGHTGLASS_READ gauge=ME-JCW-OUT mode=live ms=3156 tokens=null kind=PROPOSED stretchX=0.500
+SIGHTGLASS_ACC arm=hide gauge=ME-JCW-OUT rep=5 truth=82.217 read=91.000 errTicks=4.39 minorTick=2 kind=PROPOSED verdict=WATCH expectCant=false crop=656x656 ms=3156 tokens=null modelValue=84
+SIGHTGLASS_RESPKEYS candidates,modelVersion,createTime,responseId
+SIGHTGLASS_RAW gauge=ME-SCAV crop=660x660 json={ "legible": true, "center": { "x": 330, "y": 330 }, "needle_tip": { "x": 440, "y": 230 }, "min_mark": { "x": 190, "y": 500 }, "max_mark": { "x": 470, "y": 500 }, "min_label": 0, "max_label": 4, "image_height": 660, "image_width": 660, "model_value": 2.6, "reason": "", "unit": "bar" }
+SIGHTGLASS_READ gauge=ME-SCAV mode=live ms=3342 tokens=null kind=PROPOSED stretchX=0.500
+SIGHTGLASS_ACC arm=hide gauge=ME-SCAV rep=1 truth=2.603 read=3.100 errTicks=4.97 minorTick=0.1 kind=PROPOSED verdict=NORMAL expectCant=false crop=660x660 ms=3342 tokens=null modelValue=2.6
+SIGHTGLASS_RESPKEYS candidates,modelVersion,createTime,responseId
+SIGHTGLASS_RAW gauge=ME-SCAV crop=660x660 json={ "legible": true, "center": { "x": 330, "y": 330 }, "needle_tip": { "x": 440, "y": 230 }, "min_mark": { "x": 190, "y": 480 }, "max_mark": { "x": 470, "y": 480 }, "min_label": 0, "max_label": 4, "image_height": 660, "image_width": 660, "model_value": 2.6, "reason": "The gauge is clear and all necessary points are visible.", "unit": "bar" }
+SIGHTGLASS_READ gauge=ME-SCAV mode=live ms=3549 tokens=null kind=PROPOSED stretchX=0.500
+SIGHTGLASS_ACC arm=show gauge=ME-SCAV rep=1 truth=2.600 read=3.100 errTicks=5.00 minorTick=0.1 kind=PROPOSED verdict=NORMAL expectCant=false crop=660x660 ms=3549 tokens=null modelValue=2.6
+SIGHTGLASS_RESPKEYS candidates,modelVersion,createTime,responseId
+SIGHTGLASS_RAW gauge=ME-SCAV crop=660x660 json={"legible": true, "center": {"x": 330, "y": 330}, "needle_tip": {"x": 448, "y": 220}, "min_mark": {"x": 190, "y": 470}, "max_mark": {"x": 470, "y": 470}, "min_label": 0, "max_label": 4, "image_height": 660, "image_width": 660, "model_value": 2.6, "reason": "The gauge is clear and all necessary points are visible.", "unit": "bar"}
+SIGHTGLASS_READ gauge=ME-SCAV mode=live ms=3271 tokens=null kind=PROPOSED stretchX=0.500
+SIGHTGLASS_ACC arm=hide gauge=ME-SCAV rep=2 truth=2.601 read=3.100 errTicks=4.99 minorTick=0.1 kind=PROPOSED verdict=NORMAL expectCant=false crop=660x660 ms=3271 tokens=null modelValue=2.6
+SIGHTGLASS_RESPKEYS candidates,modelVersion,createTime,responseId
+SIGHTGLASS_RAW gauge=ME-SCAV crop=660x660 json={"legible": true, "center": {"x": 329, "y": 370}, "needle_tip": {"x": 468, "y": 240}, "min_mark": {"x": 190, "y": 500}, "max_mark": {"x": 500, "y": 500}, "min_label": 0, "max_label": 4, "image_height": 660, "image_width": 660, "model_value": 2.6, "reason": "The gauge is clear and all necessary points are visible.", "unit": "bar"}
+SIGHTGLASS_READ gauge=ME-SCAV mode=live ms=3505 tokens=null kind=PROPOSED stretchX=0.500
+SIGHTGLASS_ACC arm=show gauge=ME-SCAV rep=2 truth=2.599 read=3.200 errTicks=6.01 minorTick=0.1 kind=PROPOSED verdict=NORMAL expectCant=false crop=660x660 ms=3505 tokens=null modelValue=2.6
+SIGHTGLASS_RESPKEYS candidates,modelVersion,createTime,responseId
+SIGHTGLASS_RAW gauge=ME-SCAV crop=660x660 json={ "legible": true, "center": { "x": 330, "y": 330 }, "needle_tip": { "x": 440, "y": 220 }, "min_mark": { "x": 190, "y": 460 }, "max_mark": { "x": 470, "y": 460 }, "min_label": 0, "max_label": 4, "image_height": 660, "image_width": 660, "model_value": 2.6, "reason": "The gauge is clear and all necessary points are visible.", "unit": "bar" }
+SIGHTGLASS_READ gauge=ME-SCAV mode=live ms=3659 tokens=null kind=PROPOSED stretchX=0.500
+SIGHTGLASS_ACC arm=hide gauge=ME-SCAV rep=3 truth=2.601 read=3.100 errTicks=4.99 minorTick=0.1 kind=PROPOSED verdict=NORMAL expectCant=false crop=660x660 ms=3659 tokens=null modelValue=2.6
+SIGHTGLASS_RESPKEYS candidates,modelVersion,createTime,responseId
+SIGHTGLASS_RAW gauge=ME-SCAV crop=660x660 json={"legible": true, "center": {"x": 330, "y": 330}, "needle_tip": {"x": 448, "y": 220}, "min_mark": {"x": 190, "y": 450}, "max_mark": {"x": 470, "y": 450}, "min_label": 0, "max_label": 4, "image_height": 660, "image_width": 660, "model_value": 2.6, "unit": "bar"}
+SIGHTGLASS_READ gauge=ME-SCAV mode=live ms=3173 tokens=null kind=PROPOSED stretchX=0.500
+SIGHTGLASS_ACC arm=show gauge=ME-SCAV rep=3 truth=2.605 read=3.150 errTicks=5.45 minorTick=0.1 kind=PROPOSED verdict=NORMAL expectCant=false crop=660x660 ms=3173 tokens=null modelValue=2.6
+SIGHTGLASS_RESPKEYS candidates,modelVersion,createTime,responseId
+SIGHTGLASS_RAW gauge=ME-SCAV crop=660x660 json={ "legible": true, "center": { "x": 330, "y": 330 }, "needle_tip": { "x": 428, "y": 220 }, "min_mark": { "x": 190, "y": 450 }, "max_mark": { "x": 470, "y": 450 }, "min_label": 0, "max_label": 4, "image_height": 660, "image_width": 660, "model_value": 2.6, "reason": "", "unit": "bar" }
+SIGHTGLASS_READ gauge=ME-SCAV mode=live ms=2913 tokens=null kind=PROPOSED stretchX=0.500
+SIGHTGLASS_ACC arm=hide gauge=ME-SCAV rep=4 truth=2.599 read=3.050 errTicks=4.51 minorTick=0.1 kind=PROPOSED verdict=NORMAL expectCant=false crop=660x660 ms=2913 tokens=null modelValue=2.6
+SIGHTGLASS_RESPKEYS candidates,modelVersion,createTime,responseId
+SIGHTGLASS_RAW gauge=ME-SCAV crop=660x660 json={"legible": true, "center": {"x": 330, "y": 330}, "needle_tip": {"x": 438, "y": 220}, "min_mark": {"x": 190, "y": 460}, "max_mark": {"x": 470, "y": 460}, "min_label": 0, "max_label": 4, "image_height": 660, "image_width": 660, "model_value": 2.6, "reason": "The gauge is clear and readable.", "unit": "bar"}
+SIGHTGLASS_READ gauge=ME-SCAV mode=live ms=3168 tokens=null kind=PROPOSED stretchX=0.500
+SIGHTGLASS_ACC arm=hide gauge=ME-SCAV rep=5 truth=2.589 read=3.100 errTicks=5.11 minorTick=0.1 kind=PROPOSED verdict=NORMAL expectCant=false crop=660x660 ms=3168 tokens=null modelValue=2.6
+SIGHTGLASS_RESPKEYS candidates,modelVersion,createTime,responseId
+SIGHTGLASS_RAW gauge=FO-SUP crop=627x627 json={"legible": true, "center": {"x": 313, "y": 313}, "needle_tip": {"x": 313, "y": 125}, "min_mark": {"x": 170, "y": 440}, "max_mark": {"x": 456, "y": 440}, "min_label": 0, "max_label": 16, "image_height": 627, "image_width": 627, "model_value": 8, "reason": "The gauge is clear and all necessary points are visible.", "unit": "bar"}
+SIGHTGLASS_READ gauge=FO-SUP mode=live ms=3262 tokens=null kind=PROPOSED stretchX=0.500
+SIGHTGLASS_ACC arm=hide gauge=FO-SUP rep=1 truth=8.433 read=8.000 errTicks=-0.87 minorTick=0.5 kind=PROPOSED verdict=NORMAL expectCant=false crop=627x627 ms=3262 tokens=null modelValue=8
+SIGHTGLASS_RESPKEYS candidates,modelVersion,createTime,responseId
+SIGHTGLASS_RAW gauge=FO-SUP crop=627x627 json={"legible": true, "center": {"x": 314, "y": 340}, "needle_tip": {"x": 314, "y": 140}, "min_mark": {"x": 130, "y": 470}, "max_mark": {"x": 490, "y": 470}, "min_label": 0, "max_label": 16, "image_height": 627, "image_width": 627, "model_value": 8, "reason": "The gauge is clear and all necessary points are visible.", "unit": "bar"}
+SIGHTGLASS_READ gauge=FO-SUP mode=live ms=3472 tokens=null kind=PROPOSED stretchX=0.500
+SIGHTGLASS_ACC arm=show gauge=FO-SUP rep=1 truth=8.426 read=8.000 errTicks=-0.85 minorTick=0.5 kind=PROPOSED verdict=NORMAL expectCant=false crop=627x627 ms=3472 tokens=null modelValue=8
+SIGHTGLASS_RESPKEYS candidates,modelVersion,createTime,responseId
+SIGHTGLASS_RAW gauge=FO-SUP crop=627x627 json={"legible": true, "center": {"x": 313, "y": 313}, "needle_tip": {"x": 313, "y": 130}, "min_mark": {"x": 160, "y": 450}, "max_mark": {"x": 466, "y": 450}, "min_label": 0, "max_label": 16, "image_height": 627, "image_width": 627, "model_value": 8, "reason": "The gauge is clear and all necessary points are visible.", "unit": "bar"}
+SIGHTGLASS_READ gauge=FO-SUP mode=live ms=3192 tokens=null kind=PROPOSED stretchX=0.500
+SIGHTGLASS_ACC arm=hide gauge=FO-SUP rep=2 truth=8.426 read=8.000 errTicks=-0.85 minorTick=0.5 kind=PROPOSED verdict=NORMAL expectCant=false crop=627x627 ms=3192 tokens=null modelValue=8
+SIGHTGLASS_RESPKEYS candidates,modelVersion,createTime,responseId
+SIGHTGLASS_RAW gauge=FO-SUP crop=627x627 json={"legible": true, "center": {"x": 313, "y": 490}, "needle_tip": {"x": 313, "y": 190}, "min_mark": {"x": 100, "y": 500}, "max_mark": {"x": 520, "y": 500}, "min_label": 0, "max_label": 16, "image_height": 627, "image_width": 627, "model_value": 8, "reason": "The gauge is clear and all necessary points are visible.", "unit": "bar"}
+SIGHTGLASS_READ gauge=FO-SUP mode=live ms=3244 tokens=null kind=PROPOSED stretchX=0.500
+SIGHTGLASS_ACC arm=show gauge=FO-SUP rep=2 truth=8.427 read=8.000 errTicks=-0.85 minorTick=0.5 kind=PROPOSED verdict=NORMAL expectCant=false crop=627x627 ms=3244 tokens=null modelValue=8
+SIGHTGLASS_RESPKEYS candidates,modelVersion,createTime,responseId
+SIGHTGLASS_RAW gauge=FO-SUP crop=627x627 json={ "legible": true, "center": { "x": 313, "y": 313 }, "needle_tip": { "x": 313, "y": 140 }, "min_mark": { "x": 190, "y": 500 }, "max_mark": { "x": 436, "y": 500 }, "min_label": 0, "max_label": 16, "image_height": 627, "image_width": 627, "model_value": 8, "reason": "", "unit": "bar" }
+SIGHTGLASS_READ gauge=FO-SUP mode=live ms=3086 tokens=null kind=PROPOSED stretchX=0.500
+SIGHTGLASS_ACC arm=hide gauge=FO-SUP rep=3 truth=8.438 read=8.000 errTicks=-0.88 minorTick=0.5 kind=PROPOSED verdict=NORMAL expectCant=false crop=627x627 ms=3086 tokens=null modelValue=8
+SIGHTGLASS_RESPKEYS candidates,modelVersion,createTime,responseId
+SIGHTGLASS_RAW gauge=FO-SUP crop=627x627 json={"legible": true, "center": {"x": 314, "y": 370}, "needle_tip": {"x": 314, "y": 150}, "min_mark": {"x": 140, "y": 500}, "max_mark": {"x": 480, "y": 500}, "min_label": 0, "max_label": 16, "image_height": 627, "image_width": 627, "model_value": 8, "reason": "The gauge is clear and all necessary points are visible.", "unit": "bar"}
+SIGHTGLASS_READ gauge=FO-SUP mode=live ms=3484 tokens=null kind=PROPOSED stretchX=0.500
+SIGHTGLASS_ACC arm=show gauge=FO-SUP rep=3 truth=8.465 read=8.000 errTicks=-0.93 minorTick=0.5 kind=PROPOSED verdict=NORMAL expectCant=false crop=627x627 ms=3484 tokens=null modelValue=8
+SIGHTGLASS_RESPKEYS candidates,modelVersion,createTime,responseId
+SIGHTGLASS_RAW gauge=FO-SUP crop=627x627 json={ "legible": true, "center": { "x": 313, "y": 313 }, "needle_tip": { "x": 313, "y": 140 }, "min_mark": { "x": 170, "y": 400 }, "max_mark": { "x": 456, "y": 400 }, "min_label": 0, "max_label": 16, "image_height": 627, "image_width": 627, "model_value": 8, "reason": "The gauge is clear and all necessary points are visible.", "unit": "bar" }
+SIGHTGLASS_READ gauge=FO-SUP mode=live ms=2976 tokens=null kind=PROPOSED stretchX=0.500
+SIGHTGLASS_ACC arm=hide gauge=FO-SUP rep=4 truth=8.468 read=8.000 errTicks=-0.94 minorTick=0.5 kind=PROPOSED verdict=NORMAL expectCant=false crop=627x627 ms=2976 tokens=null modelValue=8
+SIGHTGLASS_RESPKEYS candidates,modelVersion,createTime,responseId
+SIGHTGLASS_RAW gauge=FO-SUP crop=627x627 json={"legible": true, "center": {"x": 313, "y": 313}, "needle_tip": {"x": 313, "y": 135}, "min_mark": {"x": 160, "y": 440}, "max_mark": {"x": 466, "y": 440}, "min_label": 0, "max_label": 16, "image_height": 627, "image_width": 627, "model_value": 8, "reason": "The gauge is clear and all necessary points are visible.", "unit": "bar"}
+SIGHTGLASS_READ gauge=FO-SUP mode=live ms=3412 tokens=null kind=PROPOSED stretchX=0.500
+SIGHTGLASS_ACC arm=hide gauge=FO-SUP rep=5 truth=8.520 read=8.000 errTicks=-1.04 minorTick=0.5 kind=PROPOSED verdict=NORMAL expectCant=false crop=627x627 ms=3412 tokens=null modelValue=8
+SIGHTGLASS_RESPKEYS candidates,modelVersion,createTime,responseId
+SIGHTGLASS_RAW gauge=SW-PUMP crop=534x534 json={"legible": true, "center": {"x": 267, "y": 330}, "needle_tip": {"x": 267, "y": 120}, "min_mark": {"x": 100, "y": 420}, "max_mark": {"x": 430, "y": 420}, "min_label": 0, "max_label": 6, "image_height": 534, "image_width": 534, "model_value": 2.9, "reason": "The gauge is clear and all necessary points are visible.", "unit": "bar"}
+SIGHTGLASS_READ gauge=SW-PUMP mode=live ms=2840 tokens=null kind=PROPOSED stretchX=0.500
+SIGHTGLASS_ACC arm=hide gauge=SW-PUMP rep=1 truth=2.792 read=3.000 errTicks=1.04 minorTick=0.2 kind=PROPOSED verdict=NORMAL expectCant=false crop=534x534 ms=2840 tokens=null modelValue=2.9
+SIGHTGLASS_RESPKEYS candidates,modelVersion,createTime,responseId
+SIGHTGLASS_RAW gauge=SW-PUMP crop=534x534 json={ "legible": true, "center": { "x": 267, "y": 290 }, "needle_tip": { "x": 267, "y": 100 }, "min_mark": { "x": 100, "y": 400 }, "max_mark": { "x": 430, "y": 400 }, "min_label": 0, "max_label": 6, "image_height": 534, "image_width": 534, "model_value": 3, "reason": "The gauge is clear and all necessary points are visible.", "unit": "bar" }
+SIGHTGLASS_READ gauge=SW-PUMP mode=live ms=3527 tokens=null kind=PROPOSED stretchX=0.500
+SIGHTGLASS_ACC arm=show gauge=SW-PUMP rep=1 truth=2.817 read=3.000 errTicks=0.91 minorTick=0.2 kind=PROPOSED verdict=NORMAL expectCant=false crop=534x534 ms=3527 tokens=null modelValue=3
+SIGHTGLASS_RESPKEYS candidates,modelVersion,createTime,responseId
+SIGHTGLASS_RAW gauge=SW-PUMP crop=534x534 json={ "legible": true, "center": { "x": 267, "y": 267 }, "needle_tip": { "x": 267, "y": 100 }, "min_mark": { "x": 150, "y": 400 }, "max_mark": { "x": 385, "y": 400 }, "min_label": 0, "max_label": 6, "image_height": 534, "image_width": 534, "model_value": 2.9, "reason": "", "unit": "bar" }
+SIGHTGLASS_READ gauge=SW-PUMP mode=live ms=3041 tokens=null kind=PROPOSED stretchX=0.500
+SIGHTGLASS_ACC arm=hide gauge=SW-PUMP rep=2 truth=2.812 read=3.000 errTicks=0.94 minorTick=0.2 kind=PROPOSED verdict=NORMAL expectCant=false crop=534x534 ms=3041 tokens=null modelValue=2.9
+SIGHTGLASS_RESPKEYS candidates,modelVersion,createTime,responseId
+SIGHTGLASS_RAW gauge=SW-PUMP crop=534x534 json={ "legible": true, "center": { "x": 267, "y": 330 }, "needle_tip": { "x": 267, "y": 140 }, "min_mark": { "x": 100, "y": 440 }, "max_mark": { "x": 430, "y": 440 }, "min_label": 0, "max_label": 6, "image_height": 534, "image_width": 534, "model_value": 3, "reason": "The gauge is clear and all necessary points are visible.", "unit": "bar" }
+SIGHTGLASS_READ gauge=SW-PUMP mode=live ms=3559 tokens=null kind=PROPOSED stretchX=0.500
+SIGHTGLASS_ACC arm=show gauge=SW-PUMP rep=2 truth=2.825 read=3.000 errTicks=0.87 minorTick=0.2 kind=PROPOSED verdict=NORMAL expectCant=false crop=534x534 ms=3559 tokens=null modelValue=3
+SIGHTGLASS_RESPKEYS candidates,modelVersion,createTime,responseId
+SIGHTGLASS_RAW gauge=SW-PUMP crop=534x534 json={ "legible": true, "center": { "x": 267, "y": 290 }, "needle_tip": { "x": 267, "y": 100 }, "min_mark": { "x": 100, "y": 390 }, "max_mark": { "x": 430, "y": 390 }, "min_label": 0, "max_label": 6, "image_height": 534, "image_width": 534, "model_value": 3, "reason": "The gauge is clear and all necessary points are visible.", "unit": "bar" }
+SIGHTGLASS_READ gauge=SW-PUMP mode=live ms=3473 tokens=null kind=PROPOSED stretchX=0.500
+SIGHTGLASS_ACC arm=hide gauge=SW-PUMP rep=3 truth=2.825 read=3.000 errTicks=0.87 minorTick=0.2 kind=PROPOSED verdict=NORMAL expectCant=false crop=534x534 ms=3473 tokens=null modelValue=3
+SIGHTGLASS_RESPKEYS candidates,modelVersion,createTime,responseId
+SIGHTGLASS_RAW gauge=SW-PUMP crop=534x534 json={"legible": true, "center": {"x": 267, "y": 290}, "needle_tip": {"x": 267, "y": 100}, "min_mark": {"x": 100, "y": 400}, "max_mark": {"x": 430, "y": 400}, "min_label": 0, "max_label": 6, "image_height": 534, "image_width": 534, "model_value": 3, "unit": "bar"}
+SIGHTGLASS_READ gauge=SW-PUMP mode=live ms=3123 tokens=null kind=PROPOSED stretchX=0.500
+SIGHTGLASS_ACC arm=show gauge=SW-PUMP rep=3 truth=2.825 read=3.000 errTicks=0.87 minorTick=0.2 kind=PROPOSED verdict=NORMAL expectCant=false crop=534x534 ms=3123 tokens=null modelValue=3
+SIGHTGLASS_RESPKEYS candidates,modelVersion,createTime,responseId
+SIGHTGLASS_RAW gauge=SW-PUMP crop=534x534 json={"legible": true, "center": {"x": 267, "y": 290}, "needle_tip": {"x": 267, "y": 100}, "min_mark": {"x": 120, "y": 390}, "max_mark": {"x": 410, "y": 390}, "min_label": 0, "max_label": 6, "image_height": 534, "image_width": 534, "model_value": 3, "unit": "bar"}
+SIGHTGLASS_READ gauge=SW-PUMP mode=live ms=3917 tokens=null kind=PROPOSED stretchX=0.500
+SIGHTGLASS_ACC arm=hide gauge=SW-PUMP rep=4 truth=2.830 read=3.000 errTicks=0.85 minorTick=0.2 kind=PROPOSED verdict=NORMAL expectCant=false crop=534x534 ms=3917 tokens=null modelValue=3
+SIGHTGLASS_READ gauge=SW-PUMP mode=live ms=16329 tokens=null kind=CANT_READ
+SIGHTGLASS_ACC arm=hide gauge=SW-PUMP rep=5 truth=2.825 read=null errTicks=null minorTick=0.2 kind=CANT_READ verdict=null expectCant=false crop=534x534 ms=16329 tokens=null modelValue=null
+SIGHTGLASS_RESPKEYS candidates,modelVersion,createTime,responseId
+SIGHTGLASS_RAW gauge=AIR-START crop=538x538 json={"legible": true, "center": {"x": 269, "y": 269}, "needle_tip": {"x": 350, "y": 220}, "min_mark": {"x": 150, "y": 360}, "max_mark": {"x": 388, "y": 360}, "min_label": 0, "max_label": 40, "image_height": 538, "image_width": 538, "model_value": 27.5, "reason": "The gauge is clear and all necessary points are visible.", "unit": "bar"}
+SIGHTGLASS_READ gauge=AIR-START mode=live ms=3164 tokens=null kind=PROPOSED stretchX=0.500
+SIGHTGLASS_ACC arm=hide gauge=AIR-START rep=1 truth=28.044 read=33.000 errTicks=4.96 minorTick=1 kind=PROPOSED verdict=NORMAL expectCant=false crop=538x538 ms=3164 tokens=null modelValue=27.5
+SIGHTGLASS_RESPKEYS candidates,modelVersion,createTime,responseId
+SIGHTGLASS_RAW gauge=AIR-START crop=538x538 json={ "legible": true, "center": { "x": 270, "y": 290 }, "needle_tip": { "x": 360, "y": 230 }, "min_mark": { "x": 120, "y": 390 }, "max_mark": { "x": 420, "y": 390 }, "min_label": 0, "max_label": 40, "image_height": 538, "image_width": 538, "model_value": 28, "reason": "", "unit": "bar" }
+SIGHTGLASS_READ gauge=AIR-START mode=live ms=3377 tokens=null kind=PROPOSED stretchX=0.500
+SIGHTGLASS_ACC arm=show gauge=AIR-START rep=1 truth=27.999 read=33.000 errTicks=5.00 minorTick=1 kind=PROPOSED verdict=NORMAL expectCant=false crop=538x538 ms=3377 tokens=null modelValue=28
+SIGHTGLASS_RESPKEYS candidates,modelVersion,createTime,responseId
+SIGHTGLASS_RAW gauge=AIR-START crop=538x538 json={ "legible": true, "center": { "x": 269, "y": 269 }, "needle_tip": { "x": 368, "y": 220 }, "min_mark": { "x": 170, "y": 380 }, "max_mark": { "x": 368, "y": 380 }, "min_label": 0, "max_label": 40, "image_height": 538, "image_width": 538, "model_value": 28, "reason": "The gauge is clear and all necessary points are visible.", "unit": "bar" }
+SIGHTGLASS_READ gauge=AIR-START mode=live ms=3116 tokens=null kind=PROPOSED stretchX=0.500
+SIGHTGLASS_ACC arm=hide gauge=AIR-START rep=2 truth=27.973 read=33.000 errTicks=5.03 minorTick=1 kind=PROPOSED verdict=NORMAL expectCant=false crop=538x538 ms=3116 tokens=null modelValue=28
+SIGHTGLASS_RESPKEYS candidates,modelVersion,createTime,responseId
+SIGHTGLASS_RAW gauge=AIR-START crop=538x538 json={ "legible": true, "center": { "x": 270, "y": 300 }, "needle_tip": { "x": 350, "y": 250 }, "min_mark": { "x": 120, "y": 400 }, "max_mark": { "x": 420, "y": 400 }, "min_label": 0, "max_label": 40, "image_height": 538, "image_width": 538, "model_value": 27.5, "reason": "The gauge is clear and all necessary points are visible.", "unit": "bar" }
+SIGHTGLASS_READ gauge=AIR-START mode=live ms=3214 tokens=null kind=PROPOSED stretchX=0.500
+SIGHTGLASS_ACC arm=show gauge=AIR-START rep=2 truth=27.903 read=33.500 errTicks=5.60 minorTick=1 kind=PROPOSED verdict=NORMAL expectCant=false crop=538x538 ms=3214 tokens=null modelValue=27.5
+SIGHTGLASS_RESPKEYS candidates,modelVersion,createTime,responseId
+SIGHTGLASS_RAW gauge=AIR-START crop=538x538 json={ "legible": true, "center": { "x": 269, "y": 269 }, "needle_tip": { "x": 350, "y": 200 }, "min_mark": { "x": 160, "y": 380 }, "max_mark": { "x": 378, "y": 380 }, "min_label": 0, "max_label": 40, "image_height": 538, "image_width": 538, "model_value": 27.5, "reason": "The gauge is clear and all necessary points are visible.", "unit": "bar" }
+SIGHTGLASS_READ gauge=AIR-START mode=live ms=9800 tokens=null kind=PROPOSED stretchX=0.500
+SIGHTGLASS_ACC arm=hide gauge=AIR-START rep=3 truth=27.869 read=31.500 errTicks=3.63 minorTick=1 kind=PROPOSED verdict=NORMAL expectCant=false crop=538x538 ms=9800 tokens=null modelValue=27.5
+SIGHTGLASS_RESPKEYS candidates,modelVersion,createTime,responseId
+SIGHTGLASS_RAW gauge=AIR-START crop=538x538 json={ "legible": true, "center": { "x": 270, "y": 290 }, "needle_tip": { "x": 340, "y": 220 }, "min_mark": { "x": 120, "y": 390 }, "max_mark": { "x": 420, "y": 390 }, "min_label": 0, "max_label": 40, "image_height": 538, "image_width": 538, "model_value": 28, "reason": "The gauge is clear and all necessary points are visible.", "unit": "bar" }
+SIGHTGLASS_READ gauge=AIR-START mode=live ms=3040 tokens=null kind=PROPOSED stretchX=0.500
+SIGHTGLASS_ACC arm=show gauge=AIR-START rep=3 truth=28.117 read=31.500 errTicks=3.38 minorTick=1 kind=PROPOSED verdict=NORMAL expectCant=false crop=538x538 ms=3040 tokens=null modelValue=28
+SIGHTGLASS_RESPKEYS candidates,modelVersion,createTime,responseId
+SIGHTGLASS_RAW gauge=AIR-START crop=538x538 json={ "legible": true, "center": { "x": 269, "y": 270 }, "needle_tip": { "x": 348, "y": 220 }, "min_mark": { "x": 150, "y": 390 }, "max_mark": { "x": 388, "y": 390 }, "min_label": 0, "max_label": 40, "image_height": 538, "image_width": 538, "model_value": 28, "reason": "", "unit": "bar" }
+SIGHTGLASS_READ gauge=AIR-START mode=live ms=3157 tokens=null kind=PROPOSED stretchX=0.500
+SIGHTGLASS_ACC arm=hide gauge=AIR-START rep=4 truth=28.041 read=32.500 errTicks=4.46 minorTick=1 kind=PROPOSED verdict=NORMAL expectCant=false crop=538x538 ms=3157 tokens=null modelValue=28
+SIGHTGLASS_RESPKEYS candidates,modelVersion,createTime,responseId
+SIGHTGLASS_RAW gauge=AIR-START crop=538x538 json={ "legible": true, "center": { "x": 269, "y": 269 }, "needle_tip": { "x": 360, "y": 200 }, "min_mark": { "x": 170, "y": 400 }, "max_mark": { "x": 368, "y": 400 }, "min_label": 0, "max_label": 40, "image_height": 538, "image_width": 538, "model_value": 27.5, "reason": "The gauge is clear and all necessary points are visible.", "unit": "bar" }
+SIGHTGLASS_READ gauge=AIR-START mode=live ms=3297 tokens=null kind=PROPOSED stretchX=0.500
+SIGHTGLASS_ACC arm=hide gauge=AIR-START rep=5 truth=27.963 read=31.000 errTicks=3.04 minorTick=1 kind=PROPOSED verdict=NORMAL expectCant=false crop=538x538 ms=3297 tokens=null modelValue=27.5
+SIGHTGLASS_RESPKEYS candidates,modelVersion,createTime,responseId
+SIGHTGLASS_RAW gauge=AE1-LO crop=503x503 json={"legible": true, "center": {"x": 251, "y": 251}, "needle_tip": {"x": 251, "y": 140}, "min_mark": {"x": 108, "y": 300}, "max_mark": {"x": 394, "y": 300}, "min_label": 0, "max_label": 10, "image_height": 503, "image_width": 503, "model_value": 5, "reason": "The gauge is clear and all necessary points are visible.", "unit": "bar"}
+SIGHTGLASS_READ gauge=AE1-LO mode=live ms=3184 tokens=null kind=PROPOSED stretchX=0.500
+SIGHTGLASS_ACC arm=hide gauge=AE1-LO rep=1 truth=5.224 read=5.000 errTicks=-1.12 minorTick=0.2 kind=PROPOSED verdict=NORMAL expectCant=true crop=503x503 ms=3184 tokens=null modelValue=5
+SIGHTGLASS_RESPKEYS candidates,modelVersion,createTime,responseId
+SIGHTGLASS_RAW gauge=AE1-LO crop=503x503 json={"legible": true, "center": {"x": 250, "y": 250}, "needle_tip": {"x": 250, "y": 130}, "min_mark": {"x": 100, "y": 350}, "max_mark": {"x": 400, "y": 350}, "min_label": 0, "max_label": 10, "image_height": 503, "image_width": 503, "model_value": 5, "unit": "bar"}
+SIGHTGLASS_READ gauge=AE1-LO mode=live ms=2925 tokens=null kind=PROPOSED stretchX=0.500
+SIGHTGLASS_ACC arm=show gauge=AE1-LO rep=1 truth=5.226 read=5.000 errTicks=-1.13 minorTick=0.2 kind=PROPOSED verdict=NORMAL expectCant=true crop=503x503 ms=2925 tokens=null modelValue=5
+SIGHTGLASS_READ gauge=AE1-LO mode=live ms=30094 tokens=null kind=CANT_READ
+SIGHTGLASS_ACC arm=hide gauge=AE1-LO rep=2 truth=5.230 read=null errTicks=null minorTick=0.2 kind=CANT_READ verdict=null expectCant=true crop=503x503 ms=30094 tokens=null modelValue=null
+SIGHTGLASS_RESPKEYS candidates,modelVersion,createTime,responseId
+SIGHTGLASS_RAW gauge=AE1-LO crop=503x503 json={"legible": true, "center": {"x": 250, "y": 250}, "needle_tip": {"x": 250, "y": 130}, "min_mark": {"x": 100, "y": 300}, "max_mark": {"x": 400, "y": 300}, "min_label": 0, "max_label": 10, "image_height": 503, "image_width": 503, "model_value": 5.0, "reason": "The gauge is clear and all necessary points are visible.", "unit": "bar"}
+SIGHTGLASS_READ gauge=AE1-LO mode=live ms=3198 tokens=null kind=PROPOSED stretchX=0.500
+SIGHTGLASS_ACC arm=show gauge=AE1-LO rep=2 truth=5.171 read=5.000 errTicks=-0.85 minorTick=0.2 kind=PROPOSED verdict=NORMAL expectCant=true crop=503x503 ms=3198 tokens=null modelValue=5
+SIGHTGLASS_RESPKEYS candidates,modelVersion,createTime,responseId
+SIGHTGLASS_RAW gauge=AE1-LO crop=503x503 json={"legible": true, "center": {"x": 251, "y": 251}, "needle_tip": {"x": 251, "y": 140}, "min_mark": {"x": 108, "y": 340}, "max_mark": {"x": 394, "y": 340}, "min_label": 0, "max_label": 10, "image_height": 503, "image_width": 503, "model_value": 5, "reason": "The gauge is clear and all necessary points are visible.", "unit": "bar"}
+SIGHTGLASS_READ gauge=AE1-LO mode=live ms=3466 tokens=null kind=PROPOSED stretchX=0.500
+SIGHTGLASS_ACC arm=hide gauge=AE1-LO rep=3 truth=5.174 read=5.000 errTicks=-0.87 minorTick=0.2 kind=PROPOSED verdict=NORMAL expectCant=true crop=503x503 ms=3466 tokens=null modelValue=5
+SIGHTGLASS_RESPKEYS candidates,modelVersion,createTime,responseId
+SIGHTGLASS_RAW gauge=AE1-LO crop=503x503 json={"legible": true, "center": {"x": 250, "y": 250}, "needle_tip": {"x": 250, "y": 130}, "min_mark": {"x": 100, "y": 350}, "max_mark": {"x": 400, "y": 350}, "min_label": 0, "max_label": 10, "image_height": 503, "image_width": 503, "model_value": 5.0, "reason": "The gauge is clear and all necessary points are visible.", "unit": "bar"}
+SIGHTGLASS_READ gauge=AE1-LO mode=live ms=3685 tokens=null kind=PROPOSED stretchX=0.500
+SIGHTGLASS_ACC arm=show gauge=AE1-LO rep=3 truth=5.176 read=5.000 errTicks=-0.88 minorTick=0.2 kind=PROPOSED verdict=NORMAL expectCant=true crop=503x503 ms=3685 tokens=null modelValue=5
+SIGHTGLASS_RESPKEYS candidates,modelVersion,createTime,responseId
+SIGHTGLASS_RAW gauge=AE1-LO crop=503x503 json={"legible": true, "center": {"x": 251, "y": 251}, "needle_tip": {"x": 251, "y": 100}, "min_mark": {"x": 100, "y": 251}, "max_mark": {"x": 402, "y": 251}, "min_label": 0, "max_label": 10, "image_height": 503, "image_width": 503, "model_value": 5, "unit": "bar"}
+SIGHTGLASS_READ gauge=AE1-LO mode=live ms=3361 tokens=null kind=PROPOSED stretchX=0.500
+SIGHTGLASS_ACC arm=hide gauge=AE1-LO rep=4 truth=5.172 read=5.000 errTicks=-0.86 minorTick=0.2 kind=PROPOSED verdict=NORMAL expectCant=true crop=503x503 ms=3361 tokens=null modelValue=5
+SIGHTGLASS_RESPKEYS candidates,modelVersion,createTime,responseId
+SIGHTGLASS_RAW gauge=AE1-LO crop=503x503 json={"legible": true, "center": {"x": 251, "y": 251}, "needle_tip": {"x": 251, "y": 140}, "min_mark": {"x": 108, "y": 340}, "max_mark": {"x": 394, "y": 340}, "min_label": 0, "max_label": 10, "image_height": 503, "image_width": 503, "model_value": 5.0, "reason": "The gauge is clear and all necessary points are visible.", "unit": "bar"}
+SIGHTGLASS_READ gauge=AE1-LO mode=live ms=3980 tokens=null kind=PROPOSED stretchX=0.500
+SIGHTGLASS_ACC arm=hide gauge=AE1-LO rep=5 truth=5.174 read=5.000 errTicks=-0.87 minorTick=0.2 kind=PROPOSED verdict=NORMAL expectCant=true crop=503x503 ms=3980 tokens=null modelValue=5
+SIGHTGLASS_RESPKEYS candidates,modelVersion,createTime,responseId
+SIGHTGLASS_RAW gauge=STG-OIL crop=507x507 json={"legible": true, "center": {"x": 253, "y": 253}, "needle_tip": {"x": 253, "y": 120}, "min_mark": {"x": 100, "y": 370}, "max_mark": {"x": 406, "y": 370}, "min_label": 0, "max_label": 100, "image_height": 507, "image_width": 507, "model_value": 50, "reason": "The gauge is clear and all necessary points are visible.", "unit": "\u0010C"}
+SIGHTGLASS_READ gauge=STG-OIL mode=live ms=2668 tokens=null kind=PROPOSED stretchX=0.500
+SIGHTGLASS_ACC arm=hide gauge=STG-OIL rep=1 truth=48.231 read=50.000 errTicks=0.88 minorTick=2 kind=PROPOSED verdict=NORMAL expectCant=false crop=507x507 ms=2668 tokens=null modelValue=50
+SIGHTGLASS_RESPKEYS candidates,modelVersion,createTime,responseId
+SIGHTGLASS_RAW gauge=STG-OIL crop=507x507 json={ "legible": true, "center": { "x": 253, "y": 253 }, "needle_tip": { "x": 253, "y": 108 }, "min_mark": { "x": 108, "y": 398 }, "max_mark": { "x": 398, "y": 398 }, "min_label": 0, "max_label": 100, "image_height": 507, "image_width": 507, "model_value": 50, "reason": "The gauge is clear and all necessary points are visible.", "unit": "�C" }
+SIGHTGLASS_READ gauge=STG-OIL mode=live ms=3691 tokens=null kind=PROPOSED stretchX=0.500
+SIGHTGLASS_ACC arm=show gauge=STG-OIL rep=1 truth=47.966 read=50.000 errTicks=1.02 minorTick=2 kind=PROPOSED verdict=NORMAL expectCant=false crop=507x507 ms=3691 tokens=null modelValue=50
+SIGHTGLASS_RESPKEYS candidates,modelVersion,createTime,responseId
+SIGHTGLASS_RAW gauge=STG-OIL crop=507x507 json={"legible": true, "center": {"x": 253, "y": 253}, "needle_tip": {"x": 253, "y": 120}, "min_mark": {"x": 100, "y": 353}, "max_mark": {"x": 406, "y": 353}, "min_label": 0, "max_label": 100, "image_height": 507, "image_width": 507, "model_value": 50, "reason": "The gauge is clear and all necessary points are visible.", "unit": "\u00B0C"}
+SIGHTGLASS_READ gauge=STG-OIL mode=live ms=2884 tokens=null kind=PROPOSED stretchX=0.500
+SIGHTGLASS_ACC arm=hide gauge=STG-OIL rep=2 truth=48.039 read=50.000 errTicks=0.98 minorTick=2 kind=PROPOSED verdict=NORMAL expectCant=false crop=507x507 ms=2884 tokens=null modelValue=50
+SIGHTGLASS_RESPKEYS candidates,modelVersion,createTime,responseId
+SIGHTGLASS_RAW gauge=STG-OIL crop=507x507 json={ "legible": true, "center": { "x": 253, "y": 290 }, "needle_tip": { "x": 253, "y": 100 }, "min_mark": { "x": 100, "y": 360 }, "max_mark": { "x": 400, "y": 360 }, "min_label": 0, "max_label": 100, "image_height": 507, "image_width": 507, "model_value": 45, "reason": "", "unit": "�C" }
+SIGHTGLASS_READ gauge=STG-OIL mode=live ms=4704 tokens=null kind=PROPOSED stretchX=0.500
+SIGHTGLASS_ACC arm=show gauge=STG-OIL rep=2 truth=47.803 read=50.000 errTicks=1.10 minorTick=2 kind=PROPOSED verdict=NORMAL expectCant=false crop=507x507 ms=4704 tokens=null modelValue=45
+SIGHTGLASS_RESPKEYS candidates,modelVersion,createTime,responseId
+SIGHTGLASS_RAW gauge=STG-OIL crop=507x507 json={ "legible": true, "center": { "x": 253, "y": 253 }, "needle_tip": { "x": 253, "y": 100 }, "min_mark": { "x": 100, "y": 350 }, "max_mark": { "x": 400, "y": 350 }, "min_label": 0, "max_label": 100, "image_height": 507, "image_width": 507, "model_value": 48, "reason": "The gauge is clear and all necessary points are visible.", "unit": "�C" }
+SIGHTGLASS_READ gauge=STG-OIL mode=live ms=3096 tokens=null kind=PROPOSED stretchX=0.500
+SIGHTGLASS_ACC arm=hide gauge=STG-OIL rep=3 truth=48.230 read=50.000 errTicks=0.88 minorTick=2 kind=PROPOSED verdict=NORMAL expectCant=false crop=507x507 ms=3096 tokens=null modelValue=48
+SIGHTGLASS_RESPKEYS candidates,modelVersion,createTime,responseId
+SIGHTGLASS_RAW gauge=STG-OIL crop=507x507 json={"legible": true, "center": {"x": 253, "y": 280}, "needle_tip": {"x": 253, "y": 120}, "min_mark": {"x": 100, "y": 400}, "max_mark": {"x": 405, "y": 400}, "min_label": 0, "max_label": 100, "image_height": 507, "image_width": 507, "model_value": 50, "reason": "The gauge is clear and all necessary points are visible.", "unit": "�C"}
+SIGHTGLASS_READ gauge=STG-OIL mode=live ms=3901 tokens=null kind=PROPOSED stretchX=0.500
+SIGHTGLASS_ACC arm=show gauge=STG-OIL rep=3 truth=48.118 read=50.000 errTicks=0.94 minorTick=2 kind=PROPOSED verdict=NORMAL expectCant=false crop=507x507 ms=3901 tokens=null modelValue=50
+SIGHTGLASS_RESPKEYS candidates,modelVersion,createTime,responseId
+SIGHTGLASS_RAW gauge=STG-OIL crop=507x507 json={ "legible": true, "center": { "x": 253, "y": 253 }, "needle_tip": { "x": 253, "y": 100 }, "min_mark": { "x": 100, "y": 350 }, "max_mark": { "x": 400, "y": 350 }, "min_label": 0, "max_label": 100, "image_height": 507, "image_width": 507, "model_value": 50, "reason": "", "unit": "�C" }
+SIGHTGLASS_READ gauge=STG-OIL mode=live ms=2818 tokens=null kind=PROPOSED stretchX=0.500
+SIGHTGLASS_ACC arm=hide gauge=STG-OIL rep=4 truth=48.241 read=50.000 errTicks=0.88 minorTick=2 kind=PROPOSED verdict=NORMAL expectCant=false crop=507x507 ms=2818 tokens=null modelValue=50
+SIGHTGLASS_RESPKEYS candidates,modelVersion,createTime,responseId
+SIGHTGLASS_RAW gauge=STG-OIL crop=507x507 json={ "legible": true, "center": { "x": 253, "y": 253 }, "needle_tip": { "x": 253, "y": 100 }, "min_mark": { "x": 100, "y": 350 }, "max_mark": { "x": 405, "y": 350 }, "min_label": 0, "max_label": 100, "image_height": 507, "image_width": 507, "model_value": 50, "reason": "The gauge is clear and all necessary points are visible.", "unit": "�C" }
+SIGHTGLASS_READ gauge=STG-OIL mode=live ms=2856 tokens=null kind=PROPOSED stretchX=0.500
+SIGHTGLASS_ACC arm=hide gauge=STG-OIL rep=5 truth=48.016 read=50.000 errTicks=0.99 minorTick=2 kind=PROPOSED verdict=NORMAL expectCant=false crop=507x507 ms=2856 tokens=null modelValue=50
+SIGHTGLASS_ACC_DONE

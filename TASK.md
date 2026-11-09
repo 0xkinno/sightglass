@@ -29,16 +29,16 @@ Tick `[x]` only when done and verified. One phase per session. Phase details: re
 - [x] PlantSim drives needles; LO inlet drifts to alarm during the round
 - [ ] Tags, decision bar (Accept, Correct, By eye), band arc, round card, chevron with spatial click
 - [x] Alarm moment; READY disabled; HOLD with fixed escalations; sign summary with short code
-- [ ] verify-preview from the user's eye at each station; placement fixed with design notes
+- [x] verify-preview from the user's eye at each station; placement fixed with design notes (stills: devpost/evidence/p3-station*-preview.png)
 - [x] LEAF c1 to c5 written and passing on the fixture reader
 
 ## P4. Perception (live)
-- [ ] FrameCapture: single requestCamera owner, composite crop from projected rim, overlay hidden for capture frame
-- [ ] GaugeReader live via RSG (gemini-2.5-flash, JSON schema, temperature 0); SIGHTGLASS_READ log line with ms and tokens
-- [ ] Fault switch modes: fixture, fault-lies, fault-garbage
-- [ ] Fixtures recorded from live responses, one per gauge
-- [ ] In-preview accuracy vs PlantSim: 8 gauges x 5 captures logged to devpost/evidence/preview-reads.log
-- [ ] Overlay on vs off experiment logged; FINDINGS.md written
+- [x] FrameCapture: single requestCamera owner, composite crop from projected rim, overlay hidden for capture frame
+- [ ] GaugeReader live via RSG (gemini-2.5-flash, JSON schema, temperature 0); SIGHTGLASS_READ log line with ms and tokens (live works, ms logged; tokens is null because the gateway returns no usage count)
+- [ ] Fault switch modes: fixture, fault-lies, fault-garbage (built; only fixture run in the preview so far, P5 runs the others)
+- [x] Fixtures recorded from live responses, one per gauge
+- [x] In-preview accuracy vs PlantSim: 8 gauges x 5 captures logged to devpost/evidence/preview-reads.log
+- [x] Overlay on vs off experiment logged; FINDINGS.md written (devpost/FINDINGS.md)
 
 ## P5. LEAF and breaks
 - [ ] extra-overlay-hidden, extra-fault-reader, extra-pinch-targets, extra-chevron, extra-send written and passing

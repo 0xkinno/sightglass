@@ -1,0 +1,73 @@
+- !<AssetImportMetadata/4b17eb67-6928-4505-8662-c3dfd9592cda>
+  ImportedAssetIds:
+    TypeScriptAsset: !<reference> c768c374-8651-4bbf-8f5a-876c62a401e9
+  ImporterName: TypeScriptAssetImporter
+  PrimaryAsset: !<reference> c768c374-8651-4bbf-8f5a-876c62a401e9
+  PackageType: NotAPackage
+  LegacyPackagePolicy: ~
+  ExtraData:
+    {}
+  AssetDataMap:
+    TypeScriptAsset: !<own> 45f0d796-df62-4c8a-99f7-9e4e6a5d1977
+  DependentFiles:
+    []
+  ImporterSettings: !<AssetImporterSettings>
+    {}
+  CompressionSettings: !<own> 00000000-0000-0000-0000-000000000000
+- !<TypeScriptAssetData/45f0d796-df62-4c8a-99f7-9e4e6a5d1977>
+  SvgIcon: ""
+  SetupScript:
+    code: ""
+  Description: ""
+  VersionMajor: 0
+  VersionMinor: 0
+  VersionPatch: 0
+  VersionPrerelease: ""
+  UpdateOrder: 0
+  ComponentUid: 0a08fd99-a145-4354-a8f6-11ebe92f9345
+  ExportUid: 00000000-0000-0000-0000-000000000000
+  PackagePolicy: CanBeUnpacked
+  ScriptInputsHidden:
+    capture: false
+    gaugeOrder: false
+    machineRoot: false
+    main: false
+    plant: false
+    reader: false
+    reps: false
+    run: false
+    showReps: false
+    waitSecondsPerCapture: false
+  ScriptTypesHidden:
+    {}
+  ReadMe: !<reference> 00000000-0000-0000-0000-000000000000
+  DeclarationFile: !<reference> 00000000-0000-0000-0000-000000000000
+  Tags:
+    []
+  Attachments:
+    []
+  DefaultScriptInputs:
+    - main: !<MappingBased.AssignableType_1> 00000000-0000-0000-0000-000000000000
+      reader: !<MappingBased.AssignableType_2> 00000000-0000-0000-0000-000000000000
+      capture: !<MappingBased.AssignableType_3> 00000000-0000-0000-0000-000000000000
+      plant: !<MappingBased.AssignableType_4> 00000000-0000-0000-0000-000000000000
+      machineRoot: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      run: false
+      reps: !<float> 5.000000
+      showReps: !<float> 3.000000
+      waitSecondsPerCapture: !<float> 90.000000
+      gaugeOrder: "ME-LO-IN,ME-JCW-OUT,ME-SCAV,FO-SUP,SW-PUMP,AIR-START,AE1-LO,STG-OIL"
+  ScriptTypes:
+    -
+      {}
+  InputLines:
+    - // @input AssignableType_1 main
+    - // @input AssignableType_2 reader
+    - // @input AssignableType_3 capture
+    - // @input AssignableType_4 plant
+    - // @input SceneObject machineRoot
+    - // @input bool run
+    - // @input float reps = 5
+    - // @input float showReps = 3
+    - // @input float waitSecondsPerCapture = 90
+    - '// @input string gaugeOrder = "ME-LO-IN,ME-JCW-OUT,ME-SCAV,FO-SUP,SW-PUMP,AIR-START,AE1-LO,STG-OIL"'

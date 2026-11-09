@@ -27,6 +27,7 @@ import {verdictFor, Verdict} from "./Core/Verdict"
 import {RoundSheet, buildSheet} from "./Core/RoundSheet"
 import {PlantSim} from "./PlantSim"
 import {GaugeReader} from "./GaugeReader"
+import {FrameCapture, Capture} from "./FrameCapture"
 import {GaugeTag, TagAction, TagTone} from "./GaugeTag"
 import {GaugeStationView} from "./GaugeStationView"
 import {RoundCard, CardTone} from "./RoundCard"
@@ -70,8 +71,12 @@ export class SightglassMain extends BaseScriptComponent {
   plant!: PlantSim
 
   @input
-  @hint("Gauge reader. Fixture mode only in this build.")
+  @hint("Gauge reader. Live, fixture, replay and fault modes.")
   reader!: GaugeReader
+
+  @input
+  @hint("Frame capture. Used when the reader mode is live.")
+  capture!: FrameCapture
 
   @input
   @hint("Round card shown low left of view.")
@@ -279,10 +284,13 @@ export class SightglassMain extends BaseScriptComponent {
     this.stateTone = "neutral"
     this.refreshCard()
 
-    const res = await this.reader.read(id)
+    let cap: Capture | null = null
+    if (this.reader.mode === "live") cap = await this.capture.capture(id, true)
+    const res = await this.reader.read(id, cap)
     if (run.token !== token) return
     run.reading = false
-    run.proposal = propose(this.gaugeOf(id), res.parsed, "fixture-" + id + "-" + this._readCount, Date.now(), null)
+    const frameRef = cap && cap.ok ? cap.frameRef : "fixture-" + id + "-" + this._readCount
+    run.proposal = propose(this.gaugeOf(id), res.parsed, frameRef, Date.now(), null)
     this.showProposal(id)
   }
 

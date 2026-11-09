@@ -1,0 +1,1 @@
+{ "legible": true, "center": { "x": 328, "y": 328 }, "needle_tip": { "x": 420, "y": 250 }, "min_mark": { "x": 190, "y": 460 }, "max_mark": { "x": 460, "y": 460 }, "min_label": 0, "max_label": 120, "image_height": 656, "image_width": 656, "model_value": 84, "reason": "The gauge is clear and all necessary points are visible.", "unit": "�C" }

@@ -1,0 +1,1 @@
+{ "legible": true, "center": { "x": 330, "y": 330 }, "needle_tip": { "x": 440, "y": 230 }, "min_mark": { "x": 190, "y": 500 }, "max_mark": { "x": 470, "y": 500 }, "min_label": 0, "max_label": 4, "image_height": 660, "image_width": 660, "model_value": 2.6, "reason": "", "unit": "bar" }

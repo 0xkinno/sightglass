@@ -62,3 +62,11 @@ Facts for the next session:
 - After a Lens Studio restart the MCP server may move port; reconnect the session.
 
 P3 carry-over (9 Nov 2026): scene saved, committed (16a107c) with RSG token inputs reset to placeholders (checked by length only; staged diff has no "eyJ" and no 36-character token). Open: band arc and spatial click by eye, verify-preview at stations 2 and 3. Lens Studio stopped responding right after the commit (every MCP call timed out, then the socket closed and no Lens Studio process was left), so these were not checked and P4 has not started.
+
+P4 (9 Nov 2026), mostly done. Numbers and misses: devpost/FINDINGS.md. Raw log: devpost/evidence/preview-reads.log.
+- Built: Assets/Scripts/FrameCapture.ts (single requestCamera owner, rim-projected composite crop, overlay hidden for the capture frame), live GaugeReader (RSG, gemini-2.5-flash), modes fixture, live, replay, fault-lies, fault-garbage, driver Assets/Tests/AccuracyRun.ts, fixtures in Assets/Tests/fixtures (8 recorded live replies).
+- Measured: 40 overlay-off and 24 overlay-on live captures. Median error 1.25 ticks, three gauges biased 4 to 6 ticks, one false ALARM on ME-JCW-OUT from a wrong point read. Fog stand-in too light (read through 7 of 8 times). Overlay on or off: no difference visible at this sample size.
+- Preview composite is squashed 0.5 horizontally; FrameCapture measures it and GaugeReader corrects x before the geometry.
+- Open boxes: GaugeReader tokens (gateway returns no usage count), fault modes not run in the preview, band arc seen on crops but the spatial click on a dot was not checked by eye (the PreviewInteract tool installs a package that breaks compilation here, so it was removed).
+- Scene committed with token inputs at placeholders, reader mode fixture, AccuracyRun.run false. To re-run the accuracy driver: generate tokens, set AccuracyRun.run true, refresh, then reset tokens before any commit.
+- Editing any .ts while the preview runs resets the lens and restarts a run in progress.

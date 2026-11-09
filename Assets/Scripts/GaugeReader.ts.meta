@@ -28,8 +28,10 @@
   ExportUid: 00000000-0000-0000-0000-000000000000
   PackagePolicy: CanBeUnpacked
   ScriptInputsHidden:
+    addCropSize: false
     fixtureLatencyMs: false
     mode: false
+    noThinking: false
     plant: false
   ScriptTypesHidden:
     {}
@@ -42,17 +44,21 @@
   DefaultScriptInputs:
     - plant: !<MappingBased.AssignableType_1> 00000000-0000-0000-0000-000000000000
       mode: fixture
+      addCropSize: false
+      noThinking: false
       fixtureLatencyMs: !<float> 350.000000
   ScriptTypes:
     -
       {}
   InputLines:
-    - '// @ui {"widget":"label", "label":"<span style=\"color: #60A5FA;\">GaugeReader: fixture reader</span>"}'
+    - '// @ui {"widget":"label", "label":"<span style=\"color: #60A5FA;\">GaugeReader: live, fixture and fault modes</span>"}'
     - '// @ui {"widget":"separator"}'
     - '// @ui {"widget":"group_start", "label":"References"}'
-    - '// @input AssignableType_1 plant {"hint":"Plant simulator. Only the fixture mode reads it."}'
+    - '// @input AssignableType_1 plant {"hint":"Plant simulator. Only the fixture and fault modes read it, never the live mode."}'
     - '// @ui {"widget":"group_end"}'
     - '// @ui {"widget":"group_start", "label":"Settings"}'
-    - "// @input string mode = \"fixture\" {\"hint\":\"Reader mode. Only 'fixture' is available in this build.\", \"widget\":\"combobox\", \"values\":[{\"label\":\"fixture\", \"value\":\"fixture\"}]}"
-    - '// @input float fixtureLatencyMs = 350 {"hint":"Pause before the answer comes back, so the Reading state is visible on the tag.", "widget":"slider", "min":0, "max":2000, "step":50}'
+    - '// @input string mode = "fixture" {"hint":"Reader mode: live, fixture, replay, fault-lies or fault-garbage.", "widget":"combobox", "values":[{"label":"fixture", "value":"fixture"}, {"label":"live", "value":"live"}, {"label":"replay", "value":"replay"}, {"label":"fault-lies", "value":"fault-lies"}, {"label":"fault-garbage", "value":"fault-garbage"}]}'
+    - '// @input bool addCropSize = true {"hint":"Live only. Add a line telling the model the crop size in pixels. The shared contract prompt stays unchanged."}'
+    - '// @input bool noThinking = true {"hint":"Live only. Set the Gemini thinking budget to 0 for speed."}'
+    - '// @input float fixtureLatencyMs = 350 {"hint":"Pause before the answer comes back in the non-live modes, so the Reading state is visible on the tag.", "widget":"slider", "min":0, "max":2000, "step":50}'
     - '// @ui {"widget":"group_end"}'
