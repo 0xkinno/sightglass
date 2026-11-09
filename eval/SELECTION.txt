@@ -1,0 +1,5 @@
+dataset FlagEval/MeasureBench split real_world
+filter design contains dial, not clock or watch
+seed 20261109
+n 200
+selection_sha256 f93b25cefdc37a5d1577181e9b21e0ae29fdb887fc10b3cfd48f8d843f054f02
