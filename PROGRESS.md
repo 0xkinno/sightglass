@@ -60,3 +60,5 @@ Facts for the next session:
 - Package names must match what the packages import: SpectaclesUIKit.lspkg (UI Kit 2.0.0), SpectaclesInteractionKit.lspkg (SIK 2.0.0), Leaf.lspkg (Leaf 2.0.2). A " 2" suffix breaks the UI Kit button shader (OpacityFactor missing, preview stops after 5 failed frames). These are the versions that work on Lens Studio 5.23.
 - The LEAF editor plugin 5.23.0 does not connect to Leaf 2.0.2. Run scenarios with Assets/Tests/InLensRunner.ts: set its scenarioId, refresh the preview, read LEAF_INLENS lines in the Lens Studio log.
 - After a Lens Studio restart the MCP server may move port; reconnect the session.
+
+P3 carry-over (9 Nov 2026): scene saved, committed (16a107c) with RSG token inputs reset to placeholders (checked by length only; staged diff has no "eyJ" and no 36-character token). Open: band arc and spatial click by eye, verify-preview at stations 2 and 3. Lens Studio stopped responding right after the commit (every MCP call timed out, then the socket closed and no Lens Studio process was left), so these were not checked and P4 has not started.
