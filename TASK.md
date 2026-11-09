@@ -25,12 +25,12 @@ Tick `[x]` only when done and verified. One phase per session. Phase details: re
 - [x] Core compiles inside Lens Studio (RecompileTypeScriptTool clean)
 
 ## P3. Scene and flow (fixture reader)
-- [ ] Three stations at real scale, 8 dials, numerals and units on faces, fog quad on AE1-LO, labelled stand-in
-- [ ] PlantSim drives needles; LO inlet drifts to alarm during the round
+- [x] Three stations at real scale, 8 dials, numerals and units on faces, fog quad on AE1-LO, labelled stand-in
+- [x] PlantSim drives needles; LO inlet drifts to alarm during the round
 - [ ] Tags, decision bar (Accept, Correct, By eye), band arc, round card, chevron with spatial click
-- [ ] Alarm moment; READY disabled; HOLD with fixed escalations; sign summary with short code
+- [x] Alarm moment; READY disabled; HOLD with fixed escalations; sign summary with short code
 - [ ] verify-preview from the user's eye at each station; placement fixed with design notes
-- [ ] LEAF c1 to c5 written and passing on the fixture reader
+- [x] LEAF c1 to c5 written and passing on the fixture reader
 
 ## P4. Perception (live)
 - [ ] FrameCapture: single requestCamera owner, composite crop from projected rim, overlay hidden for capture frame

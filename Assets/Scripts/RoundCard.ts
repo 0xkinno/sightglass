@@ -7,11 +7,11 @@
 
 import Event, {PublicApi} from "SpectaclesInteractionKit.lspkg/Utils/Event"
 import WorldCameraFinderProvider from "SpectaclesInteractionKit.lspkg/Providers/CameraProvider/WorldCameraFinderProvider"
-import {BackPlate} from "SpectaclesUIKit 2.lspkg/Scripts/BackPlate"
-import {Button} from "SpectaclesUIKit 2.lspkg/Scripts/Components/Button/Button"
-import {FlexLayout} from "SpectaclesUIKit 2.lspkg/Scripts/Components/Layout2D/Flex/FlexLayout"
-import {FlexItem} from "SpectaclesUIKit 2.lspkg/Scripts/Components/Layout2D/Flex/FlexItem"
-import {FlexAlign, FlexDirection, FlexJustify} from "SpectaclesUIKit 2.lspkg/Scripts/Components/Layout2D/Flex/FlexTypes"
+import {BackPlate} from "SpectaclesUIKit.lspkg/Scripts/BackPlate"
+import {Button} from "SpectaclesUIKit.lspkg/Scripts/Components/Button/Button"
+import {FlexLayout} from "SpectaclesUIKit.lspkg/Scripts/Components/Layout2D/Flex/FlexLayout"
+import {FlexItem} from "SpectaclesUIKit.lspkg/Scripts/Components/Layout2D/Flex/FlexItem"
+import {FlexAlign, FlexDirection, FlexJustify} from "SpectaclesUIKit.lspkg/Scripts/Components/Layout2D/Flex/FlexTypes"
 import {ESCALATIONS} from "./Core/EvidenceGate"
 import {childObject, PALETTE, Rgba, toVec4} from "./SightglassMesh"
 
@@ -38,12 +38,12 @@ export class RoundCard extends BaseScriptComponent {
   @input
   @hint("How far to the left of the eye line the card sits, in centimetres.")
   @widget(new SliderWidget(0, 40, 1))
-  offsetLeftCm: number = 22
+  offsetLeftCm: number = 12
 
   @input
   @hint("How far below the eye line the card sits, in centimetres.")
   @widget(new SliderWidget(0, 40, 1))
-  offsetDownCm: number = 20
+  offsetDownCm: number = 34
 
   @input
   @hint("Distance in front of the eyes, in centimetres. 80 is 0.8 m.")

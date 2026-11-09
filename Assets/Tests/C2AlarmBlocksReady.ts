@@ -82,6 +82,8 @@ export class C2AlarmBlocksReady extends Scenario {
     expect(main.signed).toBe(false)
 
     // HOLD with an escalation is accepted (this finishes the round).
+    main.card.pressSignHold()
+    await sleep(200)
     expect(main.card.escalationsVisible).toBe(true)
     expect(main.card.pressEscalation(1)).toBe(true)
     expect(main.signed).toBe(true)

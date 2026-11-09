@@ -43,15 +43,20 @@ P6 update (9 Nov 2026): deployed.
 - Production URL is public (no Vercel login wall). Deployment protection on the project was left as created; the production alias is not gated. Preview URLs may be.
 - Still pending, needs P3/P4: SheetSender pointing at the live URL, a full preview round landing on the door, and keeping it as the recorded sample.
 
-## P3 (9 Nov 2026) - NOT DONE, partial
-Built: stations, PlantSim, dials, tags, round card, chevron, sign flow, fixture reader (Assets/Scripts/*.ts). Compiles clean in Lens Studio 5.23.2. A scripted full round in Interactive Preview (builder self-test, direct calls, not real pinches) printed PASS for: alarm tag and card text, READY refused, HOLD needs an escalation, Correct by one step, fogged gauge refused then By eye, summary line, short code 3AE4. No log errors.
+## P3 (9 Nov 2026)
+Mostly done. LEAF c1 to c5 pass in the preview on the fixture reader. Evidence: devpost/evidence/leaf-p3-preview.log (c2 failed twice on a test assumption, the card resets its escalation row after a recheck, so the test now presses Sign HOLD first; then passed). c5 signed HOLD, "Called the chief engineer", code 4DB3, send logged as fixture, not sent over network.
+Stills: devpost/media/film/01-station1-*.png (preview capture), devpost/evidence/p3-station1-*-editor.png (editor screenshots).
 
-Not done, no P3 task is ticked:
-- LEAF c1 to c5 are written (Assets/Tests/) and register in the Lens, but have never been run. The LEAF plugin stayed "Not Connected": list and run requests timed out. The preview had been left paused; after setting it back to Interactive the editor stopped answering.
-- verify-preview from the user's eye at each station was not done. Tag and card backplates looked invisible in the builder's screenshots. Fog quad and band arc not confirmed visually.
-- Scene file not committed (unsaved, token state not confirmed). Assets/GeneratedSFX (two placeholder tones) not committed.
+Placement fixes from the preview check:
+- Round card moved from 22 cm left, 20 cm down to 12 cm left, 34 cm down (still 80 cm away). At 20 cm down it sat over the dial row.
+- Idle dot beside each gauge was the stock dark UI Kit face, invisible on an additive display. A light disc now sits on it.
+
+Not done (left unticked in TASK.md):
+- Tags, decision bar, band arc, round card, chevron: tags, card and chevron seen in the preview; band arc and the spatial click not checked by eye.
+- verify-preview at stations 2 and 3: not captured (every preview refresh froze Lens Studio for minutes).
+- Scene file not committed: it is unsaved in Lens Studio and its token inputs were not checked. Save it in Lens Studio, reset the three RSG token inputs to placeholders, then commit Assets/Scene.scene and Assets/GeneratedSFX.
 
 Facts for the next session:
-- InteractionKit 4.x and UI Kit 4.x do not compile on 5.23.2. Use SpectaclesInteractionKit 2.0.0 and SpectaclesUIKit 2.0.0 (folder "SpectaclesUIKit 2.lspkg"). Imports in GaugeTag.ts and RoundCard.ts use that path.
-- Leaf 4.0.0 needs InteractionKit 4.x and cannot work here. Leaf 2.0.2 works with SIK 2.0.0 but its folder must be named Leaf.lspkg. It has no waitUntil; the test kit carries its own.
+- Package names must match what the packages import: SpectaclesUIKit.lspkg (UI Kit 2.0.0), SpectaclesInteractionKit.lspkg (SIK 2.0.0), Leaf.lspkg (Leaf 2.0.2). A " 2" suffix breaks the UI Kit button shader (OpacityFactor missing, preview stops after 5 failed frames). These are the versions that work on Lens Studio 5.23.
+- The LEAF editor plugin 5.23.0 does not connect to Leaf 2.0.2. Run scenarios with Assets/Tests/InLensRunner.ts: set its scenarioId, refresh the preview, read LEAF_INLENS lines in the Lens Studio log.
 - After a Lens Studio restart the MCP server may move port; reconnect the session.

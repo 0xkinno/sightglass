@@ -6,12 +6,12 @@
 // and listens to onAction. It is a passive view.
 
 import Event, {PublicApi} from "SpectaclesInteractionKit.lspkg/Utils/Event"
-import {BackPlate} from "SpectaclesUIKit 2.lspkg/Scripts/BackPlate"
-import {Button} from "SpectaclesUIKit 2.lspkg/Scripts/Components/Button/Button"
-import {RoundButton} from "SpectaclesUIKit 2.lspkg/Scripts/Components/Button/RoundButton"
-import {FlexLayout} from "SpectaclesUIKit 2.lspkg/Scripts/Components/Layout2D/Flex/FlexLayout"
-import {FlexItem} from "SpectaclesUIKit 2.lspkg/Scripts/Components/Layout2D/Flex/FlexItem"
-import {FlexAlign, FlexDirection, FlexJustify} from "SpectaclesUIKit 2.lspkg/Scripts/Components/Layout2D/Flex/FlexTypes"
+import {BackPlate} from "SpectaclesUIKit.lspkg/Scripts/BackPlate"
+import {Button} from "SpectaclesUIKit.lspkg/Scripts/Components/Button/Button"
+import {RoundButton} from "SpectaclesUIKit.lspkg/Scripts/Components/Button/RoundButton"
+import {FlexLayout} from "SpectaclesUIKit.lspkg/Scripts/Components/Layout2D/Flex/FlexLayout"
+import {FlexItem} from "SpectaclesUIKit.lspkg/Scripts/Components/Layout2D/Flex/FlexItem"
+import {FlexAlign, FlexDirection, FlexJustify} from "SpectaclesUIKit.lspkg/Scripts/Components/Layout2D/Flex/FlexTypes"
 import {MeshAcc, childObject, PALETTE, Rgba, toVec4} from "./SightglassMesh"
 
 export type TagMode = "idle" | "reading" | "proposal" | "cant" | "adjust" | "decided"
@@ -210,6 +210,15 @@ export class GaugeTag extends BaseScriptComponent {
       dot.size = new vec3(this.dotDiameterCm, this.dotDiameterCm, 1)
     })
     dot.onTriggerUp.add(() => this.press("READ"))
+    // Light disc over the stock dark button face: dark renders as transparent on the additive display.
+    const mark = childObject(this.dotObj, "DotMark", new vec3(0, 0, 0.6))
+    const t = mark.createComponent("Component.Text") as Text
+    t.text = "●"
+    t.size = Math.round(this.dotDiameterCm * 26)
+    t.depthTest = true
+    t.horizontalAlignment = HorizontalAlignment.Center
+    t.verticalAlignment = VerticalAlignment.Center
+    t.textFill.color = new vec4(0.82, 0.92, 1, 0.95)
   }
 
   private buildPlate(): void {

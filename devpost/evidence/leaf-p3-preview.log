@@ -1,0 +1,156 @@
+# LEAF c1 to c5, fixture reader, Lens Studio 5.23.2 preview (SPECS 27, Interactive, Plane), 9 Nov 2026
+# Run in-lens by Assets/Tests/InLensRunner.ts (the LEAF editor plugin did not connect to Leaf 2.0.2).
+I 13:07:55.238 LEAF_INLENS RUNS c1-pinch-dot-reads
+I 13:13:39.776 SIGHTGLASS_FLOOR cameraY=150 floorY=-15
+I 13:13:39.784 SIGHTGLASS_START plan=ums-evening-v1 gauges=8 mode=fixture
+I 13:13:39.823 LEAF_INLENS RUNS c1-pinch-dot-reads
+I 13:28:14.769 SIGHTGLASS_FLOOR cameraY=150 floorY=-15
+I 13:28:14.775 SIGHTGLASS_START plan=ums-evening-v1 gauges=8 mode=fixture
+I 13:28:14.808 LEAF_INLENS RUNS c1-pinch-dot-reads
+I 13:34:14.422 SIGHTGLASS_READ gauge=SW-PUMP mode=fixture ms=380 tokens=null kind=PROPOSED
+I 13:34:14.766 LEAF_INLENS PASSED c1-pinch-dot-reads secs=360.0
+I 13:34:36.962 SIGHTGLASS_FLOOR cameraY=0 floorY=-165
+I 13:34:36.971 SIGHTGLASS_START plan=ums-evening-v1 gauges=8 mode=fixture
+I 13:34:37.032 LEAF_INLENS RUNS c1-pinch-dot-reads
+I 13:36:46.416 SIGHTGLASS_READ gauge=SW-PUMP mode=fixture ms=398 tokens=null kind=PROPOSED
+I 13:36:46.745 LEAF_INLENS PASSED c1-pinch-dot-reads secs=129.8
+I 13:37:04.679 SIGHTGLASS_FLOOR cameraY=0 floorY=-165
+I 13:37:04.684 SIGHTGLASS_START plan=ums-evening-v1 gauges=8 mode=fixture
+I 13:37:04.715 LEAF_INLENS RUNS c2-alarm-blocks-ready
+I 13:37:07.519 SIGHTGLASS_FLOOR cameraY=0 floorY=-165
+I 13:37:07.524 SIGHTGLASS_START plan=ums-evening-v1 gauges=8 mode=fixture
+I 13:37:07.547 LEAF_INLENS RUNS c2-alarm-blocks-ready
+I 13:38:24.176 SIGHTGLASS_READ gauge=ME-LO-IN mode=fixture ms=350 tokens=null kind=PROPOSED
+I 13:38:24.525 SIGHTGLASS_ENTRY gauge=ME-LO-IN state=SEEN value=1.6 computed=1.6 verdict=ALARM
+I 13:38:24.796 SIGHTGLASS_SIGN_REFUSED decision=READY why=7 gauges not read
+I 13:38:24.796 SIGHTGLASS_SIGN_REFUSED decision=HOLD why=7 gauges not read
+I 13:38:25.159 SIGHTGLASS_READ gauge=ME-JCW-OUT mode=fixture ms=364 tokens=null kind=PROPOSED
+I 13:38:25.160 SIGHTGLASS_ENTRY gauge=ME-JCW-OUT state=SEEN value=82 computed=82 verdict=NORMAL
+I 13:38:25.537 SIGHTGLASS_READ gauge=ME-SCAV mode=fixture ms=378 tokens=null kind=PROPOSED
+I 13:38:25.538 SIGHTGLASS_ENTRY gauge=ME-SCAV state=SEEN value=2.6 computed=2.6 verdict=NORMAL
+I 13:38:25.902 SIGHTGLASS_READ gauge=FO-SUP mode=fixture ms=365 tokens=null kind=PROPOSED
+I 13:38:25.903 SIGHTGLASS_ENTRY gauge=FO-SUP state=SEEN value=8.5 computed=8.5 verdict=NORMAL
+I 13:38:26.299 SIGHTGLASS_READ gauge=SW-PUMP mode=fixture ms=397 tokens=null kind=PROPOSED
+I 13:38:26.300 SIGHTGLASS_ENTRY gauge=SW-PUMP state=SEEN value=2.8 computed=2.8 verdict=NORMAL
+I 13:38:26.691 SIGHTGLASS_READ gauge=AE1-LO mode=fixture ms=391 tokens=null kind=CANT_READ
+I 13:38:26.695 SIGHTGLASS_ENTRY gauge=AE1-LO state=BY_EYE value=5 computed=null verdict=NORMAL
+I 13:38:27.078 SIGHTGLASS_READ gauge=AIR-START mode=fixture ms=387 tokens=null kind=PROPOSED
+I 13:38:27.079 SIGHTGLASS_ENTRY gauge=AIR-START state=SEEN value=28 computed=28 verdict=NORMAL
+I 13:38:27.434 SIGHTGLASS_READ gauge=STG-OIL mode=fixture ms=357 tokens=null kind=PROPOSED
+I 13:38:27.435 SIGHTGLASS_ENTRY gauge=STG-OIL state=SEEN value=48 computed=48 verdict=NORMAL
+I 13:38:27.435 SIGHTGLASS_SIGN_REFUSED decision=READY why=Can't leave the room unmanned with 1 reading in alarm
+I 13:38:27.435 SIGHTGLASS_SIGN_REFUSED decision=HOLD why=Say who you told before holding the room
+I 13:38:28.178 SIGHTGLASS_READ gauge=ME-LO-IN mode=fixture ms=387 tokens=null kind=PROPOSED
+I 13:38:28.509 SIGHTGLASS_ENTRY gauge=ME-LO-IN state=SEEN value=3 computed=3 verdict=NORMAL
+I 13:38:29.641 SIGHTGLASS_READ gauge=ME-LO-IN mode=fixture ms=353 tokens=null kind=PROPOSED
+I 13:38:29.957 SIGHTGLASS_ENTRY gauge=ME-LO-IN state=SEEN value=1.6 computed=1.6 verdict=ALARM
+I 13:38:30.465 SIGHTGLASS_SIGN_REFUSED decision=READY why=Can't leave the room unmanned with 1 reading in alarm
+I 13:38:30.466 LEAF_INLENS FAILED c2-alarm-blocks-ready secs=82.9 AssertionError: Expected: "true" - Received: "false" | AssertionError: Expected: "true" - Received: "false"
+I 13:49:12.938 SIGHTGLASS_FLOOR cameraY=0 floorY=-165
+I 13:49:12.942 SIGHTGLASS_START plan=ums-evening-v1 gauges=8 mode=fixture
+I 13:49:12.969 LEAF_INLENS RUNS c2-alarm-blocks-ready
+I 13:50:32.760 SIGHTGLASS_READ gauge=ME-LO-IN mode=fixture ms=380 tokens=null kind=PROPOSED
+I 13:50:33.151 SIGHTGLASS_ENTRY gauge=ME-LO-IN state=SEEN value=1.6 computed=1.6 verdict=ALARM
+I 13:50:33.434 SIGHTGLASS_SIGN_REFUSED decision=READY why=7 gauges not read
+I 13:50:33.434 SIGHTGLASS_SIGN_REFUSED decision=HOLD why=7 gauges not read
+I 13:50:33.814 SIGHTGLASS_READ gauge=ME-JCW-OUT mode=fixture ms=381 tokens=null kind=PROPOSED
+I 13:50:33.815 SIGHTGLASS_ENTRY gauge=ME-JCW-OUT state=SEEN value=82 computed=82 verdict=NORMAL
+I 13:50:34.217 SIGHTGLASS_READ gauge=ME-SCAV mode=fixture ms=402 tokens=null kind=PROPOSED
+I 13:50:34.218 SIGHTGLASS_ENTRY gauge=ME-SCAV state=SEEN value=2.6 computed=2.6 verdict=NORMAL
+I 13:50:34.600 SIGHTGLASS_READ gauge=FO-SUP mode=fixture ms=384 tokens=null kind=PROPOSED
+I 13:50:34.601 SIGHTGLASS_ENTRY gauge=FO-SUP state=SEEN value=8.5 computed=8.5 verdict=NORMAL
+I 13:50:34.992 SIGHTGLASS_READ gauge=SW-PUMP mode=fixture ms=393 tokens=null kind=PROPOSED
+I 13:50:34.993 SIGHTGLASS_ENTRY gauge=SW-PUMP state=SEEN value=2.8 computed=2.8 verdict=NORMAL
+I 13:50:35.375 SIGHTGLASS_READ gauge=AE1-LO mode=fixture ms=382 tokens=null kind=CANT_READ
+I 13:50:35.378 SIGHTGLASS_ENTRY gauge=AE1-LO state=BY_EYE value=5 computed=null verdict=NORMAL
+I 13:50:35.735 SIGHTGLASS_READ gauge=AIR-START mode=fixture ms=361 tokens=null kind=PROPOSED
+I 13:50:35.736 SIGHTGLASS_ENTRY gauge=AIR-START state=SEEN value=28 computed=28 verdict=NORMAL
+I 13:50:36.116 SIGHTGLASS_READ gauge=STG-OIL mode=fixture ms=380 tokens=null kind=PROPOSED
+I 13:50:36.117 SIGHTGLASS_ENTRY gauge=STG-OIL state=SEEN value=48 computed=48 verdict=NORMAL
+I 13:50:36.118 SIGHTGLASS_SIGN_REFUSED decision=READY why=Can't leave the room unmanned with 1 reading in alarm
+I 13:50:36.118 SIGHTGLASS_SIGN_REFUSED decision=HOLD why=Say who you told before holding the room
+I 13:50:36.977 SIGHTGLASS_READ gauge=ME-LO-IN mode=fixture ms=408 tokens=null kind=PROPOSED
+I 13:50:37.406 SIGHTGLASS_ENTRY gauge=ME-LO-IN state=SEEN value=3 computed=3 verdict=NORMAL
+I 13:50:38.675 SIGHTGLASS_READ gauge=ME-LO-IN mode=fixture ms=409 tokens=null kind=PROPOSED
+I 13:50:39.011 SIGHTGLASS_ENTRY gauge=ME-LO-IN state=SEEN value=1.6 computed=1.6 verdict=ALARM
+I 13:50:39.510 SIGHTGLASS_SIGN_REFUSED decision=READY why=Can't leave the room unmanned with 1 reading in alarm
+I 13:50:39.511 LEAF_INLENS FAILED c2-alarm-blocks-ready secs=86.6 AssertionError: Expected: "true" - Received: "false" | AssertionError: Expected: "true" - Received: "false"
+I 13:53:08.088 SIGHTGLASS_FLOOR cameraY=0 floorY=-165
+I 13:53:08.102 SIGHTGLASS_START plan=ums-evening-v1 gauges=8 mode=fixture
+I 13:53:08.174 LEAF_INLENS RUNS c2-alarm-blocks-ready
+I 13:56:01.565 SIGHTGLASS_FLOOR cameraY=0 floorY=-165
+I 13:56:01.572 SIGHTGLASS_START plan=ums-evening-v1 gauges=8 mode=fixture
+I 13:56:01.608 LEAF_INLENS RUNS c2-alarm-blocks-ready
+I 13:57:40.050 SIGHTGLASS_READ gauge=ME-LO-IN mode=fixture ms=364 tokens=null kind=PROPOSED
+I 13:57:40.425 SIGHTGLASS_ENTRY gauge=ME-LO-IN state=SEEN value=1.6 computed=1.6 verdict=ALARM
+I 13:57:40.704 SIGHTGLASS_SIGN_REFUSED decision=READY why=7 gauges not read
+I 13:57:40.704 SIGHTGLASS_SIGN_REFUSED decision=HOLD why=7 gauges not read
+I 13:57:41.095 SIGHTGLASS_READ gauge=ME-JCW-OUT mode=fixture ms=392 tokens=null kind=PROPOSED
+I 13:57:41.096 SIGHTGLASS_ENTRY gauge=ME-JCW-OUT state=SEEN value=82 computed=82 verdict=NORMAL
+I 13:57:41.500 SIGHTGLASS_READ gauge=ME-SCAV mode=fixture ms=405 tokens=null kind=PROPOSED
+I 13:57:41.501 SIGHTGLASS_ENTRY gauge=ME-SCAV state=SEEN value=2.6 computed=2.6 verdict=NORMAL
+I 13:57:41.898 SIGHTGLASS_READ gauge=FO-SUP mode=fixture ms=398 tokens=null kind=PROPOSED
+I 13:57:41.898 SIGHTGLASS_ENTRY gauge=FO-SUP state=SEEN value=8.5 computed=8.5 verdict=NORMAL
+I 13:57:42.263 SIGHTGLASS_READ gauge=SW-PUMP mode=fixture ms=365 tokens=null kind=PROPOSED
+I 13:57:42.264 SIGHTGLASS_ENTRY gauge=SW-PUMP state=SEEN value=2.8 computed=2.8 verdict=NORMAL
+I 13:57:42.667 SIGHTGLASS_READ gauge=AE1-LO mode=fixture ms=404 tokens=null kind=CANT_READ
+I 13:57:42.672 SIGHTGLASS_ENTRY gauge=AE1-LO state=BY_EYE value=5 computed=null verdict=NORMAL
+I 13:57:43.057 SIGHTGLASS_READ gauge=AIR-START mode=fixture ms=390 tokens=null kind=PROPOSED
+I 13:57:43.059 SIGHTGLASS_ENTRY gauge=AIR-START state=SEEN value=28 computed=28 verdict=NORMAL
+I 13:57:43.432 SIGHTGLASS_READ gauge=STG-OIL mode=fixture ms=374 tokens=null kind=PROPOSED
+I 13:57:43.433 SIGHTGLASS_ENTRY gauge=STG-OIL state=SEEN value=48 computed=48 verdict=NORMAL
+I 13:57:43.433 SIGHTGLASS_SIGN_REFUSED decision=READY why=Can't leave the room unmanned with 1 reading in alarm
+I 13:57:43.434 SIGHTGLASS_SIGN_REFUSED decision=HOLD why=Say who you told before holding the room
+I 13:57:44.289 SIGHTGLASS_READ gauge=ME-LO-IN mode=fixture ms=425 tokens=null kind=PROPOSED
+I 13:57:44.724 SIGHTGLASS_ENTRY gauge=ME-LO-IN state=SEEN value=3 computed=3 verdict=NORMAL
+I 13:57:45.943 SIGHTGLASS_READ gauge=ME-LO-IN mode=fixture ms=390 tokens=null kind=PROPOSED
+I 13:57:46.313 SIGHTGLASS_ENTRY gauge=ME-LO-IN state=SEEN value=1.6 computed=1.6 verdict=ALARM
+I 13:57:46.841 SIGHTGLASS_SIGN_REFUSED decision=READY why=Can't leave the room unmanned with 1 reading in alarm
+I 13:57:46.841 SIGHTGLASS_SIGN_REFUSED decision=HOLD why=Say who you told before holding the room
+I 13:57:47.093 SIGHTGLASS_SIGN decision=HOLD escalation=Called the chief engineer code=36DC digest=36dcd0c7094ccabb344e2f33d6f80eb90f089b0800327ed747cfaf113e875377
+I 13:57:47.093 SIGHTGLASS_SEND fixture, not sent over network code=36DC
+I 13:57:47.093 LEAF_INLENS PASSED c2-alarm-blocks-ready secs=105.5
+I 14:09:43.055 SIGHTGLASS_FLOOR cameraY=0 floorY=-165
+I 14:09:43.061 SIGHTGLASS_START plan=ums-evening-v1 gauges=8 mode=fixture
+I 14:09:43.110 LEAF_INLENS RUNS c3-fogged-by-eye
+I 14:09:47.087 SIGHTGLASS_FLOOR cameraY=0 floorY=-165
+I 14:09:47.093 SIGHTGLASS_START plan=ums-evening-v1 gauges=8 mode=fixture
+I 14:09:47.137 LEAF_INLENS RUNS c3-fogged-by-eye
+I 14:12:01.914 SIGHTGLASS_READ gauge=AE1-LO mode=fixture ms=399 tokens=null kind=CANT_READ
+I 14:12:04.983 SIGHTGLASS_ENTRY gauge=AE1-LO state=BY_EYE value=5.2 computed=null verdict=NORMAL
+I 14:12:05.287 LEAF_INLENS PASSED c3-fogged-by-eye secs=138.2
+I 14:12:20.733 SIGHTGLASS_FLOOR cameraY=0 floorY=-165
+I 14:12:20.739 SIGHTGLASS_START plan=ums-evening-v1 gauges=8 mode=fixture
+I 14:12:20.776 LEAF_INLENS RUNS c4-correct-steps
+I 14:12:23.849 SIGHTGLASS_FLOOR cameraY=0 floorY=-165
+I 14:12:23.854 SIGHTGLASS_START plan=ums-evening-v1 gauges=8 mode=fixture
+I 14:12:23.892 LEAF_INLENS RUNS c4-correct-steps
+I 14:14:13.820 SIGHTGLASS_READ gauge=ME-SCAV mode=fixture ms=357 tokens=null kind=PROPOSED
+I 14:14:17.166 SIGHTGLASS_ENTRY gauge=ME-SCAV state=CORRECTED value=2.7 computed=2.6 verdict=NORMAL
+I 14:14:17.407 LEAF_INLENS PASSED c4-correct-steps secs=113.6
+I 14:14:31.692 SIGHTGLASS_FLOOR cameraY=0 floorY=-165
+I 14:14:31.697 SIGHTGLASS_START plan=ums-evening-v1 gauges=8 mode=fixture
+I 14:14:31.734 LEAF_INLENS RUNS c5-sign-summary-code
+I 14:14:36.266 SIGHTGLASS_FLOOR cameraY=0 floorY=-165
+I 14:14:36.273 SIGHTGLASS_START plan=ums-evening-v1 gauges=8 mode=fixture
+I 14:14:36.309 LEAF_INLENS RUNS c5-sign-summary-code
+I 14:17:59.237 SIGHTGLASS_READ gauge=ME-LO-IN mode=fixture ms=378 tokens=null kind=PROPOSED
+I 14:17:59.618 SIGHTGLASS_ENTRY gauge=ME-LO-IN state=SEEN value=1.6 computed=1.6 verdict=ALARM
+I 14:18:00.519 SIGHTGLASS_READ gauge=ME-JCW-OUT mode=fixture ms=371 tokens=null kind=PROPOSED
+I 14:18:00.947 SIGHTGLASS_ENTRY gauge=ME-JCW-OUT state=SEEN value=82 computed=82 verdict=NORMAL
+I 14:18:01.906 SIGHTGLASS_READ gauge=ME-SCAV mode=fixture ms=399 tokens=null kind=PROPOSED
+I 14:18:03.461 SIGHTGLASS_ENTRY gauge=ME-SCAV state=CORRECTED value=2.7 computed=2.6 verdict=NORMAL
+I 14:18:04.588 SIGHTGLASS_READ gauge=FO-SUP mode=fixture ms=355 tokens=null kind=PROPOSED
+I 14:18:05.372 SIGHTGLASS_ENTRY gauge=FO-SUP state=SEEN value=8.5 computed=8.5 verdict=NORMAL
+I 14:18:06.502 SIGHTGLASS_READ gauge=SW-PUMP mode=fixture ms=384 tokens=null kind=PROPOSED
+I 14:18:06.964 SIGHTGLASS_ENTRY gauge=SW-PUMP state=SEEN value=2.8 computed=2.8 verdict=NORMAL
+I 14:18:07.995 SIGHTGLASS_READ gauge=AE1-LO mode=fixture ms=372 tokens=null kind=CANT_READ
+I 14:18:09.412 SIGHTGLASS_ENTRY gauge=AE1-LO state=BY_EYE value=5 computed=null verdict=NORMAL
+I 14:18:10.346 SIGHTGLASS_READ gauge=AIR-START mode=fixture ms=387 tokens=null kind=PROPOSED
+I 14:18:10.844 SIGHTGLASS_ENTRY gauge=AIR-START state=SEEN value=28 computed=28 verdict=NORMAL
+I 14:18:11.908 SIGHTGLASS_READ gauge=STG-OIL mode=fixture ms=408 tokens=null kind=PROPOSED
+I 14:18:12.359 SIGHTGLASS_ENTRY gauge=STG-OIL state=SEEN value=48 computed=48 verdict=NORMAL
+I 14:18:13.076 SIGHTGLASS_SIGN_REFUSED decision=HOLD why=Say who you told before holding the room
+I 14:18:13.836 SIGHTGLASS_SIGN decision=HOLD escalation=Called the chief engineer code=4DB3 digest=4db39050bb3a11cf70b34a7965882b16194946e571e6399ac6d9551f9b3282a6
+I 14:18:13.836 SIGHTGLASS_SEND fixture, not sent over network code=4DB3
+I 14:18:14.369 LEAF_INLENS PASSED c5-sign-summary-code secs=218.1
