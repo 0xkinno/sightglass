@@ -150,7 +150,7 @@ async function main() {
   const summary = {
     date: day,
     model: READER_MODEL,
-    dataset: "FlagEval/MeasureBench real_world, dial, pre-registered sample (eval/SELECTION.txt)",
+    dataset: "FlagEval/MeasureBench real_world, dial, pre-registered selection (eval/SELECTION.txt)",
     n: items.length,
     armA_read: {...a, accuracy_all: a.n ? a.correct / a.n : null, wrong: aWrong},
     armB_point: {

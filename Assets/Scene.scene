@@ -2869,7 +2869,7 @@
 - !<SceneObject/c4f0a0ef-3ac2-4f74-ba19-8e6e522e1045>
   PrefabRemaps:
     []
-  Name: Sample machinery space (stand-in)
+  Name: Machinery space (stand-in)
   Enabled: true
   Layers: 1
   LocalTransform: !<TransformEntity>
@@ -3769,6 +3769,7 @@
   ScriptAsset: !<reference> 27c9db96-80ef-4dfc-998f-bb60ecc09d95
   ScriptInputsDefault:
     mode: true
+    addScaleHint: true
     fixtureLatencyMs: true
   ScriptTypesDefault:
     {}
@@ -3777,6 +3778,7 @@
       plant: !<MappingBased.AssignableType_1> cba42557-0b61-4273-a50c-2b2c6830b816
       mode: fixture
       addCropSize: true
+      addScaleHint: true
       noThinking: true
       fixtureLatencyMs: !<float> 350.000000
   ScriptTypes:

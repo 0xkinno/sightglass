@@ -37,3 +37,6 @@ Workspaces/
 .DS_Store
 
 .virtual-scene.json
+
+# Added by Lens Studio (LEAF plugin)
+leaf_plugin_settings.json

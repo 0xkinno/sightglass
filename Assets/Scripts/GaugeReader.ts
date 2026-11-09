@@ -6,7 +6,7 @@
 // Must not: compute the value. It returns where the needle and scale marks are in the crop;
 // readDial in Core turns those points into a number. The scale never comes from the model.
 
-import {SAMPLE_UMS_ROUND, gaugeById} from "./Core/RoundPlan"
+import {UMS_EVENING_ROUND, gaugeById} from "./Core/RoundPlan"
 import {Gemini} from "Remote Service Gateway.lspkg/HostedExternal/Gemini"
 import {parseReader, ParseResult, READER_MODEL, readerRequestBody} from "./Core/ReaderContract"
 import {propose} from "./Core/EvidenceGate"
@@ -63,6 +63,10 @@ export class GaugeReader extends BaseScriptComponent {
   addCropSize: boolean = true
 
   @input
+  @hint("Live only. Add a line that says how the scale is laid out: a 270 degree sweep, lowest mark lower left, highest lower right. The shared contract prompt stays unchanged.")
+  addScaleHint: boolean = false
+
+  @input
   @hint("Live only. Set the Gemini thinking budget to 0 for speed.")
   noThinking: boolean = true
 
@@ -74,7 +78,7 @@ export class GaugeReader extends BaseScriptComponent {
 
   // Reader output for one gauge, as the model would return it: points in a 256 x 256 crop.
   buildFixtureJson(gaugeId: string, needleOffsetDeg: number = 0): string | null {
-    const g = gaugeById(SAMPLE_UMS_ROUND, gaugeId)
+    const g = gaugeById(UMS_EVENING_ROUND, gaugeId)
     if (!g) return null
     const legible = !this.plant.isFogged(gaugeId)
     const value = this.plant.valueOf(gaugeId)
@@ -99,7 +103,7 @@ export class GaugeReader extends BaseScriptComponent {
 
   private finish(gaugeId: string, parsed: ParseResult, started: number, tokens: number | null, extra: string): ReadResult {
     // tokens stays null when the gateway response carries no usageMetadata; it is never estimated.
-    const g = gaugeById(SAMPLE_UMS_ROUND, gaugeId)
+    const g = gaugeById(UMS_EVENING_ROUND, gaugeId)
     const ms = Math.round((getTime() - started) * 1000)
     const kind = g ? propose(g, parsed, null, 0, null).kind : "CANT_READ"
     print("SIGHTGLASS_READ gauge=" + gaugeId + " mode=" + this.mode + " ms=" + ms + " tokens=" + (tokens === null ? "null" : tokens) + " kind=" + kind + extra)
@@ -113,6 +117,7 @@ export class GaugeReader extends BaseScriptComponent {
     try {
       const body: any = readerRequestBody(cap.jpegB64)
       if (this.addCropSize) body.contents[0].parts.push({text: "This image is " + cap.w + " pixels wide and " + cap.h + " pixels high."})
+      if (this.addScaleHint) body.contents[0].parts.push({text: "The scale sweeps 270 degrees clockwise. The lowest printed value is at the lower left of the dial, the highest printed value is at the lower right, and the gap between them is at the bottom. min_mark and max_mark are the tick marks at those two ends, not marks at the left and right of the pivot."})
       if (this.noThinking) body.generationConfig.thinkingConfig = {thinkingBudget: 0}
       const resp: any = await Gemini.models({model: READER_MODEL, type: "generateContent", body: body} as any)
       const text: string = resp && resp.candidates && resp.candidates[0] && resp.candidates[0].content && resp.candidates[0].content.parts && resp.candidates[0].content.parts[0] ? resp.candidates[0].content.parts[0].text : ""
@@ -148,7 +153,7 @@ export class GaugeReader extends BaseScriptComponent {
     if (this.mode === "live") return this.readLive(gaugeId, cap, started)
     return new Promise<ReadResult>((resolve) => {
       const done = () => {
-        const g = gaugeById(SAMPLE_UMS_ROUND, gaugeId)
+        const g = gaugeById(UMS_EVENING_ROUND, gaugeId)
         let parsed: ParseResult
         if (!g) {
           parsed = {ok: false, why: "unknown gauge"}

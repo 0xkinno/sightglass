@@ -1,4 +1,4 @@
-"""Export a pre-registered sample of real-world DIAL images from MeasureBench (CC BY-SA 4.0).
+"""Export a pre-registered selection of real-world DIAL images from MeasureBench (CC BY-SA 4.0).
 
 Run once, from the repo root:
     python -m pip install --break-system-packages datasets pillow
@@ -6,7 +6,7 @@ Run once, from the repo root:
 
 Writes eval/data/images/<question_id>.jpg and eval/data/items.jsonl. The image files are NOT
 committed (they stay under eval/data/, which is gitignored); items.jsonl and the selection hash are.
-Inspect the printed field samples first: if 'design' or 'evaluator_kwargs' differ from what this
+Inspect the printed field values first: if 'design' or 'evaluator_kwargs' differ from what this
 script expects, fix the filter and the interval parser here before running the evaluation, and
 commit that fix BEFORE any model call (pre-registration).
 """

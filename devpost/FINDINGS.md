@@ -30,7 +30,7 @@ The fogged dial (AE1-LO) came back "Can't read it" in 1 of 5 captures with the o
 
 - Overlay off: mean error 2.71 ticks, median 1.25, 15 of 34 within 1 tick (44 percent).
 - Overlay on (tag open, band arc visible): mean 2.79, median 1.10, 9 of 20 within 1 tick (45 percent).
-- Difference: none that this sample can show. 3 captures per gauge is too few to call it. What the crops show is that the band arc sits on the dial rim and the tag beside it; see `p4-crop-overlay-on-band-arc.jpg` against `p4-crop-overlay-off.jpg`. Hiding the overlay is kept because it costs a few frames and removes the risk, not because this run proved a gain.
+- Difference: none that this set can show. 3 captures per gauge is too few to call it. What the crops show is that the band arc sits on the dial rim and the tag beside it; see `p4-crop-overlay-on-band-arc.jpg` against `p4-crop-overlay-off.jpg`. Hiding the overlay is kept because it costs a few frames and removes the risk, not because this run proved a gain.
 
 ## Speed and cost
 
@@ -49,3 +49,7 @@ The fogged dial (AE1-LO) came back "Can't read it" in 1 of 5 captures with the o
 - **The model puts the scale-end marks in the wrong place.** In the live run of c1 (SW-PUMP), the model returned the lowest and highest marks at 180 and 0 degrees (left and right of the pivot) instead of the lower left and lower right ends of the 270 degree sweep. Code computed 3.5 bar against a true 2.82. The same effect probably explains the three gauges that were biased by 4 to 6 ticks in P4. c1 in live mode is red and the log is kept. Not fixed. A prompt that states the sweep is the likely fix, but the prompt is the shared contract with the wild-set evaluation, so it needs a decision.
 - **Fault modes in the Lens.** A lying reader (needle 90 degrees off) and a garbage reader never create an entry on their own. A lie is a proposal with a wrong number until a person accepts it; a person who accepts a lie records a SEEN entry with that number. The gate does not catch a wrong number a person agrees with.
 - **Sending.** The card used to say "Sent to the chief engineer" at signing, before anything was sent. It now says "Sending", then "Sent" only after a 200 or 201, and "Not sent" otherwise. One real round was posted to the live door and read back with a matching digest. Running extra-send posts a new round each time, so the door holds several test rounds from 9 November. They are labelled by their round id only.
+
+## Scale hint tried and dropped (9 November 2026)
+
+After the live c1 run showed the model putting the scale-end marks left and right of the pivot, a second 64 capture run added one line to the live request saying the scale sweeps 270 degrees with the lowest mark at the lower left and the highest at the lower right. It was not better: median error 2.24 ticks against 1.25, within one tick 8 of 32 against 15 of 34, three legible dials refused against one. The three biased gauges (jacket water outlet, scavenge air, starting air) stayed 5 to 7 ticks high. The hint is off by default and both logs are kept: `preview-reads.log` (shipped) and `preview-reads-scale-hint.log`.

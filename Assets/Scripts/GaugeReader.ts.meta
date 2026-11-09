@@ -29,6 +29,7 @@
   PackagePolicy: CanBeUnpacked
   ScriptInputsHidden:
     addCropSize: false
+    addScaleHint: false
     fixtureLatencyMs: false
     mode: false
     noThinking: false
@@ -45,6 +46,7 @@
     - plant: !<MappingBased.AssignableType_1> 00000000-0000-0000-0000-000000000000
       mode: fixture
       addCropSize: false
+      addScaleHint: true
       noThinking: false
       fixtureLatencyMs: !<float> 350.000000
   ScriptTypes:
@@ -59,6 +61,7 @@
     - '// @ui {"widget":"group_start", "label":"Settings"}'
     - '// @input string mode = "fixture" {"hint":"Reader mode: live, fixture, replay, fault-lies or fault-garbage.", "widget":"combobox", "values":[{"label":"fixture", "value":"fixture"}, {"label":"live", "value":"live"}, {"label":"replay", "value":"replay"}, {"label":"fault-lies", "value":"fault-lies"}, {"label":"fault-garbage", "value":"fault-garbage"}]}'
     - '// @input bool addCropSize = true {"hint":"Live only. Add a line telling the model the crop size in pixels. The shared contract prompt stays unchanged."}'
+    - '// @input bool addScaleHint {"hint":"Live only. Add a line that says how the scale is laid out: a 270 degree sweep, lowest mark lower left, highest lower right. The shared contract prompt stays unchanged."}'
     - '// @input bool noThinking = true {"hint":"Live only. Set the Gemini thinking budget to 0 for speed."}'
     - '// @input float fixtureLatencyMs = 350 {"hint":"Pause before the answer comes back in the non-live modes, so the Reading state is visible on the tag.", "widget":"slider", "min":0, "max":2000, "step":50}'
     - '// @ui {"widget":"group_end"}'

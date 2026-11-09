@@ -7,7 +7,7 @@
 
 import Event, {PublicApi} from "SpectaclesInteractionKit.lspkg/Utils/Event"
 import WorldCameraFinderProvider from "SpectaclesInteractionKit.lspkg/Providers/CameraProvider/WorldCameraFinderProvider"
-import {SAMPLE_UMS_ROUND, GaugeSpec, gaugeById} from "./Core/RoundPlan"
+import {UMS_EVENING_ROUND, GaugeSpec, gaugeById} from "./Core/RoundPlan"
 import {toLogResolution} from "./Core/DialGeometry"
 import {
   Entry,
@@ -115,7 +115,7 @@ export class SightglassMain extends BaseScriptComponent {
   selfTest: boolean = false
   @ui.group_end
 
-  private plan = SAMPLE_UMS_ROUND
+  private plan = UMS_EVENING_ROUND
   private _entries: Entry[] = []
   private runs: {[id: string]: Run} = {}
   private startedAtMs: number = 0

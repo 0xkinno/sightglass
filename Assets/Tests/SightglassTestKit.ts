@@ -11,7 +11,7 @@ import {findSceneObjectByName, sleep} from "Leaf.lspkg/Utils/common/Utils"
 import {SightglassMain} from "../Scripts/SightglassMain"
 import {GaugeStationView} from "../Scripts/GaugeStationView"
 import {GaugeTag, TagAction, TagMode} from "../Scripts/GaugeTag"
-import {SAMPLE_UMS_ROUND, GaugeSpec, gaugeById} from "../Scripts/Core/RoundPlan"
+import {UMS_EVENING_ROUND, GaugeSpec, gaugeById} from "../Scripts/Core/RoundPlan"
 import {Proposal, Entry} from "../Scripts/Core/EvidenceGate"
 
 // Polls a condition every 50 ms. Leaf 2.0.2 has no waitUntil, so the kit carries its own.
@@ -23,11 +23,11 @@ export async function waitUntil(cond: () => boolean, timeoutMs: number, why: () 
   }
 }
 
-export const ALL_IDS: string[] = SAMPLE_UMS_ROUND.gauges.map((g) => g.id)
+export const ALL_IDS: string[] = UMS_EVENING_ROUND.gauges.map((g) => g.id)
 const WAIT_MS = 8000
 
 export function spec(id: string): GaugeSpec {
-  return gaugeById(SAMPLE_UMS_ROUND, id) as GaugeSpec
+  return gaugeById(UMS_EVENING_ROUND, id) as GaugeSpec
 }
 
 export function getMain(): SightglassMain {

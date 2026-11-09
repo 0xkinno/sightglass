@@ -40,7 +40,7 @@ export default async function Sheet({params}: {params: Promise<{id: string}>}) {
   const s = r.sheet
   const intact = verifyDigest(s as unknown as RoundSheet, r.digest)
   return (
-    <article>
+    <article className="wrap page">
       <p className="label">{r.recorded ? "Recorded from the Lens Studio preview" : "Round sheet"} / {s.source}</p>
       <h1>{s.planName}</h1>
       <p>

@@ -1,0 +1,182 @@
+{
+  "generatedBy": "scripts/facts.mjs",
+  "generatedAt": "2026-11-09T15:56:51.775Z",
+  "coreTests": {
+    "passed": 17,
+    "failed": 0
+  },
+  "leaf": {
+    "scenarios": 10,
+    "passedOnFixtureReader": 10,
+    "c1Live": "failed"
+  },
+  "breakProofs": {
+    "planted": 5,
+    "wentRed": 5,
+    "backToGreen": 5
+  },
+  "pinchTargets": {
+    "measured": 39,
+    "problems": 0
+  },
+  "send": {
+    "realPostStatus": 201,
+    "forcedFailureStatus": 500
+  },
+  "previewReads": {
+    "shipped": {
+      "hide": {
+        "captures": 40,
+        "legibleCaptures": 35,
+        "read": 34,
+        "cantReadOnLegible": 1,
+        "medianAbsErrTicks": 1.25,
+        "meanAbsErrTicks": 2.71,
+        "maxAbsErrTicks": 6.37,
+        "within1Tick": 15,
+        "within2Ticks": 18,
+        "medianMs": 3243,
+        "foggedCaptures": 5,
+        "foggedCantRead": 1,
+        "falseAlarms": 4
+      },
+      "show": {
+        "captures": 24,
+        "legibleCaptures": 21,
+        "read": 20,
+        "cantReadOnLegible": 1,
+        "medianAbsErrTicks": 1.1,
+        "meanAbsErrTicks": 2.79,
+        "maxAbsErrTicks": 7.35,
+        "within1Tick": 9,
+        "within2Ticks": 11,
+        "medianMs": 3377,
+        "foggedCaptures": 3,
+        "foggedCantRead": 0,
+        "falseAlarms": 2
+      },
+      "perGauge": {
+        "ME-LO-IN": {
+          "reads": 5,
+          "meanAbsErrTicks": 1.02,
+          "modelValueMeanAbsErrTicks": 0.37
+        },
+        "ME-JCW-OUT": {
+          "reads": 5,
+          "meanAbsErrTicks": 5.7,
+          "modelValueMeanAbsErrTicks": 0.9
+        },
+        "ME-SCAV": {
+          "reads": 5,
+          "meanAbsErrTicks": 4.91,
+          "modelValueMeanAbsErrTicks": 0.03
+        },
+        "FO-SUP": {
+          "reads": 5,
+          "meanAbsErrTicks": 0.92,
+          "modelValueMeanAbsErrTicks": 0.91
+        },
+        "SW-PUMP": {
+          "reads": 4,
+          "meanAbsErrTicks": 0.93,
+          "modelValueMeanAbsErrTicks": 0.68
+        },
+        "AIR-START": {
+          "reads": 5,
+          "meanAbsErrTicks": 4.22,
+          "modelValueMeanAbsErrTicks": 0.29
+        },
+        "AE1-LO": {
+          "reads": 4,
+          "meanAbsErrTicks": 0.93,
+          "modelValueMeanAbsErrTicks": 0.93
+        },
+        "STG-OIL": {
+          "reads": 5,
+          "meanAbsErrTicks": 0.92,
+          "modelValueMeanAbsErrTicks": 0.77
+        }
+      }
+    },
+    "scaleHintTried": {
+      "hide": {
+        "captures": 40,
+        "legibleCaptures": 35,
+        "read": 32,
+        "cantReadOnLegible": 3,
+        "medianAbsErrTicks": 2.24,
+        "meanAbsErrTicks": 3.3,
+        "maxAbsErrTicks": 8.14,
+        "within1Tick": 8,
+        "within2Ticks": 16,
+        "medianMs": 3338,
+        "foggedCaptures": 5,
+        "foggedCantRead": 2,
+        "falseAlarms": 5
+      },
+      "show": {
+        "captures": 24,
+        "legibleCaptures": 21,
+        "read": 19,
+        "cantReadOnLegible": 2,
+        "medianAbsErrTicks": 1.06,
+        "meanAbsErrTicks": 2.85,
+        "maxAbsErrTicks": 6.86,
+        "within1Tick": 6,
+        "within2Ticks": 11,
+        "medianMs": 3172,
+        "foggedCaptures": 3,
+        "foggedCantRead": 2,
+        "falseAlarms": 2
+      },
+      "perGauge": {
+        "ME-LO-IN": {
+          "reads": 4,
+          "meanAbsErrTicks": 1.11,
+          "modelValueMeanAbsErrTicks": 0.42
+        },
+        "ME-JCW-OUT": {
+          "reads": 5,
+          "meanAbsErrTicks": 6.76,
+          "modelValueMeanAbsErrTicks": 0.82
+        },
+        "ME-SCAV": {
+          "reads": 5,
+          "meanAbsErrTicks": 5.48,
+          "modelValueMeanAbsErrTicks": 0.08
+        },
+        "FO-SUP": {
+          "reads": 4,
+          "meanAbsErrTicks": 1.05,
+          "modelValueMeanAbsErrTicks": 1.05
+        },
+        "SW-PUMP": {
+          "reads": 4,
+          "meanAbsErrTicks": 0.95,
+          "modelValueMeanAbsErrTicks": 0.94
+        },
+        "AIR-START": {
+          "reads": 5,
+          "meanAbsErrTicks": 5.38,
+          "modelValueMeanAbsErrTicks": 0.43
+        },
+        "AE1-LO": {
+          "reads": 3,
+          "meanAbsErrTicks": 1.11,
+          "modelValueMeanAbsErrTicks": 1.11
+        },
+        "STG-OIL": {
+          "reads": 5,
+          "meanAbsErrTicks": 1.04,
+          "modelValueMeanAbsErrTicks": 0.64
+        }
+      }
+    }
+  },
+  "tokensPerRead": null,
+  "tokensNote": "The gateway response carries no usage count, so tokens are not recorded.",
+  "wildSet": {
+    "run": false,
+    "note": "Pre-registered in eval/PREREGISTRATION.md. Not run: it needs a Gemini API key and the MeasureBench download."
+  }
+}

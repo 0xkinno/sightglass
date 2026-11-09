@@ -4,11 +4,11 @@ import {createHash} from "node:crypto"
 import {acceptRound} from "../lib/accept"
 import {buildSheet, canonical} from "../lib/core/RoundSheet"
 import {sha256Hex} from "../lib/core/Sha256"
-import {SAMPLE_UMS_ROUND} from "../lib/core/RoundPlan"
+import {UMS_EVENING_ROUND} from "../lib/core/RoundPlan"
 import type {Entry} from "../lib/core/EvidenceGate"
 
 const pts = {center: {x: 0.5, y: 0.5}, needleTip: {x: 0.7, y: 0.3}, minMark: {x: 0.3, y: 0.7}, maxMark: {x: 0.7, y: 0.7}}
-const entries: Entry[] = SAMPLE_UMS_ROUND.gauges.map((g, i) => ({
+const entries: Entry[] = UMS_EVENING_ROUND.gauges.map((g, i) => ({
   gaugeId: g.id,
   state: "SEEN",
   value: g.min + 1,
@@ -22,7 +22,7 @@ const entries: Entry[] = SAMPLE_UMS_ROUND.gauges.map((g, i) => ({
 const tiny = "data:image/png;base64,iVBORw0KGgo="
 
 function good() {
-  const {sheet, digest} = buildSheet(SAMPLE_UMS_ROUND, "2026-11-09T21-58Z-test", 1, 2, {decision: "READY", escalation: null, signer: "4/E on duty"} as never, entries, "lens-studio-preview")
+  const {sheet, digest} = buildSheet(UMS_EVENING_ROUND, "2026-11-09T21-58Z-test", 1, 2, {decision: "READY", escalation: null, signer: "4/E on duty"} as never, entries, "lens-studio-preview")
   return {sheet, digest, frames: {f0: tiny, unused: tiny}}
 }
 

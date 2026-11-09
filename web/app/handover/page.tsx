@@ -19,7 +19,7 @@ export default async function Handover() {
     }
   }
   return (
-    <section>
+    <section className="wrap page">
       <p className="label">Handover</p>
       <h1>Round sheets received</h1>
       <p className="fog">Newest first. The recorded sample is pinned. This public door is capped: 2 MB per sheet and 10 sheets per hour per address. There is no login.</p>

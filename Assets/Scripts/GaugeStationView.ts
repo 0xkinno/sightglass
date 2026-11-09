@@ -6,7 +6,7 @@
 // Expects @inputs: gaugeId, plant, material (vertexBaseColorMaterial), foggedGlass.
 // Must not: decide readings or verdicts. It only draws what it is told and what PlantSim says.
 
-import {SAMPLE_UMS_ROUND, GaugeSpec, gaugeById} from "./Core/RoundPlan"
+import {UMS_EVENING_ROUND, GaugeSpec, gaugeById} from "./Core/RoundPlan"
 import {verdictFor} from "./Core/Verdict"
 import {MeshAcc, childObject, PALETTE, Rgba} from "./SightglassMesh"
 import {PlantSim} from "./PlantSim"
@@ -99,7 +99,7 @@ export class GaugeStationView extends BaseScriptComponent {
   }
 
   onAwake() {
-    const g = gaugeById(SAMPLE_UMS_ROUND, this.gaugeId)
+    const g = gaugeById(UMS_EVENING_ROUND, this.gaugeId)
     if (!g) {
       print("GaugeStationView: unknown gauge id " + this.gaugeId)
       return

@@ -1,3 +1,4 @@
+# Run 1, the shipped configuration: crop size line and thinking budget 0, no scale hint line. Run 2 with the scale hint is in preview-reads-scale-hint.log and was not better.
 # Preview reads, 9 Nov 2026. Lens Studio 5.23.2 preview, SPECS 27, live reader (gemini-2.5-flash via RSG), run by Assets/Tests/AccuracyRun.ts.
 # Copied from the Lens Studio log. truth = PlantSim value at capture time (ME-LO-IN pinned at drift 0.3). errTicks = (read - truth) / minorTick.
 # arm=hide: overlay off for the capture frame (shipped path). arm=show: overlay on, tag open, band arc visible.

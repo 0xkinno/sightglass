@@ -1,8 +1,8 @@
 // RoundPlan.ts
 // The round card: which gauges the duty engineer reads, in walking order, with the limits the
 // chief engineer set. Everything here is a human assertion (memory comes only from people).
-// Values below are a sample machinery space for a slow-speed two-stroke main engine plant,
-// modelled on typical limits; the README must call it "a sample round card", not a real ship's.
+// Values below are an example machinery space for a slow-speed two-stroke main engine plant,
+// modelled on typical limits; the README must call it "an example round card", not a real ship's.
 
 export interface Bands {
   alarmLow?: number
@@ -29,8 +29,8 @@ export interface RoundPlan {
   gauges: GaugeSpec[]
 }
 
-// Sample round card. Keep it short enough to film (8 gauges), long enough to be a real round.
-export const SAMPLE_UMS_ROUND: RoundPlan = {
+// Example round card. Keep it short enough to film (8 gauges), long enough to be a real round.
+export const UMS_EVENING_ROUND: RoundPlan = {
   id: "ums-evening-v1",
   name: "Evening round before UMS",
   gauges: [

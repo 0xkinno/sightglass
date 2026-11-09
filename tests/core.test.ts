@@ -3,7 +3,7 @@ import {test} from "node:test"
 import assert from "node:assert/strict"
 import {createHash} from "node:crypto"
 import {readDial, toLogResolution} from "../Assets/Scripts/Core/DialGeometry"
-import {SAMPLE_UMS_ROUND, gaugeById} from "../Assets/Scripts/Core/RoundPlan"
+import {UMS_EVENING_ROUND, gaugeById} from "../Assets/Scripts/Core/RoundPlan"
 import {verdictFor, changeCheck} from "../Assets/Scripts/Core/Verdict"
 import {parseReader} from "../Assets/Scripts/Core/ReaderContract"
 import {propose, accept, correct, byEye, canSign, emptyEntry} from "../Assets/Scripts/Core/EvidenceGate"
@@ -66,7 +66,7 @@ test("log resolution is half a minor tick", () => {
 })
 
 test("verdict bands come from the round card", () => {
-  const g = gaugeById(SAMPLE_UMS_ROUND, "ME-LO-IN")!
+  const g = gaugeById(UMS_EVENING_ROUND, "ME-LO-IN")!
   assert.equal(verdictFor(1.6, g).verdict, "ALARM")
   assert.equal(verdictFor(2.0, g).verdict, "WATCH")
   assert.equal(verdictFor(3.2, g).verdict, "NORMAL")
@@ -74,7 +74,7 @@ test("verdict bands come from the round card", () => {
 })
 
 test("a reading that moved faster than the plant can is implausible", () => {
-  const g = gaugeById(SAMPLE_UMS_ROUND, "ME-LO-IN")!
+  const g = gaugeById(UMS_EVENING_ROUND, "ME-LO-IN")!
   const t0 = 0
   const t4h = 4 * 3_600_000
   assert.equal(changeCheck(3.2, t0, 3.0, t4h, g).plausible, true)
@@ -104,7 +104,7 @@ test("parser refuses non JSON and points outside the image", () => {
 })
 
 test("propose uses the round card scale and code computes the value, ignoring the model's guess", () => {
-  const g = gaugeById(SAMPLE_UMS_ROUND, "ME-LO-IN")!
+  const g = gaugeById(UMS_EVENING_ROUND, "ME-LO-IN")!
   const p = propose(g, parseReader(modelJson(270), 200, 200), "frame-1", 1000, null)
   assert.equal(p.kind, "PROPOSED")
   assert.equal(p.value, 3)
@@ -113,14 +113,14 @@ test("propose uses the round card scale and code computes the value, ignoring th
 })
 
 test("scale labels that disagree with the round card send the reading to REVIEW", () => {
-  const g = gaugeById(SAMPLE_UMS_ROUND, "ME-LO-IN")!
+  const g = gaugeById(UMS_EVENING_ROUND, "ME-LO-IN")!
   const p = propose(g, parseReader(modelJson(270, {max_label: 10}), 200, 200), "frame-2", 1000, null)
   assert.equal(p.kind, "REVIEW")
   assert.equal(p.value, 3) // still computed on the card's 0 to 6, not the model's 0 to 10
 })
 
 test("illegible frame becomes CANT_READ and only a person can fill it", () => {
-  const g = gaugeById(SAMPLE_UMS_ROUND, "AE1-LO")!
+  const g = gaugeById(UMS_EVENING_ROUND, "AE1-LO")!
   const p = propose(g, parseReader(modelJson(270, {legible: false, reason: "fogged glass"}), 200, 200), "frame-3", 1000, null)
   assert.equal(p.kind, "CANT_READ")
   assert.throws(() => accept(p))
@@ -130,7 +130,7 @@ test("illegible frame becomes CANT_READ and only a person can fill it", () => {
 })
 
 test("a correction keeps both numbers", () => {
-  const g = gaugeById(SAMPLE_UMS_ROUND, "ME-LO-IN")!
+  const g = gaugeById(UMS_EVENING_ROUND, "ME-LO-IN")!
   const p = propose(g, parseReader(modelJson(270), 200, 200), "frame-4", 1000, null)
   const e = correct(p, g, 2.8)
   assert.equal(e.state, "CORRECTED")
@@ -139,7 +139,7 @@ test("a correction keeps both numbers", () => {
 })
 
 test("signing: unread gauges block, an alarm blocks READY, HOLD needs an escalation", () => {
-  const g = gaugeById(SAMPLE_UMS_ROUND, "ME-LO-IN")!
+  const g = gaugeById(UMS_EVENING_ROUND, "ME-LO-IN")!
   const alarmTip = 135 + (1.6 / 6) * 270
   const p = propose(g, parseReader(modelJson(alarmTip), 200, 200), "frame-5", 1000, null)
   assert.equal(p.verdict, "ALARM")
@@ -157,9 +157,9 @@ test("sha256 matches node crypto, including non ASCII", () => {
 })
 
 test("the round sheet digest changes if any entry changes", () => {
-  const g = gaugeById(SAMPLE_UMS_ROUND, "ME-LO-IN")!
+  const g = gaugeById(UMS_EVENING_ROUND, "ME-LO-IN")!
   const e = accept(propose(g, parseReader(modelJson(270), 200, 200), "frame-6", 1000, null))
-  const {sheet, digest} = buildSheet(SAMPLE_UMS_ROUND, "r1", 0, 2000, {decision: "READY", escalation: null, signer: "4/E"}, [e], "lens-studio-preview")
+  const {sheet, digest} = buildSheet(UMS_EVENING_ROUND, "r1", 0, 2000, {decision: "READY", escalation: null, signer: "4/E"}, [e], "lens-studio-preview")
   assert.equal(verifyDigest(sheet, digest), true)
   const tampered = JSON.parse(canonical(sheet))
   tampered.entries[0].value = 3.2

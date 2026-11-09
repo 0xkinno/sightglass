@@ -7,7 +7,7 @@
 // that dial sits straight ahead, like an engineer turning to face it. It waits until the dial is fully in view.
 // Log lines: SIGHTGLASS_ACC. Enable with run = true, then refresh the preview. Does nothing otherwise.
 
-import {SAMPLE_UMS_ROUND} from "../Scripts/Core/RoundPlan"
+import {UMS_EVENING_ROUND} from "../Scripts/Core/RoundPlan"
 import {propose} from "../Scripts/Core/EvidenceGate"
 import {GaugeReader} from "../Scripts/GaugeReader"
 import {FrameCapture} from "../Scripts/FrameCapture"
@@ -52,7 +52,7 @@ export class AccuracyRun extends BaseScriptComponent {
     print("SIGHTGLASS_ACC_START reps=" + this.reps + " showReps=" + this.showReps)
     const ids = this.gaugeOrder.split(",")
     for (const id of ids) {
-      const g = SAMPLE_UMS_ROUND.gauges.filter((x) => x.id === id)[0]
+      const g = UMS_EVENING_ROUND.gauges.filter((x) => x.id === id)[0]
       for (let rep = 1; rep <= this.reps; rep++) {
         const arms = rep <= this.showReps ? ["hide", "show"] : ["hide"]
         for (const arm of arms) {

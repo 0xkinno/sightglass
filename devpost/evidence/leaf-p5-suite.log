@@ -17,6 +17,7 @@ LEAF_INLENS PASSED extra-overlay-hidden secs=2.1
 LEAF_INLENS RUNS extra-fault-reader
 LEAF_INLENS PASSED extra-fault-reader secs=2.7
 LEAF_INLENS RUNS extra-pinch-targets
+LEAF_INLENS_INFO pinch-targets measured=39 problems=0
 LEAF_INLENS PASSED extra-pinch-targets secs=17.9
 LEAF_INLENS RUNS extra-chevron
 LEAF_INLENS PASSED extra-chevron secs=1.6

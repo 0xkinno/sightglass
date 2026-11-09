@@ -1,7 +1,9 @@
 import type {Metadata, Viewport} from "next"
 import localFont from "next/font/local"
+import {Fraunces, Hanken_Grotesk} from "next/font/google"
 import "./globals.css"
 import {Nav} from "../components/Nav"
+import {Footer} from "../components/Footer"
 
 const jetbrains = localFont({
   src: [
@@ -11,20 +13,26 @@ const jetbrains = localFont({
   variable: "--font-jetbrains",
   display: "swap",
 })
+const fraunces = Fraunces({subsets: ["latin"], variable: "--font-fraunces", display: "swap", style: ["normal", "italic"], axes: ["opsz"]})
+const hanken = Hanken_Grotesk({subsets: ["latin"], variable: "--font-hanken", display: "swap"})
 
 export const metadata: Metadata = {
-  title: "Sightglass handover door",
-  description: "Receives the signed round sheet from the Sightglass Lens. The chief engineer countersigns the digest they are looking at.",
+  metadataBase: new URL("https://sightglass-kinno.vercel.app"),
+  title: {default: "Sightglass: every reading, seen", template: "%s | Sightglass"},
+  description: "A SPECS Lens for the engine room round. It reads each gauge as you look at it, and you sign a log where nothing was assumed.",
+  openGraph: {title: "Sightglass: every reading, seen", description: "A SPECS Lens for the engine room round.", images: ["/hero.webp"]},
 }
 
 export const viewport: Viewport = {width: "device-width", initialScale: 1, themeColor: "#0F1D23"}
 
 export default function RootLayout({children}: {children: React.ReactNode}) {
   return (
-    <html lang="en" className={jetbrains.variable}>
+    <html lang="en" className={`${jetbrains.variable} ${fraunces.variable} ${hanken.variable}`}>
       <body>
+        <a href="#main" className="skip">Skip to content</a>
         <Nav />
-        <main className="wrap" style={{padding: "48px 0 96px"}}>{children}</main>
+        <main id="main">{children}</main>
+        <Footer />
       </body>
     </html>
   )

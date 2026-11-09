@@ -28,6 +28,7 @@
   ExportUid: 00000000-0000-0000-0000-000000000000
   PackagePolicy: CanBeUnpacked
   ScriptInputsHidden:
+    liveReader: false
     scenarioId: false
   ScriptTypesHidden:
     {}
@@ -39,8 +40,10 @@
     []
   DefaultScriptInputs:
     - scenarioId: ""
+      liveReader: false
   ScriptTypes:
     -
       {}
   InputLines:
     - // @input string scenarioId
+    - // @input bool liveReader

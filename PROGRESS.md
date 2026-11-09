@@ -41,7 +41,7 @@ P6 update (9 Nov 2026): deployed.
 - Live at https://sightglass-kinno.vercel.app (Vercel project sightglass-kinno, team kinnoskis-projects, Blob store sightglass-rounds connected, production deploy from web/).
 - Checked live with curl: good sheet 201, tampered sheet 422, get 200, countersign with wrong digest 409, with right digest 200, /handover/[id] 200, /api/status ok with blobListMs 29. The test round was deleted afterwards, the door is empty.
 - Production URL is public (no Vercel login wall). Deployment protection on the project was left as created; the production alias is not gated. Preview URLs may be.
-- Still pending, needs P3/P4: SheetSender pointing at the live URL, a full preview round landing on the door, and keeping it as the recorded sample.
+- Still pending, needs P3/P4: SheetSender pointing at the live URL, a full preview round landing on the door, and keeping it as the recorded round.
 
 ## P3 (9 Nov 2026)
 Mostly done. LEAF c1 to c5 pass in the preview on the fixture reader. Evidence: devpost/evidence/leaf-p3-preview.log (c2 failed twice on a test assumption, the card resets its escalation row after a recheck, so the test now presses Sign HOLD first; then passed). c5 signed HOLD, "Called the chief engineer", code 4DB3, send logged as fixture, not sent over network.
@@ -77,5 +77,13 @@ P5 (9 Nov 2026), done. Logs: devpost/evidence/leaf-p5-suite.log, devpost/evidenc
 - New: Assets/Scripts/SheetSender.ts (posts sheet, digest, crops to the door; the card says Sent only after 200 or 201), five scenarios in Assets/Tests/Extra*.ts, aimDial and resetRoom in the test kit (the driver turns the room, not the camera), liveReader switch on InLensRunner.
 - Changed for the pinch-target rule: dot 5 cm, decision bar is a column with 2.2 cm gaps, tags scaled by distance, card gaps 1.5 to 1.6 cm.
 - Results: c1 to c5 and all five extras pass on the fixture reader. One planted break per extra scenario went red and was restored from the commit. c1 in live mode FAILED (model put the scale-end marks wrong).
-- Test rounds on the door: extra-send posts a real round every run, so several rounds from 9 Nov exist on the live door. The P6 box "kept as the recorded judge sample, labelled with its date" is not ticked: the sample should come from a round with live crops and be chosen by the owner.
+- Test rounds on the door: extra-send posts a real round every run, so several rounds from 9 Nov exist on the live door. The P6 item "kept as the recorded judge round, labelled with its date" is not done: that round should come from a run with live crops and be chosen by the owner.
 - Scene committed with token inputs at placeholders, reader mode fixture, InLensRunner scenarioId empty, SheetSender target live.
+
+Close-out (9 Nov 2026)
+- Scale marks: one live read had put the scale ends on the wrong sides. A line telling the model how a 270 degree scale is laid out was tried in a second 64 capture run. It was not better (median error 2.24 ticks against 1.25, within one tick 8 of 32 against 15 of 34), so it is off by default and the log is kept as preview-reads-scale-hint.log. The three biased gauges remain a known open problem.
+- Rename: the example round card constant is now UMS_EVENING_ROUND; the scene's machinery space object is named without the word sample.
+- Web door: landing, /how, /proof, /judge and the handover pages, built from docs/FACTS.json (scripts/facts.mjs). Headless Chrome run, 6 viewports x 5 pages, 324 checks, 0 problems. Hero photograph optimised from 149 KB to 59 KB (plus a 27 KB mobile crop). The instrument sits in its own block under the hero so it does not cover the photograph.
+- Docs: README, docs/DESIGN.md, DISCLOSURES.md, THIRD_PARTY_NOTICES.md, SDK_SURFACE.md, EVIDENCE.md, JUDGE.md, MILESTONES.md, FACTS.json, devpost/BUILD_LOG.md.
+- Not done: P7 wild-set evaluation (needs a Gemini API key and the MeasureBench download), a production deploy of the new web pages (blocked in this session; run `cd web && npx vercel --prod`), the demo video, SUBMISSION_DEVPOST.md, the red team pass, Lighthouse run, the door drawing the four reader points on a crop (the crop pixels and the corrected x axis are not stored together).
+- TASK.md was moved to reference/ (gitignored) at close-out. Its last state is there.

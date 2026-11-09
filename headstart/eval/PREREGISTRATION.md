@@ -15,7 +15,7 @@ Committed before any model call. The commit hash of this file is quoted in PROOF
 
 - Dataset: FlagEval/MeasureBench, split real_world, licence CC BY-SA 4.0.
 - Filter: design contains "dial", image type not clock or watch.
-- Sample: seed 20261109, n 200, selection hash in eval/SELECTION.txt.
+- Selection: seed 20261109, n 200, selection hash in eval/SELECTION.txt.
 - Model: gemini-2.5-flash, temperature 0, one call per image per arm, no retries on content.
 - Correct means: the value lies inside MeasureBench's own accepted interval for that image.
 - Arm B uses the model's printed scale labels (no round card exists for these photos).

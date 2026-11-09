@@ -3,7 +3,7 @@
 // Expects @inputs: driftSeconds.
 // Must not: be read by the reading path in a real build. In P3 only the fixture reader and the needles read it.
 
-import {SAMPLE_UMS_ROUND, gaugeById} from "./Core/RoundPlan"
+import {UMS_EVENING_ROUND, gaugeById} from "./Core/RoundPlan"
 
 // Steady values for every gauge except ME-LO-IN, which drifts over the round (a clogging filter).
 const SCRIPTED: {[id: string]: number} = {
@@ -68,7 +68,7 @@ export class PlantSim extends BaseScriptComponent {
 
   // True value on the gauge right now, in the gauge's own unit.
   valueOf(id: string): number {
-    const g = gaugeById(SAMPLE_UMS_ROUND, id)
+    const g = gaugeById(UMS_EVENING_ROUND, id)
     if (!g) return 0
     const base = id === "ME-LO-IN" ? LO_START + (LO_END - LO_START) * this.roundProgress() : SCRIPTED[id] !== undefined ? SCRIPTED[id] : (g.min + g.max) / 2
     let phase = 0
