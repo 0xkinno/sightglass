@@ -47,8 +47,8 @@ Tick `[x]` only when done and verified. One phase per session. Phase details: re
 - [ ] Full suite run once; log saved
 
 ## P6. Handover door (cloud)
-- [ ] Next.js app in web/ deployed to Vercel at its final URL (empty page first)
-- [ ] /api/rounds (zod, caps, digest verified with Core), list, get, countersign, /api/status measured
+- [x] Next.js app in web/ deployed to Vercel at its final URL (empty page first)
+- [x] /api/rounds (zod, caps, digest verified with Core), list, get, countersign, /api/status measured
 - [ ] SheetSender points at the live URL; one full preview round lands on the door
 - [ ] That round kept as the recorded judge sample, labelled with its date
 

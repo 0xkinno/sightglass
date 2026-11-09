@@ -36,3 +36,9 @@ Built in web/, not deployed yet.
 - Frames travel in the POST as a `frames` map of frameRef to data URL, outside the digest. Lens SheetSender must send them. Points are drawn on the crop only when they are normalised 0..1.
 - Fonts: Zodiak and Switzer are not in the repo; JetBrains Mono is. Hero, /proof, /how, /judge are P9.
 - Waiting on Kinnoski: Vercel project name and URL, then create, link a Blob store, deploy.
+
+P6 update (9 Nov 2026): deployed.
+- Live at https://sightglass-kinno.vercel.app (Vercel project sightglass-kinno, team kinnoskis-projects, Blob store sightglass-rounds connected, production deploy from web/).
+- Checked live with curl: good sheet 201, tampered sheet 422, get 200, countersign with wrong digest 409, with right digest 200, /handover/[id] 200, /api/status ok with blobListMs 29. The test round was deleted afterwards, the door is empty.
+- Production URL is public (no Vercel login wall). Deployment protection on the project was left as created; the production alias is not gated. Preview URLs may be.
+- Still pending, needs P3/P4: SheetSender pointing at the live URL, a full preview round landing on the door, and keeping it as the recorded sample.
