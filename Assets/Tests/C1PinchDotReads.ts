@@ -21,6 +21,8 @@ export class C1PinchDotReads extends Scenario {
     expect(t.mode).toBe("idle")
     expect(entryOf(main, ID).state).toBe("NOT_READ")
 
+    // In live mode the value comes from a real model answer on a real crop: within two ticks, and the model's own guess is carried for the record.
+    const live = main.reader.mode === "live"
     const watch = new TagWatcher(this, t)
     await pinchDot(it, main, ID)
     await waitMode(main, ID, ["proposal", "cant"])
@@ -39,7 +41,7 @@ export class C1PinchDotReads extends Scenario {
 
     // The value is within one minor tick of what the plant holds for this gauge right now.
     const plantValue = main.plant.valueOf(ID)
-    expect(Math.abs(shown - plantValue) <= g.minorTick, "tag " + shown + " plant " + plantValue + " tick " + g.minorTick).toBe(true)
+    expect(Math.abs(shown - plantValue) <= (live ? 2 : 1) * g.minorTick, "tag " + shown + " plant " + plantValue + " tick " + g.minorTick).toBe(true)
 
     // Verdict word on the tag matches the verdict code derives from the number.
     const v = verdictFor(p.value as number, g).verdict
@@ -52,7 +54,7 @@ export class C1PinchDotReads extends Scenario {
     expect(r.ok).toBe(true)
     if (r.ok) expect(toLogResolution(r.value, g.minorTick)).toBeCloseTo(p.value as number, 6)
     // The reader gives points, not a number: no model value is carried into the proposal.
-    expect(p.modelValue).toBeNull()
+    if (!live) expect(p.modelValue).toBeNull()
 
     // Nothing is in the round until the engineer accepts.
     expect(entryOf(main, ID).state).toBe("NOT_READ")

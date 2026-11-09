@@ -14,10 +14,12 @@ import {ExtraFaultReader} from "./ExtraFaultReader"
 import {ExtraPinchTargets} from "./ExtraPinchTargets"
 import {ExtraChevron} from "./ExtraChevron"
 import {ExtraSend} from "./ExtraSend"
+import {aimDial, getMain, waitUntil} from "./SightglassTestKit"
 
 @component
 export class InLensRunner extends BaseScriptComponent {
   @input scenarioId: string = ""
+  @input liveReader: boolean = false // set the reader to live and turn the room so the c1 dial is in view
 
   onAwake(): void {
     if (!this.scenarioId) return
@@ -44,6 +46,14 @@ export class InLensRunner extends BaseScriptComponent {
     if (!tn) {
       print("LEAF_INLENS FAILED " + id + " unknown scenario id")
       return
+    }
+    if (this.liveReader) {
+      const main = getMain()
+      await waitUntil(() => main.entries.length > 0, 8000, () => "round did not start")
+      main.reader.mode = "live"
+      aimDial(main, "SW-PUMP")
+      await waitUntil(() => main.capture.dialInView("SW-PUMP"), 8000, () => "dial not in view")
+      print("LEAF_INLENS reader mode live")
     }
     print("LEAF_INLENS RUNS " + id)
     const t0 = getTime()

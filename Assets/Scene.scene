@@ -3024,11 +3024,13 @@
   ScriptAsset: !<reference> 6328f64d-9872-48fb-9e15-43ba65d1b614
   ScriptInputsDefault:
     scenarioId: true
+    liveReader: true
   ScriptTypesDefault:
     {}
   ScriptInputs:
     "":
       scenarioId: ""
+      liveReader: false
   ScriptTypes:
     "":
       {}

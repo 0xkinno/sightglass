@@ -1,0 +1,35 @@
+# LEAF suite, 9 November 2026. Lens Studio 5.23.2 preview, SPECS 27, in-lens runner (Assets/Tests/InLensRunner.ts), reader mode fixture.
+# c1 to c5 were run in one pass after the last code change. The five extra scenarios are the GREEN lines from break-proofs.log, run on the same code.
+# extra-send posts one real round to https://sightglass-kinno.vercel.app each time it runs (201), then forces a 500 and a retry (200 duplicate).
+
+LEAF_INLENS RUNS c1-pinch-dot-reads
+LEAF_INLENS PASSED c1-pinch-dot-reads secs=1.6
+LEAF_INLENS RUNS c2-alarm-blocks-ready
+LEAF_INLENS PASSED c2-alarm-blocks-ready secs=9.8
+LEAF_INLENS RUNS c3-fogged-by-eye
+LEAF_INLENS PASSED c3-fogged-by-eye secs=6.9
+LEAF_INLENS RUNS c4-correct-steps
+LEAF_INLENS PASSED c4-correct-steps secs=8.5
+LEAF_INLENS RUNS c5-sign-summary-code
+LEAF_INLENS PASSED c5-sign-summary-code secs=18.2
+LEAF_INLENS RUNS extra-overlay-hidden
+LEAF_INLENS PASSED extra-overlay-hidden secs=2.1
+LEAF_INLENS RUNS extra-fault-reader
+LEAF_INLENS PASSED extra-fault-reader secs=2.7
+LEAF_INLENS RUNS extra-pinch-targets
+LEAF_INLENS PASSED extra-pinch-targets secs=17.9
+LEAF_INLENS RUNS extra-chevron
+LEAF_INLENS PASSED extra-chevron secs=1.6
+LEAF_INLENS RUNS extra-send
+SIGHTGLASS_SEND status=201 ms=788 bytes=3240 ok=true url=https://sightglass-kinno.vercel.app
+SIGHTGLASS_SEND status=500 ms=394 bytes=3240 ok=false url=https://httpbin.org/status/500?p=
+SIGHTGLASS_SEND status=200 ms=592 bytes=3240 ok=true url=https://sightglass-kinno.vercel.app
+LEAF_INLENS PASSED extra-send secs=18.3
+
+# c1 in live mode (reader live through RSG, room turned so the SW-PUMP dial is in view, tolerance two ticks). RESULT: FAILED.
+# The model put the min and max scale marks at 180 and 0 degrees instead of the lower left and lower right ends of a 270 degree sweep, so the computed value was 3.5 against a true 2.82.
+LEAF_INLENS RUNS c1-pinch-dot-reads
+SIGHTGLASS_CAPTURE gauge=SW-PUMP crop=294x294 bytes=10553 overlayHidden=true ms=367
+SIGHTGLASS_RAW gauge=SW-PUMP crop=294x294 json={"legible": true, "center": {"x": 147, "y": 147}, "needle_tip": {"x": 158, "y": 69}, "min_mark": {"x": 69, "y": 147}, "max_mark": {"x": 225, "y": 147}, "min_label": 0, "max_label": 6, "image_height": 294, "image_width": 294, "model_value": 2.8, "reason": "The gauge is clear and all necessary points are visible.", "unit": "bar"}
+SIGHTGLASS_READ gauge=SW-PUMP mode=live ms=3142 tokens=null kind=PROPOSED stretchX=0.500
+LEAF_INLENS FAILED c1-pinch-dot-reads secs=4.6 AssertionError: tag 3.5 plant 2.816025475453832 tick 0.2

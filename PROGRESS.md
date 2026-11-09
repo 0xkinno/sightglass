@@ -72,3 +72,10 @@ P4 (9 Nov 2026), mostly done. Numbers and misses: devpost/FINDINGS.md. Raw log: 
 - Editing any .ts while the preview runs resets the lens and restarts a run in progress.
 
 Update: the spatial click was then checked by eye by the owner (pinch on the STG-OIL dot in the preview opened the tag with 48 C Normal, band arc on the rim, Accept, Correct, By eye). That P3 box is ticked. P4 open items are unchanged: token count, fault modes not run in the preview, fog stand-in too light, pointing accuracy.
+
+P5 (9 Nov 2026), done. Logs: devpost/evidence/leaf-p5-suite.log, devpost/evidence/break-proofs.log. FINDINGS.md has a P5 section.
+- New: Assets/Scripts/SheetSender.ts (posts sheet, digest, crops to the door; the card says Sent only after 200 or 201), five scenarios in Assets/Tests/Extra*.ts, aimDial and resetRoom in the test kit (the driver turns the room, not the camera), liveReader switch on InLensRunner.
+- Changed for the pinch-target rule: dot 5 cm, decision bar is a column with 2.2 cm gaps, tags scaled by distance, card gaps 1.5 to 1.6 cm.
+- Results: c1 to c5 and all five extras pass on the fixture reader. One planted break per extra scenario went red and was restored from the commit. c1 in live mode FAILED (model put the scale-end marks wrong).
+- Test rounds on the door: extra-send posts a real round every run, so several rounds from 9 Nov exist on the live door. The P6 box "kept as the recorded judge sample, labelled with its date" is not ticked: the sample should come from a round with live crops and be chosen by the owner.
+- Scene committed with token inputs at placeholders, reader mode fixture, InLensRunner scenarioId empty, SheetSender target live.

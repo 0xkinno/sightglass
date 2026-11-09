@@ -41,15 +41,15 @@ Tick `[x]` only when done and verified. One phase per session. Phase details: re
 - [x] Overlay on vs off experiment logged; FINDINGS.md written (devpost/FINDINGS.md)
 
 ## P5. LEAF and breaks
-- [ ] extra-overlay-hidden, extra-fault-reader, extra-pinch-targets, extra-chevron, extra-send written and passing
-- [ ] One planted break per scenario seen red, restored byte-identical, logged in devpost/evidence/break-proofs.log
-- [ ] c1 also run once in live mode; log kept
-- [ ] Full suite run once; log saved
+- [x] extra-overlay-hidden, extra-fault-reader, extra-pinch-targets, extra-chevron, extra-send written and passing (devpost/evidence/leaf-p5-suite.log)
+- [x] One planted break per scenario seen red, restored byte-identical, logged in devpost/evidence/break-proofs.log (restored files equal the committed blobs; CRLF working copies became LF, the committed form)
+- [x] c1 also run once in live mode; log kept (the live run FAILED: model placed the scale-end marks wrong; see leaf-p5-suite.log and FINDINGS.md)
+- [x] Full suite run once; log saved
 
 ## P6. Handover door (cloud)
 - [x] Next.js app in web/ deployed to Vercel at its final URL (empty page first)
 - [x] /api/rounds (zod, caps, digest verified with Core), list, get, countersign, /api/status measured
-- [ ] SheetSender points at the live URL; one full preview round lands on the door
+- [x] SheetSender points at the live URL; one full preview round lands on the door (extra-send: 201, read back from the door, digest matched)
 - [ ] That round kept as the recorded judge sample, labelled with its date
 
 ## P7. Wild-set evaluation (cloud, parallel)

@@ -1,0 +1,65 @@
+# Break proofs, 9 November 2026. Lens Studio 5.23.2 preview, in-lens LEAF runner (Assets/Tests/InLensRunner.ts).
+# One planted break per scenario: the scenario was green, the break was planted, the scenario went red, the file was restored from the commit
+# (git checkout), and the scenario went green again. Lines are copied from the Lens Studio log.
+# The committed blob hash of each restored file equals the working file (git diff clean). Working copies were CRLF before the first restore and are LF after, which is the committed form.
+
+## extra-overlay-hidden
+file: Assets/Scripts/FrameCapture.ts
+break: overlay is not hidden for the capture frame (the setOverlay(false) call removed)
+sha_before 58a1afab5a16ee9ca04c26a7f4c96bde42aaeb62fb3b647e6b1707870b194385
+sha_broken de4be46f5601c354afc7cf37ccf03d776767b371974bb86ef8c2cdfcd8a1fe84
+RED:   LEAF_INLENS RUNS extra-overlay-hidden
+       LEAF_INLENS FAILED extra-overlay-hidden secs=1.9 AssertionError: an overlay object was still on at the capture frame: true,true,true,true,true,true,true,true,true,true
+sha_restored a80b823e4f5e663fbdc69eb6bd8d507cdcac771a95910666200a0a24302aa942
+GREEN: LEAF_INLENS RUNS extra-overlay-hidden
+       LEAF_INLENS PASSED extra-overlay-hidden secs=2.1
+
+## extra-fault-reader
+file: Assets/Scripts/SightglassMain.ts
+break: a PROPOSED reading is auto accepted into the round
+sha_before bd03936157d592e4d46db8db10861b53a1f96afc8ec2ab7c8a9ee6b4c4699100
+sha_broken c5dd3ab496028a37696e8d93337c1f175bc611870e37d7faace1235dc875c851
+RED:   LEAF_INLENS RUNS extra-fault-reader
+       LEAF_INLENS FAILED extra-fault-reader secs=2.7 AssertionError: a lie became an entry without a person
+sha_restored 0b99c0d591290de97ad5e64dd3077d047258f8d4f793548403fd84b36a5ee300
+GREEN: LEAF_INLENS RUNS extra-fault-reader
+       LEAF_INLENS PASSED extra-fault-reader secs=2.7
+
+## extra-pinch-targets
+file: Assets/Scripts/GaugeTag.ts
+break: the dot is built at half its width
+sha_before a609be77e10a676b46cd1363f246fb1d5a598734bdeb0ece2a5cf9717fe6e76d
+sha_broken bce7723f944a767c478390a5ab479eb17e11ed2ed0e7aa21c9ab0b769fd1988d
+RED:   LEAF_INLENS RUNS extra-pinch-targets
+       LEAF_INLENS FAILED extra-pinch-targets secs=17.4 AssertionError: ME-LO-IN dot Dot is 1.20 x 1.20 deg at 127 cm | ME-JCW-OUT dot Dot is 1.19 x 1.19 deg at 122 cm | ME-SCAV dot Dot is 1.20 x 1.20 deg at 124 cm | FO-SUP dot Dot is 1.20 x 1.20 deg at 134 cm | SW-PUMP dot Dot is 1.19 x 1.19 deg at 151 cm | AE1-LO dot Dot is 1.19 x 1.19 deg at 161 cm | AIR-START dot Dot is 1.19 x 1.1
+sha_restored a4431f2547f4a478884fdfa92965fa57b57234f2b1519f52ec197d4e79eb32fe
+GREEN: LEAF_INLENS RUNS extra-pinch-targets
+       LEAF_INLENS PASSED extra-pinch-targets secs=17.9
+
+## extra-chevron
+file: Assets/Scripts/ChevronGuide.ts
+break: the chevron never hides when the next dial is in view
+sha_before a4676e0ad61aab5645afd0cd4b77cf5118c251c18dd633240ec5b4d92f58473c
+sha_broken 03ec1547ffde2fb61d8edebfee0d7f872747cabfc96f7e8e6c59bf7f1e40e8ac
+RED:   LEAF_INLENS RUNS extra-chevron
+       LEAF_INLENS FAILED extra-chevron secs=2.0 AssertionError: chevron shown with the next dial straight ahead
+sha_restored a4676e0ad61aab5645afd0cd4b77cf5118c251c18dd633240ec5b4d92f58473c
+GREEN: LEAF_INLENS RUNS extra-chevron
+       LEAF_INLENS PASSED extra-chevron secs=1.6
+
+## extra-send
+file: Assets/Scripts/SightglassMain.ts
+break: the card says Sent whatever the door answered
+sha_before 0b99c0d591290de97ad5e64dd3077d047258f8d4f793548403fd84b36a5ee300
+sha_broken dbb296a672930ec0316a81753d938e4c63d9932a74a0832825c92819d502347d
+RED:   LEAF_INLENS RUNS extra-send
+       SIGHTGLASS_SEND status=201 ms=789 bytes=3238 ok=true url=https://sightglass-kinno.vercel.app
+       SIGHTGLASS_SEND status=500 ms=420 bytes=3238 ok=false url=https://httpbin.org/status/500?p=
+       LEAF_INLENS FAILED extra-send secs=25.8 AssertionError: Expected: "0" - Received: "-1" | AssertionError: Expected: "0" - Received: "-1"
+sha_restored 0b99c0d591290de97ad5e64dd3077d047258f8d4f793548403fd84b36a5ee300
+GREEN: LEAF_INLENS RUNS extra-send
+       SIGHTGLASS_SEND status=201 ms=788 bytes=3240 ok=true url=https://sightglass-kinno.vercel.app
+       SIGHTGLASS_SEND status=500 ms=394 bytes=3240 ok=false url=https://httpbin.org/status/500?p=
+       SIGHTGLASS_SEND status=200 ms=592 bytes=3240 ok=true url=https://sightglass-kinno.vercel.app
+       LEAF_INLENS PASSED extra-send secs=18.3
+
