@@ -24,11 +24,11 @@
   VersionPatch: 0
   VersionPrerelease: ""
   UpdateOrder: 0
-  ComponentUid: 00000000-0000-0000-0000-000000000000
+  ComponentUid: 6167f8a6-e84b-42a0-915c-2e68b74f05b7
   ExportUid: 00000000-0000-0000-0000-000000000000
   PackagePolicy: CanBeUnpacked
   ScriptInputsHidden:
-    {}
+    scenarioId: false
   ScriptTypesHidden:
     {}
   ReadMe: !<reference> 00000000-0000-0000-0000-000000000000
@@ -38,10 +38,9 @@
   Attachments:
     []
   DefaultScriptInputs:
-    -
-      {}
+    - scenarioId: ""
   ScriptTypes:
     -
       {}
   InputLines:
-    []
+    - // @input string scenarioId
