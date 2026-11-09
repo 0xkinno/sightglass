@@ -19,6 +19,11 @@ export const entrySchema = z
   })
   .strict()
 
+const unit = z.number().finite().min(-0.05).max(1.05)
+const upt = z.object({x: unit, y: unit}).strict()
+// Where the reader placed the four points, as fractions of the crop image (0 to 1 across, 0 to 1 down).
+export const overlaySchema = z.object({center: upt, needleTip: upt, minMark: upt, maxMark: upt}).strict()
+
 export const ID_RE = /^[A-Za-z0-9._-]{3,80}$/
 
 export const sheetSchema = z
@@ -51,6 +56,11 @@ export const postSchema = z
       .record(z.string().max(80), z.string().max(MAX_FRAME_CHARS).regex(/^data:image\/(jpeg|png);base64,[A-Za-z0-9+/=]+$/))
       .refine((r) => Object.keys(r).length <= MAX_FRAMES, "too many frames")
       .optional(),
+    // frameRef -> points as fractions of the crop. Outside the digest, like the frames.
+    overlays: z
+      .record(z.string().max(80), overlaySchema)
+      .refine((r) => Object.keys(r).length <= MAX_FRAMES, "too many overlays")
+      .optional(),
   })
   .strict()
 
@@ -73,6 +83,7 @@ export interface StoredRound {
   receivedAtMs: number
   sheet: z.infer<typeof sheetSchema>
   frames: Record<string, string>
+  overlays?: Record<string, z.infer<typeof overlaySchema>>
   countersigns: Countersign[]
   recorded?: boolean
 }

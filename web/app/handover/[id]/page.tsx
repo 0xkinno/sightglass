@@ -11,23 +11,23 @@ export const metadata = {title: "Round sheet | Sightglass"}
 
 const when = (ms: number | null) => (ms ? new Date(ms).toISOString().replace("T", " ").slice(0, 19) + " UTC" : "not read")
 
-function Frame({src, points}: {src: string; points: StoredRound["sheet"]["entries"][number]["points"]}) {
-  // Points are in crop pixels as the Lens sent them. They are drawn in a 0..1 box when they fit, else hidden.
-  const pts = points ? [points.center, points.needleTip, points.minMark, points.maxMark] : []
-  const unit = pts.every((p) => p.x >= 0 && p.x <= 1 && p.y >= 0 && p.y <= 1)
+function Frame({src, points, overlay}: {src: string; points: StoredRound["sheet"]["entries"][number]["points"]; overlay?: NonNullable<StoredRound["overlays"]>[string]}) {
+  // The Lens sends the four points as fractions of the crop. Older sheets carry crop pixels, drawn only if they already fit 0..1.
+  const q = overlay ?? (points && [points.center, points.needleTip, points.minMark, points.maxMark].every((p) => p.x >= 0 && p.x <= 1 && p.y >= 0 && p.y <= 1) ? points : null)
   return (
     <span className="frame" style={{maxWidth: 360}}>
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img src={src} alt="The crop the reader was shown" />
-      {points && unit && (
+      {q && (
         <svg viewBox="0 0 1 1" preserveAspectRatio="none" aria-hidden="true">
-          <line x1={points.center.x} y1={points.center.y} x2={points.needleTip.x} y2={points.needleTip.y} stroke="#5EEAD4" strokeWidth="0.008" />
-          {[["center", points.center], ["tip", points.needleTip], ["min", points.minMark], ["max", points.maxMark]].map(([n, p]) => {
-            const q = p as {x: number; y: number}
-            return <circle key={n as string} cx={q.x} cy={q.y} r="0.02" fill="none" stroke="#5EEAD4" strokeWidth="0.008" />
+          <line x1={q.center.x} y1={q.center.y} x2={q.needleTip.x} y2={q.needleTip.y} stroke="#5EEAD4" strokeWidth="0.008" />
+          {[["center", q.center], ["tip", q.needleTip], ["min", q.minMark], ["max", q.maxMark]].map(([n, p]) => {
+            const c = p as {x: number; y: number}
+            return <ellipse key={n as string} cx={c.x} cy={c.y} rx="0.022" ry="0.022" fill="none" stroke="#5EEAD4" strokeWidth="0.008" />
           })}
         </svg>
       )}
+      <span className="label" style={{display: "block", marginTop: 6}}>Teal rings: pivot, needle tip, lowest mark, highest mark, as the reader placed them</span>
     </span>
   )
 }
@@ -63,7 +63,7 @@ export default async function Sheet({params}: {params: Promise<{id: string}>}) {
               {e.verdict && <span className={"pill " + e.verdict}>{e.verdict}</span>}
             </p>
             {e.state === "CORRECTED" && <p className="fog">Computed from the frame: {e.computedValue}. Changed by the engineer.</p>}
-            {e.frameRef && r.frames[e.frameRef] && <Frame src={r.frames[e.frameRef]} points={e.points} />}
+            {e.frameRef && r.frames[e.frameRef] && <Frame src={r.frames[e.frameRef]} points={e.points} overlay={r.overlays?.[e.frameRef]} />}
             {e.notes.map((n, i) => <p key={i} className="fog" style={{margin: "4px 0"}}>{n}</p>)}
             <p className="label">Looked at {when(e.atMs)}</p>
           </div>

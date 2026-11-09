@@ -1,6 +1,6 @@
 {
   "generatedBy": "scripts/facts.mjs",
-  "generatedAt": "2026-11-09T15:56:51.775Z",
+  "generatedAt": "2026-11-09T18:39:23.211Z",
   "coreTests": {
     "passed": 17,
     "failed": 0
@@ -177,6 +177,6 @@
   "tokensNote": "The gateway response carries no usage count, so tokens are not recorded.",
   "wildSet": {
     "run": false,
-    "note": "Pre-registered in eval/PREREGISTRATION.md. Not run: it needs a Gemini API key and the MeasureBench download."
+    "note": "Pre-registered in eval/PREREGISTRATION.md. Started with gemini-3.5-flash (Amendment 1) and not finished. No figure is claimed."
   }
 }

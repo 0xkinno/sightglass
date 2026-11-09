@@ -99,7 +99,7 @@ const facts = {
   },
   tokensPerRead: null,
   tokensNote: "The gateway response carries no usage count, so tokens are not recorded.",
-  wildSet: {run: false, note: "Pre-registered in eval/PREREGISTRATION.md. Not run: it needs a Gemini API key and the MeasureBench download."},
+  wildSet: {run: false, note: "Pre-registered in eval/PREREGISTRATION.md. Started with gemini-3.5-flash (Amendment 1) and not finished. No figure is claimed."},
 }
 fs.mkdirSync("docs", {recursive: true})
 fs.writeFileSync("docs/FACTS.json", JSON.stringify(facts, null, 2) + "\n")

@@ -31,12 +31,12 @@ export class SheetSender extends BaseScriptComponent {
 
   private internetModule: InternetModule = require("LensStudio:InternetModule")
 
-  async send(sheet: RoundSheet, digest: string, frames: {[ref: string]: string}): Promise<SendResult> {
+  async send(sheet: RoundSheet, digest: string, frames: {[ref: string]: string}, overlays: {[ref: string]: object} = {}): Promise<SendResult> {
     if (this.target !== "live") {
       print("SIGHTGLASS_SEND off, nothing sent")
       return {ok: false, status: 0, ms: 0, bytes: 0, why: "sending is switched off", doorUrl: ""}
     }
-    const body = JSON.stringify({sheet: sheet, digest: digest, frames: frames})
+    const body = JSON.stringify({sheet: sheet, digest: digest, frames: frames, overlays: overlays})
     const t0 = getTime()
     try {
       const res = await this.internetModule.fetch(this.url + "/api/rounds", {

@@ -20,7 +20,7 @@ The click and alarm tones are plain synthesised sine bursts made for this projec
 
 ## Evidence limits
 - All live reads were taken in the Lens Studio preview, against a plant simulator, not on a device and not on a ship.
-- The 200 photo wild-set evaluation is pre-registered and has not been run.
+- The wild-set evaluation is pre-registered, was started with gemini-3.5-flash after the pre-registered model returned 404 for the API key (Amendment 1), and is not finished. No figure is claimed.
 - The gateway returns no token usage, so cost per read is not recorded.
 - The LEAF editor plugin did not connect to the installed LEAF version, so scenarios were run with `Assets/Tests/InLensRunner.ts`. The scenarios themselves are unchanged.
 - Running the `extra-send` scenario posts a real round to the handover door each time, so the door holds several test rounds dated 9 November 2026.

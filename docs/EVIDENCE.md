@@ -10,6 +10,8 @@
 | The same run with a scale hint line added (not adopted) | `devpost/evidence/preview-reads-scale-hint.log` |
 | Crops the model saw, overlay off and on | `devpost/evidence/p4-crop-overlay-off.jpg`, `p4-crop-overlay-on-band-arc.jpg` |
 | Stations in the preview | `devpost/evidence/p3-station2-preview.png`, `p3-station3-preview.png`, `devpost/media/film/` |
+| Live round sent to the door with crops and reader points (HTTP 201) | `devpost/evidence/leaf-p5-send-live.log`, `docs/screens/door-crops-live.webp` |
+| Wild-set pre-registration, selection hash and Amendment 1 | `eval/PREREGISTRATION.md`, `eval/SELECTION.txt` |
 | What went wrong and what was found | `devpost/FINDINGS.md` |
 | Numbers used in the README and on the door | `docs/FACTS.json`, written by `scripts/facts.mjs` |
 | Door on six viewports, headless Chrome | `docs/screens/web-*.jpg`, `web/tests/viewports.mjs` |

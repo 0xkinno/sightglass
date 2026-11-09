@@ -1,0 +1,15 @@
+# extra-send in LIVE reader mode, 9 Nov 2026: eight live reads through the gateway, one round signed HOLD, posted to the door with the crops and the reader points (201), read back, forced 500 shown as Not sent, retry accepted (200 duplicate).
+LEAF_INLENS RUNS extra-send
+SIGHTGLASS_READ gauge=ME-LO-IN mode=live ms=5459 tokens=null kind=PROPOSED stretchX=0.500
+SIGHTGLASS_READ gauge=ME-JCW-OUT mode=live ms=3682 tokens=null kind=PROPOSED stretchX=0.500
+SIGHTGLASS_READ gauge=ME-SCAV mode=live ms=3145 tokens=null kind=PROPOSED stretchX=0.500
+SIGHTGLASS_READ gauge=FO-SUP mode=live ms=3208 tokens=null kind=PROPOSED stretchX=0.500
+SIGHTGLASS_READ gauge=SW-PUMP mode=live ms=2600 tokens=null kind=PROPOSED stretchX=0.500
+SIGHTGLASS_READ gauge=AE1-LO mode=live ms=3200 tokens=null kind=PROPOSED stretchX=0.500
+SIGHTGLASS_READ gauge=AIR-START mode=live ms=4147 tokens=null kind=PROPOSED stretchX=0.500
+SIGHTGLASS_READ gauge=STG-OIL mode=live ms=3244 tokens=null kind=PROPOSED stretchX=0.500
+SIGHTGLASS_SEND status=201 ms=2891 bytes=361708 ok=true url=https://sightglass-kinno.vercel.app
+LEAF_INLENS_INFO send-door url=https://sightglass-kinno.vercel.app/handover/2026-11-09T17-49-13-710Z-ums digest=65c310c64839bdf5441a47f3c78eb91879bf2acaafd4f8186ecd65ca93b3b32a
+SIGHTGLASS_SEND status=500 ms=1748 bytes=361708 ok=false url=https://httpbin.org/status/500?p=
+SIGHTGLASS_SEND status=200 ms=1232 bytes=361708 ok=true url=https://sightglass-kinno.vercel.app
+LEAF_INLENS PASSED extra-send secs=57.5

@@ -67,7 +67,7 @@ export default function Proof() {
           <p><b>Three gauges carry a steady bias.</b> The jacket water outlet, scavenge air and starting air gauges read 4 to 7 ticks high from the points, while the model&apos;s own number for them is within about one tick. The pointing step is the weak part and is not fixed. A line telling the model how the scale is laid out was tried and did not help.</p>
           <p><b>Overlay hidden or shown.</b> No difference this set of captures can show. Hiding it costs a few frames and removes the risk, so it stays.</p>
           <p><b>Tokens.</b> The gateway response carries no usage count, so tokens per read are not recorded. Nothing is estimated.</p>
-          <p><b>Wild set.</b> The 200 real dial photos evaluation is pre-registered in <span className="mono">headstart/eval/PREREGISTRATION.md</span> and has not been run, so this page states no figure for it.</p>
+          <p><b>Wild set.</b> The evaluation on real dial photos is pre-registered in <span className="mono">eval/PREREGISTRATION.md</span>. It was started with a different model after the pre-registered one returned 404 for the API key (Amendment 1), and it is not finished, so this page states no figure for it.</p>
         </div>
       </section>
 

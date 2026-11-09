@@ -533,14 +533,22 @@ export class SightglassMain extends BaseScriptComponent {
   async sendSheet(): Promise<SendResult> {
     const sheet = this._sheet as RoundSheet
     const frames: {[ref: string]: string} = {}
+    const overlays: {[ref: string]: object} = {}
     for (const e of this._entries) {
       if (e.frameRef) {
         const b64 = this.capture.frameB64(e.frameRef)
         if (b64) frames[e.frameRef] = "data:image/jpeg;base64," + b64
+        // The points the entry carries are in crop pixels with x already corrected for the squashed composite.
+        // The door draws on the crop as stored, so convert back to fractions of that image.
+        const meta = this.capture.frameMeta(e.frameRef)
+        if (b64 && meta && e.points) {
+          const f = (p: {x: number; y: number}) => ({x: (p.x * meta.stretchX) / meta.w, y: p.y / meta.h})
+          overlays[e.frameRef] = {center: f(e.points.center), needleTip: f(e.points.needleTip), minMark: f(e.points.minMark), maxMark: f(e.points.maxMark)}
+        }
       }
     }
     this.roundCard.showSigned(this._code, "Sending, code " + this._code)
-    const res = await this.sender.send(sheet, this._digest, frames)
+    const res = await this.sender.send(sheet, this._digest, frames, overlays)
     this._sendStatus = res.status
     this._sendOk = res.ok
     this._doorUrl = res.doorUrl

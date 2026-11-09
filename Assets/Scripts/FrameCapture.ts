@@ -66,6 +66,7 @@ export class FrameCapture extends BaseScriptComponent {
   private camTex: Texture | null = null
   private updates: number = 0
   private frames: {[ref: string]: string} = {}
+  private metas: {[ref: string]: {w: number; h: number; stretchX: number}} = {}
   private order: string[] = []
   private counter: number = 0
   private busy: boolean = false
@@ -100,6 +101,10 @@ export class FrameCapture extends BaseScriptComponent {
 
   get frameCount(): number {
     return this.order.length
+  }
+
+  frameMeta(ref: string): {w: number; h: number; stretchX: number} | null {
+    return this.metas[ref] !== undefined ? this.metas[ref] : null
   }
 
   frameB64(ref: string): string | null {
@@ -215,10 +220,12 @@ export class FrameCapture extends BaseScriptComponent {
       this.counter += 1
       const ref = "F" + this.counter + "-" + gaugeId
       this.frames[ref] = b64
+      this.metas[ref] = {w: w, h: h, stretchX: this.stretchX()}
       this.order.push(ref)
       while (this.order.length > 8) {
         const old = this.order.shift() as string
         delete this.frames[old]
+        delete this.metas[old]
       }
       const bytes = (Base64.decode(b64) as unknown as Uint8Array).length
       const ms = Math.round((getTime() - t0) * 1000)

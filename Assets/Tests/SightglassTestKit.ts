@@ -106,8 +106,13 @@ export async function waitMode(main: SightglassMain, id: string, modes: TagMode[
 
 // Pinch the dot and wait for the tag to settle on a proposal or on Can't read it.
 export async function readByPinch(it: DefaultLeafInteractor, main: SightglassMain, id: string): Promise<void> {
+  if (main.reader.mode === "live") {
+    // A live read needs the dial in view, so turn the room to it first, as an engineer turns to a gauge.
+    aimDial(main, id)
+    await waitUntil(() => main.capture.dialInView(id), WAIT_MS, () => id + " dial not in view for a live read")
+  }
   await pinchDot(it, main, id)
-  await waitMode(main, id, ["proposal", "cant"])
+  await waitMode(main, id, ["proposal", "cant"], main.reader.mode === "live" ? 30000 : WAIT_MS)
 }
 
 export function numberOf(headline: string): number {

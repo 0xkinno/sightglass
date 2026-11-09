@@ -53,3 +53,8 @@ The fogged dial (AE1-LO) came back "Can't read it" in 1 of 5 captures with the o
 ## Scale hint tried and dropped (9 November 2026)
 
 After the live c1 run showed the model putting the scale-end marks left and right of the pivot, a second 64 capture run added one line to the live request saying the scale sweeps 270 degrees with the lowest mark at the lower left and the highest at the lower right. It was not better: median error 2.24 ticks against 1.25, within one tick 8 of 32 against 15 of 34, three legible dials refused against one. The three biased gauges (jacket water outlet, scavenge air, starting air) stayed 5 to 7 ticks high. The hint is off by default and both logs are kept: `preview-reads.log` (shipped) and `preview-reads-scale-hint.log`.
+
+## Door crops and the wild set (9 November 2026)
+
+- **The door draws the reader's points.** `SheetSender` now sends, beside the frames, the four points as fractions of the crop that was sent (`overlays`, outside the digest). The Lens converts its corrected points back to the stored image before sending. A live round of eight reads was sent from the preview, accepted with HTTP 201, read back, and drawn with teal rings on every crop (`devpost/evidence/leaf-p5-send-live.log`, `docs/screens/door-crops-live.webp`). The rings make the open problem visible: on the crops the lowest and highest mark rings sit below the dial.
+- **Wild set not finished.** The pre-registered model returns 404 for the API key available, the named replacement did not answer, and the evaluation was moved to gemini-3.5-flash by Amendment 1 (committed before the run). The run is slow and had not completed when this was written. No figure is claimed.

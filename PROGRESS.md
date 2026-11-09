@@ -87,3 +87,9 @@ Close-out (9 Nov 2026)
 - Docs: README, docs/DESIGN.md, DISCLOSURES.md, THIRD_PARTY_NOTICES.md, SDK_SURFACE.md, EVIDENCE.md, JUDGE.md, MILESTONES.md, FACTS.json, devpost/BUILD_LOG.md.
 - Not done: P7 wild-set evaluation (needs a Gemini API key and the MeasureBench download), a production deploy of the new web pages (blocked in this session; run `cd web && npx vercel --prod`), the demo video, SUBMISSION_DEVPOST.md, the red team pass, Lighthouse run, the door drawing the four reader points on a crop (the crop pixels and the corrected x axis are not stored together).
 - TASK.md was moved to reference/ (gitignored) at close-out. Its last state is there.
+
+Close-out 2 (9 Nov 2026)
+- Door crops done: overlays travel beside the frames, the door draws the four reader points, live round sent from the preview (201), log in devpost/evidence/leaf-p5-send-live.log. New door deployed to production with `vercel --prod`.
+- P7: selection and pre-registration committed before any call (hash 84b3fed), amendment 1 for the model (0ce4008). The run is slow and not finished; no figure is claimed anywhere. Re-run after it completes: `EVAL_MODEL=gemini-3.5-flash node --env-file=.env node_modules/tsx/dist/cli.mjs eval/run_eval.ts --arm both --limit 200`.
+- CI: the gitleaks job failed on false positives in the generic rule; `.gitleaks.toml` allowlists env var reads, digests, ids and lockfile hashes. Check the next run.
+- Demo film built in reference/video (gitignored): sightglass_demo.mp4, 2:50, 1080p, voice over 2:40.

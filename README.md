@@ -183,7 +183,11 @@ All values below are read from [`docs/FACTS.json`](docs/FACTS.json). The room, t
 | Signed round posted to the door | HTTP 201, read back with a matching digest; a forced 500 shows Not sent | LEAF `extra-send` |
 | Web door | 324 checks pass: 6 viewports x 5 pages, no overlap, no horizontal scroll, no serious accessibility violations, no console errors | `web/tests/viewports.mjs` |
 
-**Wild set.** An evaluation on real dial photos, point against read, is pre-registered in [`headstart/eval/PREREGISTRATION.md`](headstart/eval/PREREGISTRATION.md). It has not been run, because it needs a Gemini API key and the MeasureBench download. No figure is claimed for it.
+**Wild set.** An evaluation on real dial photos, point against read, is pre-registered in [`eval/PREREGISTRATION.md`](eval/PREREGISTRATION.md), with the selection hash committed before any model call. It is not finished, so no figure is claimed. The pre-registered model is no longer served to the API key used, and the replacement the API names did not answer. Amendment 1 moves both arms to a model that did answer, so the result will describe the method with a different model than the product uses. The run was started and is slow, and partial output is not summarised anywhere until it completes.
+
+**The door shows what the reader saw.** The handover sheet draws the four points the reader placed on the crop that was sent. Below is a real round, sent from the Lens in live mode, as the chief engineer sees it. It also shows the weakness plainly: the lowest and highest mark rings sit below the dial, not on its scale ends.
+
+<p align="center"><img src="docs/screens/door-crops-live.webp" alt="Handover sheet with two live crops: teal rings mark the pivot, needle tip, lowest mark and highest mark as the reader placed them"></p>
 
 ## Snap's SPECS guidance, measured
 
@@ -204,7 +208,7 @@ All values below are read from [`docs/FACTS.json`](docs/FACTS.json). The room, t
 | Camera crop of the composite frame | Live (`FrameCapture.ts`) |
 | Model call through Remote Service Gateway | Live (`GaugeReader.ts`) |
 | Geometry, verdicts, evidence gate | Live, the same files the unit tests run |
-| Sending the signed sheet | Live, to the handover door (`SheetSender.ts`) |
+| Sending the signed sheet, with the crops and the reader's points | Live, to the handover door (`SheetSender.ts`) |
 | Round card limits | An example round card, not a real ship's |
 | Alarm and click sounds | Plain synthesised tones |
 

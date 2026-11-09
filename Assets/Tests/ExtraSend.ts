@@ -7,7 +7,7 @@
 import {Scenario} from "Leaf.lspkg/Scenarios/scenario/Scenario"
 import {expect} from "Leaf.lspkg/Utils/common/Expect"
 import {sleep} from "Leaf.lspkg/Utils/common/Utils"
-import {waitUntil, beginRound, newInteractor, readByPinch, pinchAction, pinchCard, waitMode, ALL_IDS} from "./SightglassTestKit"
+import {waitUntil, beginRound, newInteractor, readByPinch, pinchAction, pinchCard, waitMode, tag, ALL_IDS} from "./SightglassTestKit"
 
 @component
 export class ExtraSend extends Scenario {
@@ -23,7 +23,8 @@ export class ExtraSend extends Scenario {
     try {
       for (const id of ALL_IDS) {
         await readByPinch(it, main, id)
-        if (id === "AE1-LO") {
+        // A live read can come back Can't read it; then the engineer reads by eye, as the card offers.
+        if (id === "AE1-LO" || tag(main, id).buttons.indexOf("ACCEPT") < 0) {
           await pinchAction(it, main, id, "BY_EYE")
           await waitMode(main, id, ["adjust"])
           await pinchAction(it, main, id, "DONE")
