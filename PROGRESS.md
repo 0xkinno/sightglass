@@ -11,4 +11,13 @@ Decisions and facts for later phases:
 - Do not place the RemoteServiceGatewayExamples prefab.
 - The scene has one object, RSG_Credentials, holding the credentials component.
 
-Next: P1 (plan-lens, run by Kinnoski).
+## P1 (9 Nov 2026)
+Done. Kinnoski answered the plan-lens interview in his own words and approved devpost/design-brief.md (status: approved). MOMENT.md and THESIS.md written.
+
+Facts for later phases:
+- The interview first drifted to a coding-agent dashboard. Kinnoski dropped that and restated the engine-room round concept. The approved brief is the engine-room one.
+- Brief defaults, marked (default) in the brief: virtual engine room with three stand-in gauges, a pinch on a dot beside a gauge stands for looking at it, round sheet about 60 to 80 cm away and 30 by 20 cm, buttons at least 4 cm, Correct by plus and minus buttons, Send as a pinch button.
+- The plan-lens skill is not registered as a callable skill in this harness. It was run from agent/skills/plan-lens/SKILL.md.
+- THESIS.md PROOF line carries no figures until docs/FACTS.json exists.
+
+Next: P2.

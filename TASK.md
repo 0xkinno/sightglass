@@ -16,8 +16,8 @@ Tick `[x]` only when done and verified. One phase per session. Phase details: re
 - [x] PLATFORM_PROBE.md written from those real outputs; probe objects deleted from the scene
 
 ## P1. Plan (Kinnoski answers plan-lens himself)
-- [ ] `devpost/design-brief.md` written by plan-lens and approved (status: approved)
-- [ ] Brief committed unedited; MOMENT.md and THESIS.md written from Part 4
+- [x] `devpost/design-brief.md` written by plan-lens and approved (status: approved)
+- [x] Brief committed unedited; MOMENT.md and THESIS.md written from Part 4
 
 ## P2. Core
 - [ ] Core files copied to `Assets/Scripts/Core/`, tests to `tests/`, root package.json with tsx and typescript
