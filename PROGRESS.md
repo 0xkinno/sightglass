@@ -70,3 +70,5 @@ P4 (9 Nov 2026), mostly done. Numbers and misses: devpost/FINDINGS.md. Raw log: 
 - Open boxes: GaugeReader tokens (gateway returns no usage count), fault modes not run in the preview, band arc seen on crops but the spatial click on a dot was not checked by eye (the PreviewInteract tool installs a package that breaks compilation here, so it was removed).
 - Scene committed with token inputs at placeholders, reader mode fixture, AccuracyRun.run false. To re-run the accuracy driver: generate tokens, set AccuracyRun.run true, refresh, then reset tokens before any commit.
 - Editing any .ts while the preview runs resets the lens and restarts a run in progress.
+
+Update: the spatial click was then checked by eye by the owner (pinch on the STG-OIL dot in the preview opened the tag with 48 C Normal, band arc on the rim, Accept, Correct, By eye). That P3 box is ticked. P4 open items are unchanged: token count, fault modes not run in the preview, fog stand-in too light, pointing accuracy.
