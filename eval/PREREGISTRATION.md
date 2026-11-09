@@ -27,3 +27,7 @@ Committed before any model call. The commit hash of this file is quoted in PROOF
 - Arm B refuses more than half of the dials arm A read correctly.
 
 Either outcome is reported in the README's "Measured" section as found.
+
+## Amendment 1 (9 November 2026, before any successful model call)
+
+The first attempt to call gemini-2.5-flash with the API key available for this run failed with HTTP 404: the model is no longer available to new users of the direct API. No result was produced. Both arms will instead use `gemini-3.8-flash`, the model the API names as its replacement, temperature 0, everything else unchanged. The product itself still calls gemini-2.5-flash through Snap's Remote Service Gateway, so this evaluation measures the point-versus-read method with a different model and says so wherever it is quoted.

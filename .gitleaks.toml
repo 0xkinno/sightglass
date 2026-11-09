@@ -1,0 +1,24 @@
+title = "sightglass"
+
+[extend]
+useDefault = true
+
+# The scanner's generic rule reads these as secrets. None is: they are environment variable names, content
+# digests, Lens Studio object ids, evaluation item fields and lockfile hashes. The Remote Service Gateway tokens in
+# the scene are placeholder strings, and real keys live only in the gitignored .env.
+[allowlist]
+description = "false positives: env var reads, digests, ids, lockfile hashes"
+regexes = [
+  '''process\.env\.[A-Z0-9_]+''',
+  '''digest[=:]\s*"?[0-9a-f]{64}''',
+  '''\[INSERT [A-Z ]+TOKEN\]''',
+]
+paths = [
+  '''Assets/Scene\.scene''',
+  '''.*\.meta$''',
+  '''.*package-lock\.json$''',
+  '''devpost/evidence/.*''',
+  '''eval/data/items\.jsonl''',
+  '''docs/FACTS\.json''',
+  '''web/lib/facts\.json''',
+]

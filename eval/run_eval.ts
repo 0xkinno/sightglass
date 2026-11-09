@@ -12,7 +12,7 @@
 
 import {readFileSync, writeFileSync, mkdirSync, existsSync, appendFileSync} from "node:fs"
 import {GoogleGenAI} from "@google/genai"
-import {READER_MODEL, READER_PROMPT, READER_SCHEMA, parseReader} from "../Assets/Scripts/Core/ReaderContract"
+import {READER_MODEL as PRODUCT_MODEL, READER_PROMPT, READER_SCHEMA, parseReader} from "../Assets/Scripts/Core/ReaderContract"
 import {readDial} from "../Assets/Scripts/Core/DialGeometry"
 
 type Interval = [number, number]
@@ -24,6 +24,10 @@ interface Item {
   width: number
   height: number
 }
+
+// The pre-registered model is the product model. The API key used for this run cannot call it (404, no longer
+// available to new users), so EVAL_MODEL overrides it. See the amendment in PREREGISTRATION.md.
+const READER_MODEL = process.env.EVAL_MODEL || PRODUCT_MODEL
 
 function argOf(name: string, dflt: string): string {
   const i = process.argv.indexOf("--" + name)
