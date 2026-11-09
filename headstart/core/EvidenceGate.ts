@@ -8,7 +8,7 @@
 //   BY_EYE     the dial could not be read from the frame; the engineer entered the value
 //   NOT_READ   nothing entered yet (the round cannot be signed)
 
-import {readDial, toLogResolution, DialResult, DialPoints} from "./DialGeometry"
+import {readDial, toLogResolution, DialResult, DialRefusal, DialPoints} from "./DialGeometry"
 import {ParseResult} from "./ReaderContract"
 import {GaugeSpec} from "./RoundPlan"
 import {verdictFor, changeCheck, Verdict} from "./Verdict"
@@ -55,7 +55,7 @@ export function propose(
 ): Proposal {
   const base = {gaugeId: g.id, frameRef, atMs, points: parsed.ok ? parsed.out.points : null}
   if (!parsed.ok) {
-    return {...base, kind: "CANT_READ", value: null, plusMinus: null, verdict: null, notes: ["No usable answer from the reader: " + parsed.why], modelValue: null}
+    return {...base, kind: "CANT_READ", value: null, plusMinus: null, verdict: null, notes: ["No usable answer from the reader: " + (parsed as {ok: false; why: string}).why], modelValue: null}
   }
   const out = parsed.out
   if (!out.legible) {
@@ -65,7 +65,7 @@ export function propose(
   // The scale always comes from the round card (a person set it), never from the model.
   const r: DialResult = readDial(out.points, {min: g.min, max: g.max, unit: g.unit, minorTick: g.minorTick})
   if (!r.ok) {
-    return {...base, kind: "CANT_READ", value: null, plusMinus: null, verdict: null, notes: ["Can't read it: " + r.reason.split("-").join(" ")], modelValue: out.modelValue}
+    return {...base, kind: "CANT_READ", value: null, plusMinus: null, verdict: null, notes: ["Can't read it: " + (r as DialRefusal).reason.split("-").join(" ")], modelValue: out.modelValue}
   }
   const notes: string[] = []
   let kind: ProposalKind = "PROPOSED"

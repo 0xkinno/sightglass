@@ -1,4 +1,4 @@
-﻿# PROGRESS
+# PROGRESS
 
 ## P0 (9 Nov 2026)
 Done. Platform probes (a) to (d) pass. Evidence: devpost/evidence/PLATFORM_PROBE.md.
@@ -21,3 +21,7 @@ Facts for later phases:
 - THESIS.md PROOF line carries no figures until docs/FACTS.json exists.
 
 Next: P2.
+
+## P2 (9 Nov 2026)
+Done. Core in Assets/Scripts/Core, tests in tests/, root package.json. 17 of 17 pass under tsx. Core compiles in Lens Studio.
+One change to the headstart Core: two type casts in EvidenceGate.ts, because Lens Studio's non-strict TypeScript does not narrow the union types. Behaviour is unchanged and the tests still pass.

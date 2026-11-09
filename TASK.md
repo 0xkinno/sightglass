@@ -1,4 +1,4 @@
-﻿# TASK.md (Sightglass)
+# TASK.md (Sightglass)
 
 Tick `[x]` only when done and verified. One phase per session. Phase details: reference/SIGHTGLASS_BUILD_INSTRUCTION.md Part 10.
 
@@ -20,9 +20,9 @@ Tick `[x]` only when done and verified. One phase per session. Phase details: re
 - [x] Brief committed unedited; MOMENT.md and THESIS.md written from Part 4
 
 ## P2. Core
-- [ ] Core files copied to `Assets/Scripts/Core/`, tests to `tests/`, root package.json with tsx and typescript
-- [ ] `npx tsx --test tests/*.test.ts` passes (17 at start)
-- [ ] Core compiles inside Lens Studio (RecompileTypeScriptTool clean)
+- [x] Core files copied to `Assets/Scripts/Core/`, tests to `tests/`, root package.json with tsx and typescript
+- [x] `npx tsx --test tests/*.test.ts` passes (17 at start)
+- [x] Core compiles inside Lens Studio (RecompileTypeScriptTool clean)
 
 ## P3. Scene and flow (fixture reader)
 - [ ] Three stations at real scale, 8 dials, numerals and units on faces, fog quad on AE1-LO, labelled stand-in
