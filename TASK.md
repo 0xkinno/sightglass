@@ -1,19 +1,19 @@
-# TASK.md (Sightglass)
+﻿# TASK.md (Sightglass)
 
 Tick `[x]` only when done and verified. One phase per session. Phase details: reference/SIGHTGLASS_BUILD_INSTRUCTION.md Part 10.
 
 ## P0. Setup and platform probe
-- [ ] Lens Studio 5.23.2 open, signed in; SPECS Base Template saved as `Sightglass`
-- [ ] Claude Code started in the project folder; `/mcp` shows lens-studio; `/plugin` shows CLAD
-- [ ] `npx skills add challengepost/learn-specs --all -y`
-- [ ] `.gitignore` (reference/, eval/data/, node_modules/, Cache/, Workspaces/, .mcp.json, .env*) committed first
-- [ ] git identity set to 0xkinno; `.github/workflows/no-claude-attribution.yml` and `checks.yml` committed
-- [ ] `reference/` populated (samples, dogwatch, ls-extensions, learn-specs, MeasureBench); `reference/banned_names.txt` written
-- [ ] PLATFORM_PROBE (a) RSG token plugin + one Gemini text call answered (model id, ms)
-- [ ] PLATFORM_PROBE (b) composite crop encodes to a non-blank JPEG in the preview
-- [ ] PLATFORM_PROBE (c) one vision call on a composite crop returns parseable JSON
-- [ ] PLATFORM_PROBE (d) InternetModule POST returns 200 with Device Type Override SPECS 27
-- [ ] PLATFORM_PROBE.md written from those real outputs; probe objects deleted from the scene
+- [x] Lens Studio 5.23.2 open, signed in; SPECS Base Template saved as `Sightglass`
+- [x] Claude Code started in the project folder; `/mcp` shows lens-studio; `/plugin` shows CLAD
+- [x] `npx skills add challengepost/learn-specs --all -y`
+- [x] `.gitignore` (reference/, eval/data/, node_modules/, Cache/, Workspaces/, .mcp.json, .env*) committed first
+- [x] git identity set to 0xkinno; `.github/workflows/no-claude-attribution.yml` and `checks.yml` committed
+- [x] `reference/` populated (samples, dogwatch, ls-extensions, learn-specs, MeasureBench); `reference/banned_names.txt` written
+- [x] PLATFORM_PROBE (a) RSG token plugin + one Gemini text call answered (model id, ms)
+- [x] PLATFORM_PROBE (b) composite crop encodes to a non-blank JPEG in the preview
+- [x] PLATFORM_PROBE (c) one vision call on a composite crop returns parseable JSON
+- [x] PLATFORM_PROBE (d) InternetModule POST returns 200 with Device Type Override SPECS 27
+- [x] PLATFORM_PROBE.md written from those real outputs; probe objects deleted from the scene
 
 ## P1. Plan (Kinnoski answers plan-lens himself)
 - [ ] `devpost/design-brief.md` written by plan-lens and approved (status: approved)
