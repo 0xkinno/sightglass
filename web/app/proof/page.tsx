@@ -65,7 +65,7 @@ export default function Proof() {
           <p><b>Fogged dial.</b> The fog quad in the stand-in scene is too light. The reader flagged the dial unreadable {a.hide.foggedCantRead} of {a.hide.foggedCaptures} times with the overlay hidden. The legibility gate was not properly tested by this stand-in.</p>
           <p><b>A wrong read can look alarming.</b> {a.hide.falseAlarms} reads of the engine jacket water outlet gauge came out well above the true value and crossed into ALARM, with the overlay hidden, although the plant value was normal. A person must still accept each one, and the tag shows the number and the verdict word, but the gate cannot catch a wrong number a person agrees with.</p>
           <p><b>Three gauges carry a steady bias.</b> The jacket water outlet, scavenge air and starting air gauges read 4 to 7 ticks high from the points, while the model&apos;s own number for them is within about one tick. The pointing step is the weak part and is not fixed. A line telling the model how the scale is laid out was tried and did not help.</p>
-          <p><b>Overlay hidden or shown.</b> No difference this sample can show. Hiding it costs a few frames and removes the risk, so it stays.</p>
+          <p><b>Overlay hidden or shown.</b> No difference this set of captures can show. Hiding it costs a few frames and removes the risk, so it stays.</p>
           <p><b>Tokens.</b> The gateway response carries no usage count, so tokens per read are not recorded. Nothing is estimated.</p>
           <p><b>Wild set.</b> The 200 real dial photos evaluation is pre-registered in <span className="mono">headstart/eval/PREREGISTRATION.md</span> and has not been run, so this page states no figure for it.</p>
         </div>

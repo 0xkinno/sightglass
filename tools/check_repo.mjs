@@ -30,7 +30,7 @@ for (const p of tracked) {
   }
 }
 
-// 2. banned names (competitor and sample names) live only in a gitignored file
+// 2. banned names (names of other projects) live only in a gitignored file
 const banned = existsSync("reference/banned_names.txt")
   ? readFileSync("reference/banned_names.txt", "utf8").split("\n").map((l) => l.trim()).filter((l) => l && !l.startsWith("#"))
   : []

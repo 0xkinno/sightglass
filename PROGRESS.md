@@ -65,7 +65,7 @@ P3 carry-over (9 Nov 2026): scene saved, committed (16a107c) with RSG token inpu
 
 P4 (9 Nov 2026), mostly done. Numbers and misses: devpost/FINDINGS.md. Raw log: devpost/evidence/preview-reads.log.
 - Built: Assets/Scripts/FrameCapture.ts (single requestCamera owner, rim-projected composite crop, overlay hidden for the capture frame), live GaugeReader (RSG, gemini-2.5-flash), modes fixture, live, replay, fault-lies, fault-garbage, driver Assets/Tests/AccuracyRun.ts, fixtures in Assets/Tests/fixtures (8 recorded live replies).
-- Measured: 40 overlay-off and 24 overlay-on live captures. Median error 1.25 ticks, three gauges biased 4 to 6 ticks, one false ALARM on ME-JCW-OUT from a wrong point read. Fog stand-in too light (read through 7 of 8 times). Overlay on or off: no difference visible at this sample size.
+- Measured: 40 overlay-off and 24 overlay-on live captures. Median error 1.25 ticks, three gauges biased 4 to 6 ticks, one false ALARM on ME-JCW-OUT from a wrong point read. Fog stand-in too light (read through 7 of 8 times). Overlay on or off: no difference visible at this set size.
 - Preview composite is squashed 0.5 horizontally; FrameCapture measures it and GaugeReader corrects x before the geometry.
 - Open boxes: GaugeReader tokens (gateway returns no usage count), fault modes not run in the preview, band arc seen on crops but the spatial click on a dot was not checked by eye (the PreviewInteract tool installs a package that breaks compilation here, so it was removed).
 - Scene committed with token inputs at placeholders, reader mode fixture, AccuracyRun.run false. To re-run the accuracy driver: generate tokens, set AccuracyRun.run true, refresh, then reset tokens before any commit.
@@ -82,7 +82,7 @@ P5 (9 Nov 2026), done. Logs: devpost/evidence/leaf-p5-suite.log, devpost/evidenc
 
 Close-out (9 Nov 2026)
 - Scale marks: one live read had put the scale ends on the wrong sides. A line telling the model how a 270 degree scale is laid out was tried in a second 64 capture run. It was not better (median error 2.24 ticks against 1.25, within one tick 8 of 32 against 15 of 34), so it is off by default and the log is kept as preview-reads-scale-hint.log. The three biased gauges remain a known open problem.
-- Rename: the example round card constant is now UMS_EVENING_ROUND; the scene's machinery space object is named without the word sample.
+- Rename: the example round card constant is now UMS_EVENING_ROUND; the scene's machinery space object was renamed.
 - Web door: landing, /how, /proof, /judge and the handover pages, built from docs/FACTS.json (scripts/facts.mjs). Headless Chrome run, 6 viewports x 5 pages, 324 checks, 0 problems. Hero photograph optimised from 149 KB to 59 KB (plus a 27 KB mobile crop). The instrument sits in its own block under the hero so it does not cover the photograph.
 - Docs: README, docs/DESIGN.md, DISCLOSURES.md, THIRD_PARTY_NOTICES.md, SDK_SURFACE.md, EVIDENCE.md, JUDGE.md, MILESTONES.md, FACTS.json, devpost/BUILD_LOG.md.
 - Not done: P7 wild-set evaluation (needs a Gemini API key and the MeasureBench download), a production deploy of the new web pages (blocked in this session; run `cd web && npx vercel --prod`), the demo video, SUBMISSION_DEVPOST.md, the red team pass, Lighthouse run, the door drawing the four reader points on a crop (the crop pixels and the corrected x axis are not stored together).
