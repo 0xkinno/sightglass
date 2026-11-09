@@ -25,3 +25,14 @@ Next: P2.
 ## P2 (9 Nov 2026)
 Done. Core in Assets/Scripts/Core, tests in tests/, root package.json. 17 of 17 pass under tsx. Core compiles in Lens Studio.
 One change to the headstart Core: two type casts in EvidenceGate.ts, because Lens Studio's non-strict TypeScript does not narrow the union types. Behaviour is unchanged and the tests still pass.
+
+## P6 (9 Nov 2026), partly done
+Built in web/, not deployed yet.
+- Next.js 15 app: /api/rounds (POST, GET), /api/rounds/[id], /api/rounds/[id]/countersign, /api/status, pages /, /handover, /handover/[id] with a Countersign button bound to the digest.
+- Digest check uses Core copies in web/lib/core (RoundSheet, Sha256 and what they import). Vercel builds from web/ only, so the copies are committed. `npm run sync-core` refreshes them, `node scripts/sync-core.mjs --check` fails if they drift.
+- Checked locally with no store: typecheck clean, 5 door tests pass (digest matches Node crypto, tampered value gives 422, unknown fields refused), build passes, a good sheet reaches the store step and returns 503 "not configured", a tampered sheet returns 422.
+- Not verified: anything against a real Blob store (post, list, get, countersign, measured /api/status).
+- Rate limit is in memory per server instance, so it is a soft cap. The door says so.
+- Frames travel in the POST as a `frames` map of frameRef to data URL, outside the digest. Lens SheetSender must send them. Points are drawn on the crop only when they are normalised 0..1.
+- Fonts: Zodiak and Switzer are not in the repo; JetBrains Mono is. Hero, /proof, /how, /judge are P9.
+- Waiting on Kinnoski: Vercel project name and URL, then create, link a Blob store, deploy.
