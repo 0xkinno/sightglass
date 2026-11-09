@@ -13,7 +13,7 @@
 |---|---|
 | Handover door | https://sightglass-kinno.vercel.app (no login; signed round sheets land here and the chief engineer countersigns) |
 | For judges | [`docs/JUDGE.md`](docs/JUDGE.md) and the door's `/judge` page: a 60 second, a 3 minute and a 10 minute route |
-| Video | Added to the submission form at the end. It is recorded in the Lens Studio preview. |
+| Video | https://youtu.be/66xntf96bA4 (2:50): the live door and the Lens Studio preview, with narration |
 | Built with | Lens Studio 5.23.2, CLAD and the Lens Studio MCP, LEAF, Spectacles Interaction Kit, Spectacles UI Kit, CameraModule, Remote Service Gateway (Gemini 2.5 Flash), InternetModule |
 | Planned with | Devpost Learn `plan-lens`: [`devpost/design-brief.md`](devpost/design-brief.md) |
 | Measured | [`docs/FACTS.json`](docs/FACTS.json), written by `scripts/facts.mjs` from the evidence files. Every number below comes from it. |
@@ -62,10 +62,11 @@ A reading in alarm turns its tag coral, plays a low two-note cue from the dial, 
 
 ## Explore it in two minutes
 
-1. Open the [handover door](https://sightglass-kinno.vercel.app/handover) and open a signed round sheet. The digest line says whether it still matches.
-2. Read [`/proof`](https://sightglass-kinno.vercel.app/proof), including the misses.
-3. Run the tests: `npm ci && npm test` (17 Core tests).
-4. In Lens Studio 5.23.2, open `Sightglass.esproj`, set `scenarioId` on the `InLensRunner` object (for example `extra-pinch-targets`), refresh the preview and read the `LEAF_INLENS` lines in the log.
+1. Watch the [film](https://youtu.be/66xntf96bA4) (2:50).
+2. Open the [handover door](https://sightglass-kinno.vercel.app/handover) and open a signed round sheet. The digest line says whether it still matches.
+3. Read [`/proof`](https://sightglass-kinno.vercel.app/proof), including the misses.
+4. Run the tests: `npm ci && npm test` (17 Core tests).
+5. In Lens Studio 5.23.2, open `Sightglass.esproj`, set `scenarioId` on the `InLensRunner` object (for example `extra-pinch-targets`), refresh the preview and read the `LEAF_INLENS` lines in the log.
 
 ## How it works
 

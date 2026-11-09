@@ -16,6 +16,7 @@ export default function Judge() {
           <p className="label">60 seconds</p>
           <h3>See it</h3>
           <ol className="fog" style={{paddingLeft: 20}}>
+            <li>Watch <a href="https://youtu.be/66xntf96bA4">the film</a> (2:50).</li>
             <li>Read the landing page: <Link href="/">the round, shown</Link>.</li>
             <li>Open a signed sheet on <Link href="/handover">the handover door</Link>.</li>
             <li>Check the digest line says it matches.</li>

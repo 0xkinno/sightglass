@@ -14,6 +14,7 @@ export function Footer() {
           <li><Link href="/how">How it works</Link></li>
           <li><Link href="/proof">Proof</Link></li>
           <li><Link href="/judge">For judges</Link></li>
+          <li><a href="https://youtu.be/66xntf96bA4">Film</a></li>
           <li><a href="https://github.com/0xkinno/sightglass">Source on GitHub</a></li>
         </ul>
       </div>

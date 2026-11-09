@@ -63,7 +63,8 @@ export default function Home() {
                 Sightglass reads each gauge as you look at it, and you sign a log where nothing was assumed.
               </p>
               <div className="actions">
-                <Link href="#round" className="btn solid">See the round</Link>
+                <a href="https://youtu.be/66xntf96bA4" className="btn solid">Watch the film (2:50)</a>
+                <Link href="#round" className="btn brassline">See the round</Link>
                 <Link href="/handover" className="btn">Open the handover</Link>
               </div>
             </div>
