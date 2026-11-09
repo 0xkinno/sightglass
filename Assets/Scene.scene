@@ -374,8 +374,7 @@
     plateWidthCm: true
     plateHeightCm: true
     buttonWidthCm: true
-    buttonHeightCm: true
-    dotDiameterCm: true
+    barGapCm: true
   ScriptTypesDefault:
     {}
   ScriptInputs:
@@ -385,8 +384,9 @@
       plateWidthCm: !<float> 9.000000
       plateHeightCm: !<float> 5.000000
       buttonWidthCm: 4.800000
-      buttonHeightCm: 4.200000
-      dotDiameterCm: !<float> 4.000000
+      buttonHeightCm: 4.600000
+      barGapCm: 2.200000
+      dotDiameterCm: !<float> 5.000000
   ScriptTypes:
     "":
       {}
@@ -515,6 +515,21 @@
     - !<own> 94020a53-fca8-4290-b7a7-b715181e0b4b
   Components:
     []
+- !<SceneObject/1aab8045-b318-4947-be5c-851ca9e95fe2>
+  PrefabRemaps:
+    []
+  Name: SheetSender
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> 8e398b7a-b8ec-4b32-a4bc-9f24040148b8
 - !<SceneObject/1c4ee75d-c6cd-431b-ac85-671139ec41a6>
   PrefabRemaps:
     []
@@ -585,8 +600,7 @@
     plateWidthCm: true
     plateHeightCm: true
     buttonWidthCm: true
-    buttonHeightCm: true
-    dotDiameterCm: true
+    barGapCm: true
   ScriptTypesDefault:
     {}
   ScriptInputs:
@@ -596,8 +610,9 @@
       plateWidthCm: !<float> 9.000000
       plateHeightCm: !<float> 5.000000
       buttonWidthCm: 4.800000
-      buttonHeightCm: 4.200000
-      dotDiameterCm: !<float> 4.000000
+      buttonHeightCm: 4.600000
+      barGapCm: 2.200000
+      dotDiameterCm: !<float> 5.000000
   ScriptTypes:
     "":
       {}
@@ -929,8 +944,7 @@
     plateWidthCm: true
     plateHeightCm: true
     buttonWidthCm: true
-    buttonHeightCm: true
-    dotDiameterCm: true
+    barGapCm: true
   ScriptTypesDefault:
     {}
   ScriptInputs:
@@ -940,8 +954,9 @@
       plateWidthCm: !<float> 9.000000
       plateHeightCm: !<float> 5.000000
       buttonWidthCm: 4.800000
-      buttonHeightCm: 4.200000
-      dotDiameterCm: !<float> 4.000000
+      buttonHeightCm: 4.600000
+      barGapCm: 2.200000
+      dotDiameterCm: !<float> 5.000000
   ScriptTypes:
     "":
       {}
@@ -1346,7 +1361,7 @@
   LocalTransform: !<TransformEntity>
     Position: {x: 13.500000, y: 0.000000, z: 1.000000}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
-    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    Scale: {x: 1.120000, y: 1.120000, z: 1.120000}
     HasSegmentScaleCompensation: false
   Children:
     []
@@ -1481,7 +1496,7 @@
   LocalTransform: !<TransformEntity>
     Position: {x: 13.500000, y: 0.000000, z: 1.000000}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
-    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    Scale: {x: 1.060000, y: 1.060000, z: 1.060000}
     HasSegmentScaleCompensation: false
   Children:
     []
@@ -1496,7 +1511,7 @@
   LocalTransform: !<TransformEntity>
     Position: {x: 13.500000, y: 0.000000, z: 1.000000}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
-    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    Scale: {x: 1.270000, y: 1.270000, z: 1.270000}
     HasSegmentScaleCompensation: false
   Children:
     []
@@ -1511,7 +1526,7 @@
   LocalTransform: !<TransformEntity>
     Position: {x: 13.500000, y: 0.000000, z: 1.000000}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
-    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    Scale: {x: 1.040000, y: 1.040000, z: 1.040000}
     HasSegmentScaleCompensation: false
   Children:
     []
@@ -1621,9 +1636,10 @@
       plant: !<MappingBased.AssignableType_1> cba42557-0b61-4273-a50c-2b2c6830b816
       reader: !<MappingBased.AssignableType_2> f9f9937c-aa0e-4be7-b118-ca02aa25dc34
       capture: !<MappingBased.AssignableType_3> 2e48748c-3970-4404-9a1b-87b9b13fdd8b
-      roundCard: !<MappingBased.AssignableType_4> 5399dbe7-9a21-4e58-8a16-d43657934dfa
-      chevron: !<MappingBased.AssignableType_5> 004b7832-3e09-4f0d-895a-355b44e12620
-      audio: !<MappingBased.AssignableType_6> 4a4ac11b-6a0e-4198-b552-8f7b90fc6e9c
+      sender: !<MappingBased.AssignableType_4> 8e398b7a-b8ec-4b32-a4bc-9f24040148b8
+      roundCard: !<MappingBased.AssignableType_5> 5399dbe7-9a21-4e58-8a16-d43657934dfa
+      chevron: !<MappingBased.AssignableType_6> 004b7832-3e09-4f0d-895a-355b44e12620
+      audio: !<MappingBased.AssignableType_7> 4a4ac11b-6a0e-4198-b552-8f7b90fc6e9c
       machineRoot: !<reference.SceneObject> c4f0a0ef-3ac2-4f74-ba19-8e6e522e1045
       eyeHeightCm: !<float> 165.000000
       placeFloorFromCamera: true
@@ -1753,8 +1769,7 @@
     plateWidthCm: true
     plateHeightCm: true
     buttonWidthCm: true
-    buttonHeightCm: true
-    dotDiameterCm: true
+    barGapCm: true
   ScriptTypesDefault:
     {}
   ScriptInputs:
@@ -1764,8 +1779,9 @@
       plateWidthCm: !<float> 9.000000
       plateHeightCm: !<float> 5.000000
       buttonWidthCm: 4.800000
-      buttonHeightCm: 4.200000
-      dotDiameterCm: !<float> 4.000000
+      buttonHeightCm: 4.600000
+      barGapCm: 2.200000
+      dotDiameterCm: !<float> 5.000000
   ScriptTypes:
     "":
       {}
@@ -1916,8 +1932,7 @@
     plateWidthCm: true
     plateHeightCm: true
     buttonWidthCm: true
-    buttonHeightCm: true
-    dotDiameterCm: true
+    barGapCm: true
   ScriptTypesDefault:
     {}
   ScriptInputs:
@@ -1927,8 +1942,9 @@
       plateWidthCm: !<float> 9.000000
       plateHeightCm: !<float> 5.000000
       buttonWidthCm: 4.800000
-      buttonHeightCm: 4.200000
-      dotDiameterCm: !<float> 4.000000
+      buttonHeightCm: 4.600000
+      barGapCm: 2.200000
+      dotDiameterCm: !<float> 5.000000
   ScriptTypes:
     "":
       {}
@@ -2058,8 +2074,7 @@
     plateWidthCm: true
     plateHeightCm: true
     buttonWidthCm: true
-    buttonHeightCm: true
-    dotDiameterCm: true
+    barGapCm: true
   ScriptTypesDefault:
     {}
   ScriptInputs:
@@ -2069,8 +2084,9 @@
       plateWidthCm: !<float> 9.000000
       plateHeightCm: !<float> 5.000000
       buttonWidthCm: 4.800000
-      buttonHeightCm: 4.200000
-      dotDiameterCm: !<float> 4.000000
+      buttonHeightCm: 4.600000
+      barGapCm: 2.200000
+      dotDiameterCm: !<float> 5.000000
   ScriptTypes:
     "":
       {}
@@ -2206,6 +2222,24 @@
     - !<own> ae061ccf-f3eb-486a-8c69-9deff69c403b
   Components:
     []
+- !<ScriptComponent/8e398b7a-b8ec-4b32-a4bc-9f24040148b8>
+  PrefabRemaps:
+    []
+  Name: SheetSender
+  Enabled: true
+  ScriptAsset: !<reference> 79e9cefa-3dba-4bfc-a29a-8e78e223b68c
+  ScriptInputsDefault:
+    url: true
+    target: true
+  ScriptTypesDefault:
+    {}
+  ScriptInputs:
+    "":
+      url: "https://sightglass-kinno.vercel.app"
+      target: live
+  ScriptTypes:
+    "":
+      {}
 - !<SceneObject/8f18f1cb-ec22-4b29-8b74-2d5a8ad07743>
   PrefabRemaps:
     []
@@ -2254,6 +2288,7 @@
     - !<own> 937837ea-358b-457c-bfe4-a54c5f67b848
     - !<own> fa8d0ea3-c7d3-48b8-8240-a9ec071750d3
     - !<own> bafd617b-8b3a-48af-ad14-7d0ac390a8be
+    - !<own> 1aab8045-b318-4947-be5c-851ca9e95fe2
   Components:
     - !<own> 5b8ab422-8a3f-4da1-858b-23ceb9f01ae2
 - !<ScriptComponent/9317de19-e139-4ae1-9d2c-732aa27e7fae>
@@ -2492,7 +2527,7 @@
   LocalTransform: !<TransformEntity>
     Position: {x: 13.500000, y: 0.000000, z: 1.000000}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
-    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    Scale: {x: 1.010000, y: 1.010000, z: 1.010000}
     HasSegmentScaleCompensation: false
   Children:
     []
@@ -2508,8 +2543,7 @@
     plateWidthCm: true
     plateHeightCm: true
     buttonWidthCm: true
-    buttonHeightCm: true
-    dotDiameterCm: true
+    barGapCm: true
   ScriptTypesDefault:
     {}
   ScriptInputs:
@@ -2519,8 +2553,9 @@
       plateWidthCm: !<float> 9.000000
       plateHeightCm: !<float> 5.000000
       buttonWidthCm: 4.800000
-      buttonHeightCm: 4.200000
-      dotDiameterCm: !<float> 4.000000
+      buttonHeightCm: 4.600000
+      barGapCm: 2.200000
+      dotDiameterCm: !<float> 5.000000
   ScriptTypes:
     "":
       {}
@@ -2747,7 +2782,7 @@
   LocalTransform: !<TransformEntity>
     Position: {x: 13.500000, y: 0.000000, z: 1.000000}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
-    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    Scale: {x: 1.360000, y: 1.360000, z: 1.360000}
     HasSegmentScaleCompensation: false
   Children:
     []
@@ -3066,7 +3101,7 @@
   LocalTransform: !<TransformEntity>
     Position: {x: 13.500000, y: 0.000000, z: 1.000000}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
-    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    Scale: {x: 1.340000, y: 1.340000, z: 1.340000}
     HasSegmentScaleCompensation: false
   Children:
     []
@@ -3430,7 +3465,7 @@
   LocalTransform: !<TransformEntity>
     Position: {x: 13.500000, y: 0.000000, z: 1.000000}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
-    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    Scale: {x: 1.260000, y: 1.260000, z: 1.260000}
     HasSegmentScaleCompensation: false
   Children:
     []
@@ -3567,8 +3602,7 @@
     plateWidthCm: true
     plateHeightCm: true
     buttonWidthCm: true
-    buttonHeightCm: true
-    dotDiameterCm: true
+    barGapCm: true
   ScriptTypesDefault:
     {}
   ScriptInputs:
@@ -3578,8 +3612,9 @@
       plateWidthCm: !<float> 9.000000
       plateHeightCm: !<float> 5.000000
       buttonWidthCm: 4.800000
-      buttonHeightCm: 4.200000
-      dotDiameterCm: !<float> 4.000000
+      buttonHeightCm: 4.600000
+      barGapCm: 2.200000
+      dotDiameterCm: !<float> 5.000000
   ScriptTypes:
     "":
       {}

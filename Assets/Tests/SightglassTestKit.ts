@@ -9,6 +9,7 @@ import {DefaultLeafInteractor} from "Leaf.lspkg/Interactors/interactor/DefaultLe
 import {findInteractablesByName} from "Leaf.lspkg/Interactors/InteractableUtils"
 import {findSceneObjectByName, sleep} from "Leaf.lspkg/Utils/common/Utils"
 import {SightglassMain} from "../Scripts/SightglassMain"
+import {GaugeStationView} from "../Scripts/GaugeStationView"
 import {GaugeTag, TagAction, TagMode} from "../Scripts/GaugeTag"
 import {SAMPLE_UMS_ROUND, GaugeSpec, gaugeById} from "../Scripts/Core/RoundPlan"
 import {Proposal, Entry} from "../Scripts/Core/EvidenceGate"
@@ -139,4 +140,24 @@ export class TagWatcher {
   stop(): void {
     this.owner.removeEvent(this.ev)
   }
+}
+
+// Turn the stand-in room about the vertical axis so a dial sits straight ahead of the camera, like an engineer
+// turning to face it. Runtime only. yawExtraDeg turns it further away.
+export function aimDial(main: SightglassMain, id: string, yawExtraDeg: number = 0): void {
+  const view = GaugeStationView.byId[id]
+  const rt = main.machineRoot.getTransform()
+  rt.setWorldRotation(quat.quatIdentity())
+  const p = view.sceneObject.getTransform().getWorldPosition()
+  const a = Math.atan2(p.x, -p.z)
+  for (const sign of [-1, 1]) {
+    rt.setWorldRotation(quat.angleAxis(sign * a, vec3.up()))
+    const q = view.sceneObject.getTransform().getWorldPosition()
+    if (Math.abs(q.x) < 1) break
+  }
+  if (yawExtraDeg !== 0) rt.setWorldRotation(rt.getWorldRotation().multiply(quat.angleAxis((yawExtraDeg * Math.PI) / 180, vec3.up())))
+}
+
+export function resetRoom(main: SightglassMain): void {
+  main.machineRoot.getTransform().setWorldRotation(quat.quatIdentity())
 }

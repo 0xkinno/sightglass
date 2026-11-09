@@ -1,0 +1,53 @@
+- !<AssetImportMetadata/75758a74-07ea-4532-b12f-377793b41d49>
+  ImportedAssetIds:
+    TypeScriptAsset: !<reference> 79e9cefa-3dba-4bfc-a29a-8e78e223b68c
+  ImporterName: TypeScriptAssetImporter
+  PrimaryAsset: !<reference> 79e9cefa-3dba-4bfc-a29a-8e78e223b68c
+  PackageType: NotAPackage
+  LegacyPackagePolicy: ~
+  ExtraData:
+    {}
+  AssetDataMap:
+    TypeScriptAsset: !<own> 90a4edd4-12ba-4456-8df2-1fade9c0108f
+  DependentFiles:
+    []
+  ImporterSettings: !<AssetImporterSettings>
+    {}
+  CompressionSettings: !<own> 00000000-0000-0000-0000-000000000000
+- !<TypeScriptAssetData/90a4edd4-12ba-4456-8df2-1fade9c0108f>
+  SvgIcon: ""
+  SetupScript:
+    code: ""
+  Description: ""
+  VersionMajor: 0
+  VersionMinor: 0
+  VersionPatch: 0
+  VersionPrerelease: ""
+  UpdateOrder: 0
+  ComponentUid: ecd72a01-f17d-42de-aec8-c4cd664ca2ea
+  ExportUid: 00000000-0000-0000-0000-000000000000
+  PackagePolicy: CanBeUnpacked
+  ScriptInputsHidden:
+    target: false
+    url: false
+  ScriptTypesHidden:
+    {}
+  ReadMe: !<reference> 00000000-0000-0000-0000-000000000000
+  DeclarationFile: !<reference> 00000000-0000-0000-0000-000000000000
+  Tags:
+    []
+  Attachments:
+    []
+  DefaultScriptInputs:
+    - url: "https://sightglass-kinno.vercel.app"
+      target: live
+  ScriptTypes:
+    -
+      {}
+  InputLines:
+    - '// @ui {"widget":"label", "label":"<span style=\"color: #60A5FA;\">SheetSender: post the signed sheet to the handover door</span>"}'
+    - '// @ui {"widget":"separator"}'
+    - '// @ui {"widget":"group_start", "label":"Settings"}'
+    - '// @input string url = "https://sightglass-kinno.vercel.app" {"hint":"Base address of the handover door, without a trailing slash."}'
+    - '// @input string target = "live" {"hint":"live posts to the door. off sends nothing and says so. LEAF scenarios set off except the send scenario.", "widget":"combobox", "values":[{"label":"live", "value":"live"}, {"label":"off", "value":"off"}]}'
+    - '// @ui {"widget":"group_end"}'

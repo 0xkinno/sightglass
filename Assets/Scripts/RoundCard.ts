@@ -14,6 +14,7 @@ import {FlexItem} from "SpectaclesUIKit.lspkg/Scripts/Components/Layout2D/Flex/F
 import {FlexAlign, FlexDirection, FlexJustify} from "SpectaclesUIKit.lspkg/Scripts/Components/Layout2D/Flex/FlexTypes"
 import {ESCALATIONS} from "./Core/EvidenceGate"
 import {childObject, PALETTE, Rgba, toVec4} from "./SightglassMesh"
+import {PinchTarget} from "./GaugeTag"
 
 export type CardTone = "neutral" | "normal" | "watch" | "alarm"
 
@@ -157,7 +158,7 @@ export class RoundCard extends BaseScriptComponent {
     this.summaryT.sceneObject.enabled = false
 
     this.signRow = this.addRow(content, "SignRow", innerW, 3.8)
-    const bw = (innerW - 0.8) / 2
+    const bw = (innerW - 1.6) / 2
     const ready = this.addButton(this.signRow, "Sign READY", bw, 3.6, () => this.pressSignReady())
     this.readyBtn = ready.btn
     this.readyLabel = ready.label
@@ -272,7 +273,7 @@ export class RoundCard extends BaseScriptComponent {
       f.direction = FlexDirection.Row
       f.justifyContent = FlexJustify.Center
       f.alignItems = FlexAlign.Center
-      f.columnGap = 0.8
+      f.columnGap = 1.6
     })
     const item = so.createComponent(FlexItem.getTypeName()) as FlexItem
     item.overrideWidth = w
@@ -283,19 +284,29 @@ export class RoundCard extends BaseScriptComponent {
   private addColumn(parent: SceneObject, name: string, w: number): SceneObject {
     const so = childObject(parent, name)
     const f = so.createComponent(FlexLayout.getTypeName()) as FlexLayout
-    const h = ESCALATIONS.length * 3.4 + (ESCALATIONS.length - 1) * 0.5
+    const h = ESCALATIONS.length * 3.4 + (ESCALATIONS.length - 1) * 1.5
     f.onInitialized.add(() => {
       f.width = w
       f.height = h
       f.direction = FlexDirection.Column
       f.justifyContent = FlexJustify.Start
       f.alignItems = FlexAlign.Center
-      f.rowGap = 0.5
+      f.rowGap = 1.5
     })
     const item = so.createComponent(FlexItem.getTypeName()) as FlexItem
     item.overrideWidth = w
     item.overrideHeight = h
     return so
+  }
+
+  private buttonList: {name: string; parent: string; btn: Button; obj: SceneObject}[] = []
+
+  // Real sizes of the card's buttons that are showing now, for the pinch-target scenario.
+  pinchTargets(): PinchTarget[] {
+    return this.buttonList.filter((b) => b.obj.isEnabledInHierarchy).map((b) => {
+      const sc = b.obj.getTransform().getWorldScale()
+      return {name: b.name, parent: b.parent, centre: b.obj.getTransform().getWorldPosition(), widthCm: b.btn.size.x * sc.x, heightCm: b.btn.size.y * sc.y}
+    })
   }
 
   private addButton(
@@ -325,6 +336,7 @@ export class RoundCard extends BaseScriptComponent {
     t.verticalOverflow = VerticalOverflow.Overflow
     t.layoutRect = Rect.create(-w / 2 + 0.2, w / 2 - 0.2, -1.2, 1.2)
     btn.onTriggerUp.add(onPress)
+    this.buttonList.push({name: text, parent: parent.name, btn: btn, obj: so})
     return {btn: btn, label: t}
   }
 

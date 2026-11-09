@@ -28,6 +28,7 @@ import {RoundSheet, buildSheet} from "./Core/RoundSheet"
 import {PlantSim} from "./PlantSim"
 import {GaugeReader} from "./GaugeReader"
 import {FrameCapture, Capture} from "./FrameCapture"
+import {SheetSender, SendResult} from "./SheetSender"
 import {GaugeTag, TagAction, TagTone} from "./GaugeTag"
 import {GaugeStationView} from "./GaugeStationView"
 import {RoundCard, CardTone} from "./RoundCard"
@@ -79,6 +80,10 @@ export class SightglassMain extends BaseScriptComponent {
   capture!: FrameCapture
 
   @input
+  @hint("Posts the signed sheet to the handover door.")
+  sender!: SheetSender
+
+  @input
   @hint("Round card shown low left of view.")
   roundCard!: RoundCard
 
@@ -120,6 +125,9 @@ export class SightglassMain extends BaseScriptComponent {
   private _code: string = ""
   private _digest: string = ""
   private _sheet: RoundSheet | null = null
+  private _sendStatus: number = -1
+  private _sendOk: boolean = false
+  private _doorUrl: string = ""
   private _readCount: number = 0
   private settleUntil: number = 0
   private _onEntryChanged = new Event<string>()
@@ -173,6 +181,16 @@ export class SightglassMain extends BaseScriptComponent {
   }
   get sheet(): RoundSheet | null {
     return this._sheet
+  }
+  // Result of the last send: -1 not tried, 0 no answer or switched off, else the HTTP status.
+  get sendStatus(): number {
+    return this._sendStatus
+  }
+  get sendOk(): boolean {
+    return this._sendOk
+  }
+  get doorUrl(): string {
+    return this._doorUrl
   }
   get card(): RoundCard {
     return this.roundCard
@@ -501,14 +519,39 @@ export class SightglassMain extends BaseScriptComponent {
     this._digest = built.digest
     this._code = built.digest.substring(0, 4).toUpperCase()
     this._signed = true
-    this.roundCard.showSigned(this._code, "Sent to the chief engineer, code " + this._code)
+    this.roundCard.showSigned(this._code, "Sending, code " + this._code)
     this.stateMsg = "Round signed " + decision + (esc ? ". " + esc + "." : ".")
     this.stateTone = "normal"
     this.roundCard.setState(this.stateMsg, this.stateTone)
     print("SIGHTGLASS_SIGN decision=" + decision + " escalation=" + (esc ? esc : "none") + " code=" + this._code + " digest=" + built.digest)
-    print("SIGHTGLASS_SEND fixture, not sent over network code=" + this._code)
     this._onSigned.invoke(this._code)
+    this.sendSheet()
     return true
+  }
+
+  // Posts the sheet and the crops that were seen. The card says Sent only after the door answered 200 or 201.
+  async sendSheet(): Promise<SendResult> {
+    const sheet = this._sheet as RoundSheet
+    const frames: {[ref: string]: string} = {}
+    for (const e of this._entries) {
+      if (e.frameRef) {
+        const b64 = this.capture.frameB64(e.frameRef)
+        if (b64) frames[e.frameRef] = "data:image/jpeg;base64," + b64
+      }
+    }
+    this.roundCard.showSigned(this._code, "Sending, code " + this._code)
+    const res = await this.sender.send(sheet, this._digest, frames)
+    this._sendStatus = res.status
+    this._sendOk = res.ok
+    this._doorUrl = res.doorUrl
+    if (res.ok) this.roundCard.showSigned(this._code, "Sent to the chief engineer, code " + this._code)
+    else this.roundCard.showSigned(this._code, "Not sent. Kept on the glasses, code " + this._code + ". " + res.why + ".")
+    return res
+  }
+
+  // Try the send again after a failure. Does nothing before the round is signed.
+  retrySend(): Promise<SendResult> | null {
+    return this._signed ? this.sendSheet() : null
   }
 
   private updateChevron(): void {
@@ -577,6 +620,6 @@ export class SightglassMain extends BaseScriptComponent {
     this.check("ready-refused", this.sign("READY") === false, "signed=" + this._signed)
     this.check("hold-needs-escalation", this.sign("HOLD") === false && this.roundCard.escalationsVisible, "escalationsVisible=" + this.roundCard.escalationsVisible)
     this.check("hold-signed", this.sign("HOLD", 1) === true, "code=" + this._code)
-    this.check("sent-card", this.roundCard.resultText.indexOf("Sent to the chief engineer, code " + this._code) === 0, this.roundCard.resultText)
+    this.check("sent-card", this.roundCard.resultText.indexOf("Sending, code " + this._code) === 0 || this.roundCard.resultText.indexOf("Sent to the chief engineer") === 0 || this.roundCard.resultText.indexOf("Not sent") === 0, this.roundCard.resultText)
   }
 }

@@ -38,6 +38,7 @@
     reader: false
     roundCard: false
     selfTest: false
+    sender: false
   ScriptTypesHidden:
     {}
   ReadMe: !<reference> 00000000-0000-0000-0000-000000000000
@@ -50,9 +51,10 @@
     - plant: !<MappingBased.AssignableType_1> 00000000-0000-0000-0000-000000000000
       reader: !<MappingBased.AssignableType_2> 00000000-0000-0000-0000-000000000000
       capture: !<MappingBased.AssignableType_3> 00000000-0000-0000-0000-000000000000
-      roundCard: !<MappingBased.AssignableType_4> 00000000-0000-0000-0000-000000000000
-      chevron: !<MappingBased.AssignableType_5> 00000000-0000-0000-0000-000000000000
-      audio: !<MappingBased.AssignableType_6> 00000000-0000-0000-0000-000000000000
+      sender: !<MappingBased.AssignableType_4> 00000000-0000-0000-0000-000000000000
+      roundCard: !<MappingBased.AssignableType_5> 00000000-0000-0000-0000-000000000000
+      chevron: !<MappingBased.AssignableType_6> 00000000-0000-0000-0000-000000000000
+      audio: !<MappingBased.AssignableType_7> 00000000-0000-0000-0000-000000000000
       machineRoot: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
       eyeHeightCm: !<float> 165.000000
       placeFloorFromCamera: true
@@ -67,9 +69,10 @@
     - '// @input AssignableType_1 plant {"hint":"Plant simulator. Restarted when the round starts."}'
     - '// @input AssignableType_2 reader {"hint":"Gauge reader. Live, fixture, replay and fault modes."}'
     - '// @input AssignableType_3 capture {"hint":"Frame capture. Used when the reader mode is live."}'
-    - '// @input AssignableType_4 roundCard {"hint":"Round card shown low left of view."}'
-    - '// @input AssignableType_5 chevron {"hint":"Chevron that points to the next gauge when it is out of view."}'
-    - '// @input AssignableType_6 audio {"hint":"Spatial cues for the alarm moment."}'
+    - '// @input AssignableType_4 sender {"hint":"Posts the signed sheet to the handover door."}'
+    - '// @input AssignableType_5 roundCard {"hint":"Round card shown low left of view."}'
+    - '// @input AssignableType_6 chevron {"hint":"Chevron that points to the next gauge when it is out of view."}'
+    - '// @input AssignableType_7 audio {"hint":"Spatial cues for the alarm moment."}'
     - '// @input SceneObject machineRoot {"hint":"Root of the stand-in machinery space. Its floor is placed relative to the real camera height."}'
     - '// @ui {"widget":"group_end"}'
     - '// @ui {"widget":"group_start", "label":"Settings"}'

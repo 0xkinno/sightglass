@@ -53,6 +53,14 @@ function roleSize(base: number): number {
   return base * (READ_DISTANCE_CM / 110)
 }
 
+export interface PinchTarget {
+  name: string
+  parent: string // targets with the same parent are in one group, gaps are checked inside a group
+  centre: vec3
+  widthCm: number
+  heightCm: number
+}
+
 interface Slot {
   obj: SceneObject
   btn: Button
@@ -88,19 +96,24 @@ export class GaugeTag extends BaseScriptComponent {
   plateHeightCm: number = 5
 
   @input
-  @hint("Width of each decision button in centimetres. Targets must stay at least 4 cm.")
+  @hint("Width of each decision button in centimetres. Targets must be at least 2 degrees at station distance.")
   @widget(new SliderWidget(4, 8, 0.2))
   buttonWidthCm: number = 4.8
 
   @input
   @hint("Height of each decision button in centimetres.")
   @widget(new SliderWidget(4, 6, 0.2))
-  buttonHeightCm: number = 4.2
+  buttonHeightCm: number = 4.6
+
+  @input
+  @hint("Gap between decision buttons in centimetres. Gaps must be at least 1 degree at station distance.")
+  @widget(new SliderWidget(0.4, 4, 0.2))
+  barGapCm: number = 2.2
 
   @input
   @hint("Diameter of the idle dot you pinch to read, in centimetres.")
   @widget(new SliderWidget(2, 6, 0.5))
-  dotDiameterCm: number = 4
+  dotDiameterCm: number = 5
   @ui.group_end
 
   private _onAction = new Event<TagAction>()
@@ -108,6 +121,7 @@ export class GaugeTag extends BaseScriptComponent {
     return this._onAction.publicApi()
   }
 
+  private dotBtn!: RoundButton
   private dotObj!: SceneObject
   private plateObj!: SceneObject
   private barObj!: SceneObject
@@ -206,8 +220,9 @@ export class GaugeTag extends BaseScriptComponent {
   private buildDot(): void {
     this.dotObj = childObject(this.sceneObject, "Dot")
     const dot = this.dotObj.createComponent(RoundButton.getTypeName()) as RoundButton
+    this.dotBtn = dot
     dot.onInitialized.add(() => {
-      dot.size = new vec3(this.dotDiameterCm, this.dotDiameterCm, 1)
+      dot.width = this.dotDiameterCm
     })
     dot.onTriggerUp.add(() => this.press("READ"))
     // Light disc over the stock dark button face: dark renders as transparent on the additive display.
@@ -256,6 +271,23 @@ export class GaugeTag extends BaseScriptComponent {
     this.detailText.size = roleSize(38)
   }
 
+  // Pinch targets that exist now: the dot, and every decision slot that has an action. Sizes are the real
+  // component sizes times the world scale. Used by the pinch-target scenario.
+  pinchTargets(): PinchTarget[] {
+    const out: PinchTarget[] = []
+    // The dot and the decision bar are never on screen together, so they are separate groups for the gap check.
+    const add = (name: string, obj: SceneObject, size: vec3) => {
+      const sc = obj.getTransform().getWorldScale()
+      out.push({name: name, parent: this.gaugeId + (name === "Dot" ? " dot" : " bar"), centre: obj.getTransform().getWorldPosition(), widthCm: size.x * sc.x, heightCm: size.y * sc.y})
+    }
+    if (this.dotObj && this.dotObj.enabled && this.dotBtn) add("Dot", this.dotObj, this.dotBtn.size)
+    for (let i = 0; i < this.slots.length; i++) {
+      const sl = this.slots[i]
+      if (sl.obj.enabled && sl.action !== null) add("Slot" + i + " " + sl.action, sl.obj, sl.btn.size)
+    }
+    return out
+  }
+
   private paintTone(c: Rgba): void {
     if (!this.toneObj) return
     const old = this.toneObj.getComponent("Component.RenderMeshVisual") as RenderMeshVisual | null
@@ -280,25 +312,26 @@ export class GaugeTag extends BaseScriptComponent {
     return t
   }
 
-  // Decision bar under the plate, left aligned with it, three button slots in a row.
+  // Decision bar under the plate, left aligned with it, three button slots in a column. A column fits between two
+  // dials; a row of targets that are each 2 degrees wide with 1 degree gaps does not.
   private buildBar(): void {
     const n = 3
-    const gap = 0.4
-    const barW = n * this.buttonWidthCm + (n - 1) * gap
+    const gap = this.barGapCm
+    const barH = n * this.buttonHeightCm + (n - 1) * gap
     this.barObj = childObject(
       this.sceneObject,
       "DecisionBar",
-      new vec3(-this.plateWidthCm / 2 + barW / 2, -(this.plateHeightCm / 2 + 0.5 + this.buttonHeightCm / 2), 0.6),
+      new vec3(-this.plateWidthCm / 2 + this.buttonWidthCm / 2, -(this.plateHeightCm / 2 + 0.5 + barH / 2), 0.6),
     )
     this.barFlex = this.barObj.createComponent(FlexLayout.getTypeName()) as FlexLayout
     const flex = this.barFlex
     flex.onInitialized.add(() => {
-      flex.width = barW
-      flex.height = this.buttonHeightCm
-      flex.direction = FlexDirection.Row
+      flex.width = this.buttonWidthCm
+      flex.height = barH
+      flex.direction = FlexDirection.Column
       flex.justifyContent = FlexJustify.Start
       flex.alignItems = FlexAlign.Center
-      flex.columnGap = gap
+      flex.rowGap = gap
     })
 
     for (let i = 0; i < n; i++) {

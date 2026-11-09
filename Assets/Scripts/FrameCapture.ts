@@ -69,6 +69,8 @@ export class FrameCapture extends BaseScriptComponent {
   private order: string[] = []
   private counter: number = 0
   private busy: boolean = false
+  // What the overlay looked like at the moment the JPEG was taken, for the overlay-hidden scenario.
+  lastOverlayAtEncode: {roots: boolean[]; bands: boolean[]} | null = null
 
   onAwake() {
     this.createEvent("OnStartEvent").bind(() => this.start())
@@ -200,6 +202,10 @@ export class FrameCapture extends BaseScriptComponent {
       crop.cropRect.bottom = rect.bottom
       if (hideOverlay) this.setOverlay(false, saved, bands, ids)
       await this.waitUpdates(4)
+      this.lastOverlayAtEncode = {
+        roots: this.overlayRoots.map((o) => (o ? o.enabled : false)),
+        bands: ids.map((id) => GaugeStationView.byId[id].bandVisible),
+      }
       const b64: string = await new Promise<string>((resolve, reject) => {
         Base64.encodeTextureAsync(this.cropTexture, (s) => resolve(s), () => reject("encode failed"), CompressionQuality.HighQuality, EncodingType.Jpg)
       })

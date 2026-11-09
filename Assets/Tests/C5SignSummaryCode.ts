@@ -11,6 +11,7 @@ import {waitUntil, beginRound, newInteractor, readByPinch, pinchAction, pinchCar
 export class C5SignSummaryCode extends Scenario {
   async run(): Promise<void> {
     const main = await beginRound(1)
+    main.sender.target = "off" // c5 checks the sign flow; the send scenario is the only one that posts
     const it = newInteractor()
 
     for (const id of ALL_IDS) {
@@ -62,6 +63,7 @@ export class C5SignSummaryCode extends Scenario {
     expect(code.length).toBe(4)
     expect(/^[0-9A-F]{4}$/.test(code), "code: " + code).toBe(true)
     expect(main.digest.substring(0, 4).toUpperCase()).toBe(code)
-    expect(main.card.resultText).toBe("Sent to the chief engineer, code " + code)
+    expect(main.card.resultText.indexOf("Not sent. Kept on the glasses, code " + code)).toBe(0)
+    expect(main.sendOk).toBe(false)
   }
 }

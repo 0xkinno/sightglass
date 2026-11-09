@@ -9,6 +9,11 @@ import {C2AlarmBlocksReady} from "./C2AlarmBlocksReady"
 import {C3FoggedByEye} from "./C3FoggedByEye"
 import {C4CorrectSteps} from "./C4CorrectSteps"
 import {C5SignSummaryCode} from "./C5SignSummaryCode"
+import {ExtraOverlayHidden} from "./ExtraOverlayHidden"
+import {ExtraFaultReader} from "./ExtraFaultReader"
+import {ExtraPinchTargets} from "./ExtraPinchTargets"
+import {ExtraChevron} from "./ExtraChevron"
+import {ExtraSend} from "./ExtraSend"
 
 @component
 export class InLensRunner extends BaseScriptComponent {
@@ -29,6 +34,11 @@ export class InLensRunner extends BaseScriptComponent {
       "c3-fogged-by-eye": C3FoggedByEye.getTypeName(),
       "c4-correct-steps": C4CorrectSteps.getTypeName(),
       "c5-sign-summary-code": C5SignSummaryCode.getTypeName(),
+      "extra-overlay-hidden": ExtraOverlayHidden.getTypeName(),
+      "extra-fault-reader": ExtraFaultReader.getTypeName(),
+      "extra-pinch-targets": ExtraPinchTargets.getTypeName(),
+      "extra-chevron": ExtraChevron.getTypeName(),
+      "extra-send": ExtraSend.getTypeName(),
     }
     const tn = map[id]
     if (!tn) {
